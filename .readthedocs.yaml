@@ -1,0 +1,16 @@
+version: 2
+
+# Define la versión de Python y el sistema operativo del servidor
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.10"
+
+# Indica que estamos usando MkDocs
+mkdocs:
+  configuration: mkdocs.yml
+
+# Instala los temas visuales necesarios
+python:
+  install:
+    - requirements: requirements.txt

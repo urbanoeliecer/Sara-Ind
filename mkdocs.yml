@@ -1,0 +1,27 @@
+site_name: SaraII - Indicadores Rurales
+theme:
+  name: material
+  language: es
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid 
+nav:
+  - Inicio: index.md
+  - Revisión de Sesión: loginRev.md
+  - Panel Principal: principal.md
+  - Co-relación Ejecución.: admin/indCorelEjec.md
+  - Interv. Cons. (MVC): admin/indInterConsMVC.md
+  - Intervencón. Det.: admin/indInterGnrl.md
+  - Inf. de Elementos: admin/infGrafElem.md
+  - Inf. de Activ. Mensuales por Proy. (MVC): admin/infTabMesActivPryMVC.md
+  - Back:
+    - Conexión: back/conexion.md
+    - Estilos: back/estilos.md
+  - Definición:
+    - Bd Estructura: tecnico/bdEst.md
+    - Entorno: tecnico/entorno.md
+    - Requerimientos: tecnico/req.md
+    - Roles: tecnico/roles.md
+
