@@ -1,0 +1,25 @@
+/* Texto principal */
+.md-content {
+  font-size: 0.7rem;
+}
+/* Párrafos */
+.md-content p {
+  font-size: 0.7rem;
+}
+/* Listas */
+.md-content li {
+  font-size: 0.7rem;
+}
+/* Títulos principales */
+.md-typeset h1 {
+  font-size: 0.8rem !important;
+}
+/* Reducir espacio entre párrafos */
+.md-typeset p {
+  margin-top: 0.3em !important;
+  margin-bottom: 0.3em !important;
+}
+/* Quitar espacio extra entre ítems de listas numeradas */
+.md-typeset ol li {
+  margin-bottom: 0em !important;
+}

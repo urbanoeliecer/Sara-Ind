@@ -1,7 +1,13 @@
-site_name: SaraII - Indicadores Rurales
+site_name: SARA II - Rural Indicators
 theme:
   name: material
   language: es
+
+repo_url: https://github.com/urbanoeliecer/Sara00 
+
+extra_css: 
+  - styles/extra.css
+
 markdown_extensions:
   - pymdownx.superfences:
       custom_fences:
