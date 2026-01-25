@@ -6,7 +6,7 @@
 </head>
 <body>
 <a href="../principal.php">Principal</a></li>
-<h2>Indicador de Co-relación de Ejecución</h2>
+<h2>Sara II - Indicador de Co-relación de Ejecución</h2>
 <?php
 // === consolidado.php ===
 // modo: departamento / municipio / junta
@@ -200,9 +200,9 @@ $resultado->data_seek(0);
             <th>Municipio</th>
             <th>Vereda</th>
         <?php endif; ?>
-        <th>Proyectos</th><th>Gráfica Proyectos</th>
-        <th>Monto</th><th>Gráfica Monto</th>
-        <th>Beneficiarios</th><th>Gráfica Beneficiarios</th>
+        <th>Proyectos</th><th>-</th>
+        <th>Dinero</th><th>-</th>
+        <th>Benef.</th><th>-</th>
     </tr><?php 
     $contFil = 1;
     while ($row = $resultado->fetch_assoc()): ?>

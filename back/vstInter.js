@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <tr>
                 <th>#</th>            
                 <th>Proyecto</th>
-                <th>Monto</th>
+                <th>Dinero</th>
                 <th>-</th>
                 <th>Benef.</th>
                 <th>-</th>
@@ -116,9 +116,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 <tr><td>${fila}</td>
                     <td>${d.proyecto}</td>
                     <td>${d.monto}</td>
-                    <td><img src="../img/barra.png" height="10" width="${ancho1}">
+                    <td><img src="../img/barra.png" height="12" width="${ancho1}">
                     <td>${d.beneficiarios}</td>
-                    <td><img src="../img/barra.png" height="10" width="${ancho2}">
+                    <td><img src="../img/barra.png" height="12" width="${ancho2}">
                     <td>${d.junta}</td>
                     <td>${d.municipio}</td>
                     <td>${d.departamento}</td>

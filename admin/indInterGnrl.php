@@ -1,7 +1,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Sara II - Ind. Actividades</title>
+<title>Sara II - Ind. de Intervención General</title>
 <link rel="stylesheet" href="../back/estilos.css">
 </head>
 <body>

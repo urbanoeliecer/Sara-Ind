@@ -11,17 +11,16 @@ nav:
   - Inicio: index.md
   - Revisión de Sesión: loginRev.md
   - Panel Principal: principal.md
-  - Co-relación Ejecución.: admin/indCorelEjec.md
-  - Interv. Cons. (MVC): admin/indInterConsMVC.md
-  - Intervencón. Det.: admin/indInterGnrl.md
-  - Inf. de Elementos: admin/infGrafElem.md
-  - Inf. de Activ. Mensuales por Proy. (MVC): admin/infTabMesActivPryMVC.md
+  - Ind. de Correlación de Ejec,: admin/indCorelEjec.md
+  - Ind. de Interv. Cons. (MVC): admin/indInterConsMVC.md
+  - Ind. de Interv. General: admin/indInterGnrl.md
+  - Inf. de Elementos: admin/infElem.md
+  - Inf. de Activ. por Proy. (MVC): admin/infActivMesPryMVC.md
   - Back:
     - Conexión: back/conexion.md
     - Estilos: back/estilos.md
   - Definición:
-    - Bd Estructura: tecnico/bdEst.md
     - Entorno: tecnico/entorno.md
+    - Estructura: tecnico/bdEst.md
     - Requerimientos: tecnico/req.md
     - Roles: tecnico/roles.md
-

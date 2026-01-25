@@ -1,7 +1,6 @@
-        body { font-family: Arial; padding: 20px; font-size: 14px;}
+        body { font-family: Arial; padding: 10px; font-size: 12px;}
         form { margin-bottom: 20px; padding: 10px; background: #f7f7f7; border-radius: 6px; }
-        label { display: inline-block; width: 150px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 5px; font-size:12px }
         th, td { border: 1px solid #ccc; padding: 8px; }
         th { background: #eee; }
         .paginacion { margin-top: 20px; }

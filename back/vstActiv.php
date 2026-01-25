@@ -1,7 +1,7 @@
 <?php
 function mostrarTablaActividades($datos) {
 ?>
-<table border="1" cellpadding="5">
+<table >
 <tr>
     <th>#</th>
     <th>Id</th>
@@ -39,14 +39,14 @@ if (!empty($datos)):
         if ($row['presupuesto_proyecto'] > 0) 
              $var = round($row['total_presupuesto_actividades']*50/$row['presupuesto_proyecto'],0);
         else $var = 0;
-        echo '<img src="../img/barra.png" height="10" width="'.$var.'"> '.$var.'%';
+        echo '<img src="../img/barra.png" height="12" width="'.$var.'"> '.$var.'%';
         echo '</td>';
         echo '<td>'.$row['total_personas'];
         echo '<td>'.$row['beneficiarios'].'</td>';
         if ($row['beneficiarios'] > 0) 
              $var = round((($row['total_personas']*100)/$row['total_actividades'])/$row['beneficiarios'],1);
         else $var = 0;  
-        echo '<td><img src="../img/barra.png" height="10" width="'.$var.'"> '.$var.'%'; // = ('.$row["total_personas"].'/'.$row["total_actividades"].')/'.$row["beneficiarios"];
+        echo '<td><img src="../img/barra.png" height="12" width="'.$var.'"> '.$var.'%'; // = ('.$row["total_personas"].'/'.$row["total_actividades"].')/'.$row["beneficiarios"];
         echo '<td>'.$row['total_horas'].'</td>';
         echo '<td>'.$row['total_actividades'].'</td>';
         echo '</tr>';
@@ -58,5 +58,5 @@ else:
 </table>
 <?php
 }
-print_r($datos);
+//print_r($datos);
 mostrarTablaActividades($datos); 
