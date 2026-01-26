@@ -28,12 +28,12 @@ SELECT
 /* OBJETIVOS DESEADOS (juntasdsc) */
     IFNULL(jd.proyectos, 0)      AS proyectos_deseados,
     IFNULL(jd.presupuesto, 0)    AS presupuesto_deseado,
-    IFNULL(jd.participantes, 0) AS participantes_deseados,
-/* RGI (40% - 30% - 30%) */
+    IFNULL(jd.participantes, 0)  AS participantes_deseados,
+/* GII (40% - 30% - 30%) */
     (   0.4 * IF(jd.proyectos > 0, COUNT(DISTINCT a.idpry) / jd.proyectos,0)
       + 0.3 * IF(jd.presupuesto > 0, SUM(a.presupuesto) / jd.presupuesto,0)
       + 0.3 * IF(jd.participantes > 0, (SUM(a.cntpersonas)/COUNT(a.idact)) / jd.participantes,0)
-    ) * 100 AS RGI
+    ) * 100 AS GII
 
 FROM pryact a
 INNER JOIN vproyectosxjunta v ON v.idproyecto = a.idpry
@@ -43,14 +43,15 @@ LEFT JOIN juntasdsc jd
 GROUP BY v.departamento, v.municipio, v.junta
 ORDER BY v.departamento ASC,v.municipio ASC, v.junta ASC
 LIMIT 0, 20; ";
-// ORDENAMIENTO POR RGI
+// ORDENAMIENTO POR GII
 if (isset($_GET['order'])) {
-    if ($_GET['order'] === 'rgi_asc') {
-        $sql .= " ORDER BY RGI ASC";
-    } elseif ($_GET['order'] === 'rgi_desc') {
-        $sql .= " ORDER BY RGI DESC";
+    if ($_GET['order'] === 'gii_asc') {
+        $sql .= " ORDER BY GII ASC";
+    } elseif ($_GET['order'] === 'gii_desc') {
+        $sql .= " ORDER BY GII DESC";
     }
 }
+print $sql;
 $result = mysqli_query($conexion, $sql);
 // FUNCIONES
 function porcentaje($real, $deseado) {
@@ -63,9 +64,10 @@ function barra($porcentaje) {
     return '../img/barraverde.png';
 }
 ?>
-<!-- BOTONES ORDEN -->
-<a href="?order=rgi_desc" class="btn btn-success btn-sm">RGI ↓</a>
-<a href="?order=rgi_asc" class="btn btn-warning btn-sm">RGI ↑</a>
+<!-- BOTONES ORDEN 
+<a href="?order=gii_desc" class="btn btn-success btn-sm">GII ↓</a>
+<a href="?order=gii_asc" class="btn btn-warning btn-sm">GII ↑</a>
+-->
 <table class="table table-bordered table-striped">
 <thead>
 <tr>
@@ -74,7 +76,7 @@ function barra($porcentaje) {
     <th>Municipio</th>
     <th>Vereda</th>
 
-    <th>RGI</th>
+    <th>GII</th>
     <th>Gráfica</th>
     
     <th>Activ.</th>
@@ -108,8 +110,8 @@ while ($row = mysqli_fetch_assoc($result)):
     <td><?= $row['departamento'] ?></td>
     <td><?= $row['municipio'] ?></td>
     <td><?= $row['vereda'] ?></td>
-    <td><strong><?= round($row['RGI']) ?>%</strong></td>
-    <td><img src="<?= barra($row['RGI']) ?>" class="barra" width="<?= min(100, $row['RGI']) ?>%" style="height:16px;" ></td>
+    <td><strong><?= round($row['GII']) ?>%</strong></td>
+    <td><img src="<?= barra($row['GII']) ?>" class="barra" width="<?= min(100, $row['GII']) ?>%" style="height:16px;" ></td>
     <td><strong><?= $row['total_actividades'] ?></strong></td>
     <td><?= $row['total_proyectos'] ?></td>
     <td><?= $row['proyectos_deseados'] ?></td>

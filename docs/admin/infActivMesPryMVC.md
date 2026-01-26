@@ -4,15 +4,12 @@
 Es una de los dos paginas hechas en MVC
 
 Presenta una tabla con el listado de actividades con:
-Id, Id, Proyecto, Benefiniciairos, Departamento, Municipio, Junta, Mes, Presupuesto asignado y ejecutados, beneficiarios promedios por mes, Cantidad de Horas dedicadas, Cantidad de actividades realziadas.
-El informe tiene opciones de filtro como:
+Id, Proyecto, Benefiniciairos, Departamento, Municipio, Junta, Mes, Presupuesto asignado y ejecutados, beneficiarios promedios por mes, Cantidad de Horas dedicadas, Cantidad de actividades realziadas.
+Un ejemplo es presentada en la figura
 
-Un ejemplo a mediados de enero de 2026 es presentada en la figura.
-
-Muestra los ingresos de cada usuario al sistema, incluido el admin
 ![Inf. Mensual de actividades por proyecto](../img/a2.jpg)
 
-# El modelo y la vista está en back y no tiene markdown debido a que seran explicadas aquí
+El modelo y la vista está en back y no tiene markdown debido a que se presentan en la figura
 
 ![MVC](../img/mvc.jpg)
 

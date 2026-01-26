@@ -12,9 +12,9 @@ if (isset($_SESSION["usuario"])) {
         <ul>
         <li><a href="admin/indcorelEjec.php">Ind. de Corelación de Ejecución</a></li>  
         <li><a href="admin/indInterGnrl.php">Ind. de Intervención General</a></li>
-        <li><a href="admin/infPryMVC.php">Ind. de Proyectos por JAC</a></li>
-        <li><a href="admin/infElem.php">Inf. de Elementos por JAC</a></li>
-        <li><a href="admin/infActivMesPryMVC.php">Inf. de Actividades</a></li>
+        <li><a href="admin/infPryMVC.php">Inf. de Proyectos por JAC</a></li>
+        <li><a href="admin/infActivMesPryMVC.php">Inf. Mesnual de Activ. por JAC </a></li>
+        <li><a href="admin/infElem.php">Inf. de Infraestructura por JAC</a></li>        
         </ul>
     </nav>    
     <div class="container">

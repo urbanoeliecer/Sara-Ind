@@ -18,14 +18,14 @@ nav:
   - Principal Panel : principal.md
   - Ind. de Correlación de Ejec,: admin/indCorelEjec.md
   - Ind. de Interv. General: admin/indInterGnrl.md
-  - Ind. de Proyectos (MVC): admin/inPryMVC.md
-  - Inf. de Elementos: admin/infElem.md
+  - Inf. de Proyectos por JAC (MVC): admin/infPryMVC.md
   - Inf. de Activ. por Proy. (MVC): admin/infActivMesPryMVC.md
+  - Inf. de Infraestructura: admin/infElem.md
   - Back:
     - Conexión: back/conexion.md
     - Estilos: back/estilos.md
   - Definición:
     - Entorno: tecnico/entorno.md
-    - Estructura: tecnico/bdEst.md
+    - Estructura BD: tecnico/bdest.md
     - Requerimientos: tecnico/req.md
     - Roles: tecnico/roles.md

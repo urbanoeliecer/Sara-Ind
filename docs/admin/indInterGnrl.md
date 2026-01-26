@@ -1,8 +1,8 @@
 # Indicador de intervención general
 
-El Indicador general de intervención (**RGI**) se define como un indicador sintético que resume el desempeño global de la intervención en una comunidad, es el más importante e integra los distintos indicadores normalizados mediante una combinación lineal ponderada que se calcula para cada comunidad; se calcula mediante la siguiente expresión:
+El Indicador general de intervención (**GII**) se define como un indicador sintético que resume el desempeño global de la intervención en una comunidad, es el más importante e integra los distintos indicadores normalizados mediante una combinación lineal ponderada que se calcula para cada comunidad; se calcula mediante la siguiente expresión:
 
-**RGIᵢ = pP · Pᵢ + pT · Tᵢ + pB · Bᵢ**
+**GIIᵢ = pP · Pᵢ + pT · Tᵢ + pB · Bᵢ**
 
 A partir de los siguientes indicadores:
 
@@ -23,7 +23,7 @@ El informe presenta una tabla con el listado de proyectos por Departamento, Muni
 
 La figura tiene las siguientes secciones:
 
-1. Indicador RGI
+1. Indicador GII
 
 2. Cantidad de actividades realizadas en el periodo de tiempo filtrado
 
