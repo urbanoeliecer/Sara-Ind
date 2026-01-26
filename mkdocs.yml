@@ -1,7 +1,7 @@
 site_name: SARA II - Rural Indicators
 theme:
   name: material
-  language: es
+  language: en
 
 repo_url: https://github.com/urbanoeliecer/Sara00 
 
@@ -14,12 +14,11 @@ markdown_extensions:
         - name: mermaid
           class: mermaid 
 nav:
-  - Inicio: index.md
-  - Revisión de Sesión: loginRev.md
-  - Panel Principal: principal.md
+  - Index: index.md
+  - Principal Panel : principal.md
   - Ind. de Correlación de Ejec,: admin/indCorelEjec.md
-  - Ind. de Interv. Cons. (MVC): admin/indInterConsMVC.md
   - Ind. de Interv. General: admin/indInterGnrl.md
+  - Ind. de Proyectos (MVC): admin/inPryMVC.md
   - Inf. de Elementos: admin/infElem.md
   - Inf. de Activ. por Proy. (MVC): admin/infActivMesPryMVC.md
   - Back:

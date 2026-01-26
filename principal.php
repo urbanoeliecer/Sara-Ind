@@ -11,8 +11,8 @@ if (isset($_SESSION["usuario"])) {
     <nav><?php // if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
         <ul>
         <li><a href="admin/indcorelEjec.php">Ind. de Corelación de Ejecución</a></li>  
-        <li><a href="admin/indInterConsMVC.php">Ind. de Intervención Consolidado</a></li>
         <li><a href="admin/indInterGnrl.php">Ind. de Intervención General</a></li>
+        <li><a href="admin/infPryMVC.php">Ind. de Proyectos por JAC</a></li>
         <li><a href="admin/infElem.php">Inf. de Elementos por JAC</a></li>
         <li><a href="admin/infActivMesPryMVC.php">Inf. de Actividades</a></li>
         </ul>
