@@ -5,6 +5,15 @@
 </head><body>
 <a href="../principal.php">Principal</a>
 <h2>Inf. Graf. Ubicaciones</h2>
+<form method="post">
+    Departamento: 
+    <select name="iddepartamento">
+        <option value="">Seleccione...</option>
+    </select>
+    Municipio: <select name="departamento"><option>Seleccione...</option></select>
+    Junta: <select name="departamento"><option>Seleccione...</option></select>
+    <button type="submit">Consultar</button>
+</form>
 <?php
 // 1. CONEXIÓN A LA BD
 include("../back/conexion.php"); 

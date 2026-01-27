@@ -7,10 +7,13 @@
 <form method="post">
     Fecha inicio:<input type="date" name="fecha_inicio">
     Fecha fin:<input type="date" name="fecha_fin">
-    Departamento:
+    &nbsp;
+    Departamento: 
     <select name="iddepartamento">
-        <option value="">Todos</option>
+        <option value="">Seleccione...</option>
     </select>
+    Municipio: <select name="departamento"><option>Seleccione...</option></select>
+    Junta: <select name="departamento"><option>Seleccione...</option></select>
     <button type="submit">Consultar</button>
 </form><br>
 <?php

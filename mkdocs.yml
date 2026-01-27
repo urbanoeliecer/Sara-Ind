@@ -16,16 +16,16 @@ markdown_extensions:
 nav:
   - Index: index.md
   - Principal Panel : principal.md
-  - Ind. de Correlación de Ejec,: admin/indCorelEjec.md
-  - Ind. de Interv. General: admin/indInterGnrl.md
-  - Inf. de Proyectos por JAC (MVC): admin/infPryMVC.md
-  - Inf. de Activ. por Proy. (MVC): admin/infActivMesPryMVC.md
-  - Inf. de Infraestructura: admin/infElem.md
+  - Correlational Intervention Indicator: admin/indCorelEjec.md
+  - Overall Intervention Indicator: admin/indInterGnrl.md
+  - Municipal Intervention Report (MVC: admin/infPryMVC.md
+  - Monthly Activ. by Project Report (MVC): admin/infActivMesPryMVC.md
+  - Infrastructure by JAC Report: admin/infElem.md
   - Back:
-    - Conexión: back/conexion.md
-    - Estilos: back/estilos.md
+    - Conection: back/conexion.md
+    - Styles: back/estilos.md
   - Definición:
-    - Entorno: tecnico/entorno.md
-    - Estructura BD: tecnico/bdest.md
-    - Requerimientos: tecnico/req.md
-    - Roles: tecnico/roles.md
+    - BD structure: tecnico/bdest.md
+    - Code: tecnico/entorno.md
+    - Profiles: tecnico/roles.md
+    - Requeriments: tecnico/req.md

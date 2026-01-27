@@ -149,8 +149,11 @@ $totalPaginas = ceil($totalRows / $porPagina);
     <div>
     Fecha inicio: <input type="date" name="fecha_inicio" value="<?= $fechaInicio ?>">
     Fecha fin: <input type="date" name="fecha_fin" value="<?= $fechaFin ?>">
-    Departamento: <input type="text" name="departamento" value="<?= $departamento ?>">
-    </div><br>
+    &nbsp;
+    Departamento: <select name="departamento"><option>Seleccione...</option></select>
+    Municipio: <select name="departamento"><option>Seleccione...</option></select>
+    Junta: <select name="departamento"><option>Seleccione...</option></select>
+    <br><br>
     Agrupar por:
     <select name="agrupacion">
         <option value="ninguna" <?= $agrupacion=='ninguna'?'selected':'' ?>>No agrupar</option>
@@ -161,13 +164,14 @@ $totalPaginas = ceil($totalRows / $porPagina);
     ¿Consolidar por año?
     <input type="radio" name="agrupar_anio" value="1" <?= $agruparAnyo==1?'checked':'' ?>> Sí
     <input type="radio" name="agrupar_anio" value="0" <?= $agruparAnyo==0?'checked':'' ?>> No
-    <br><br>
+    &nbsp;
     <button type="submit">Filtrar</button>&nbsp;&nbsp;
     <strong>Ordenar:</strong>
     <a href="?<?= http_build_query(array_merge($_GET, ['orden'=>'junta'])) ?>">Junta</a> |
     <a href="?<?= http_build_query(array_merge($_GET, ['orden'=>'monto'])) ?>">Monto</a> |
     <a href="?<?= http_build_query(array_merge($_GET, ['orden'=>'beneficiarios'])) ?>">Beneficiarios</a> |
     <a href="?<?= http_build_query(array_merge($_GET, ['orden'=>'fecha'])) ?>">Fecha Inicio</a>
+    </div>
 </form>
 <?php
 // Obtener máximos reales para barras

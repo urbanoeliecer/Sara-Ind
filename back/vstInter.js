@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(r => r.json())
             .then(data => {
                 selDepartamento.innerHTML =
-                    `<option value="">Seleccione departamento</option>`;
+                    `<option value="">Seleccione...</option>`;
                 data.forEach(d => {
                     selDepartamento.innerHTML +=
                         `<option value="${d.iddepartamento}">${d.nombre}</option>`;
@@ -28,9 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(r => r.json())
             .then(data => {
                 selMunicipio.innerHTML =
-                    `<option value="">Seleccione municipio</option>`;
+                    `<option value="">Seleccione...</option>`;
                 selJunta.innerHTML =
-                    `<option value="">Seleccione junta</option>`;
+                    `<option value="">Seleccione...</option>`;
 
                 data.forEach(m => {
                     selMunicipio.innerHTML +=

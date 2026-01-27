@@ -6,7 +6,7 @@
 </head>
 <body>
 <a href="../principal.php">Principal</a></li>
-<h2>Indicador de intervenciones ejecutadas</h2>
+<h2>Indicador General de Intervención</h2>
 <?php
 include("../back/conexion.php"); 
 $conexion = conectarse();
@@ -51,7 +51,7 @@ if (isset($_GET['order'])) {
         $sql .= " ORDER BY GII DESC";
     }
 }
-print $sql;
+// print $sql;
 $result = mysqli_query($conexion, $sql);
 // FUNCIONES
 function porcentaje($real, $deseado) {
@@ -68,6 +68,34 @@ function barra($porcentaje) {
 <a href="?order=gii_desc" class="btn btn-success btn-sm">GII ↓</a>
 <a href="?order=gii_asc" class="btn btn-warning btn-sm">GII ↑</a>
 -->
+<form method="GET">
+    <div>
+    Fecha inicio: <input type="date" name="fecha_inicio">
+    Fecha fin: <input type="date" name="fecha_fin">
+    &nbsp;
+    Departamento: <select name="departamento"><option>Seleccione...</option></select>
+    Municipio: <select name="departamento"><option>Seleccione...</option></select>
+    Junta: <select name="departamento"><option>Seleccione...</option></select>
+    <br><br>
+    Agrupar por:
+    <select name="agrupacion">
+        <option value="ninguna">No agrupar</option>
+        <option value="departamento">Departamento</option>
+        <option value="municipio">Municipio</option>
+        <option value="vereda">Junta / Vereda</option>
+    </select>
+    ¿Consolidar por año?
+    <input type="radio" name="agrupar_anio" value="1"> Sí
+    <input type="radio" name="agrupar_anio" value="0"> No
+    &nbsp;
+    <button type="submit">Filtrar</button>&nbsp;&nbsp;
+    <strong>Ordenar:</strong>
+    <a href="?<?= http_build_query(array_merge($_GET, ['orden'=>'junta'])) ?>">Junta</a> |
+    <a href="?<?= http_build_query(array_merge($_GET, ['orden'=>'monto'])) ?>">Monto</a> |
+    <a href="?<?= http_build_query(array_merge($_GET, ['orden'=>'beneficiarios'])) ?>">Beneficiarios</a> |
+    <a href="?<?= http_build_query(array_merge($_GET, ['orden'=>'fecha'])) ?>">Fecha Inicio</a>
+    </div>
+</form>
 <table class="table table-bordered table-striped">
 <thead>
 <tr>

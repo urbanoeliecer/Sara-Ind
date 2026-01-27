@@ -16,9 +16,9 @@ $rol = $_GET['rol'] ?? 0;
     Fecha inicio: <input type="date" id="fecha_inicio" name="fecha_inicio">
     Fecha final:  <input type="date" id="fecha_fin" name="fecha_fin">
     <br><br>
-    <select name="iddepartamento" id="departamento" onchange="cargarMunicipios()"></select>
-    <select name="idmunicipio" id="municipio" onchange="cargarJuntas()"></select>
-    <select name="idjunta" id="junta"></select>
+    Departamento: <select name="iddepartamento" id="departamento" onchange="cargarMunicipios()"></select>
+    Municipio: <select name="idmunicipio" id="municipio" onchange="cargarJuntas()"></select>
+    Junta: <select name="idjunta" id="junta"></select>
     <button type="submit" id="consultar">Consultar</button>
 </form>
 <!-- Resumen y Detalles de los Proyectos -->
