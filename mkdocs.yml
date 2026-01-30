@@ -18,9 +18,9 @@ nav:
   - Principal Panel : principal.md
   - Correlational Intervention Indicator: admin/indCorelEjec.md
   - Overall Intervention Indicator: admin/indInterGnrl.md
-  - Municipal Intervention Report (MVC: admin/indPryMVC.md
-  - Monthly Activ. by Project Report (MVC): admin/indActivMesPryMVC.md
-  - Infrastructure by JAC Report: admin/indElem.md
+  - Municipal Intervention Indicator (MVC): admin/indPryMVC.md
+  - Monthly Activ. by Project Indicator (MVC): admin/indActivMesPryMVC.md
+  - Infrastructure by JAC Indicator: admin/indElem.md
   - Back:
     - Conection: back/conexion.md
     - Styles: back/estilos.md

@@ -12,3 +12,6 @@ SARA aims to:
 - Generate intervention and impact indicators related to rural infrastructure.
 - Facilitate data consolidation at different territorial levels 
 - Provide transparent and structured information for decision-making  by territorial entities and community organizations.
+
+The project documentation is available at: <a href="https://sara-indicadores.readthedocs.io">MkDocs</a>
+The source code repository is available at: <a href="https://github.com/urbanoeliecer/Sara-Ind">GitHub</a>

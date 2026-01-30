@@ -6,7 +6,7 @@ session_start(); ?>
 <table width="100%" cellpadding="15">
 <tr>
 <td width="35%" valign="top">
-<h2>SARA-Ind - Observaciones</h2>
+<h2>SARA - Ind. de Administración Comunitaria Rural</h2>
 <br>
 Este Demo es presentado datos de diciembre de 2025 y enero de 2026.<br><br>
 Se debe tener en cuenta que este módulo ya se integró a SARA en su framework Laravel, pero aquí se presentan de manera concreta en PHP y JavaScript básico para facilitar la comprensión, y se agregaron páginas de login, de validación de credenciales y de menú principal, además, solo dos de los informes fueron realizados con estructura MVC. 
