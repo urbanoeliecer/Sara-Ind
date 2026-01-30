@@ -13,18 +13,18 @@
         de proyectos de infraestructura rural en juntas de acción comunal veredales.
         <br><br>
         Su descripción es presentada en: <a href="https://sara-indicadores.readthedocs.io">MkDocs</a> 
-        y su repositorio de código en: <a href="https://github.com/urbanoeliecer/Sara00">Git</a>
+        y su repositorio de código en: <a href="https://github.com/urbanoeliecer/Sara-Ind">Git</a>
         <br><br>
         Este aplicativo permite la generación de informes e indicadores de intervención en
-        infraestructura rural a partir de la información gestionada en <a href="https://acofipapers.org/index.php/eiei/article/view/4844">SARA 1.0</a>, una arquitectura
+        infraestructura rural a partir de la información gestionada en <a href="https://acofipapers.org/index.php/eiei/article/view/4844">SARA</a>, una arquitectura
         en la nube orientada a la administración de proyectos comunitarios rurales, compuesta por un sistema de
         información que favorece la gestión de proyectos comunitarios veredales ejecutados por
         las Juntas de Acción Comunal (JAC), con el apoyo de entidades territoriales.
         <br><br>
-        En este contexto, SARA 2.0 amplía las capacidades del sistema original al ofrecer un módulo
-        especializado para el análisis de indicadores, utilizando datos registrados en SARA 1.0.
+        En este contexto, SARA-Ind amplía las capacidades del sistema original al ofrecer un módulo
+        especializado para el análisis de indicadores, utilizando datos registrados en SARA.
         <br><br>
-        Los indicadores que se agregaron a SARA 1.0 son generados por parte del administrador,
+        Los indicadores que se agregaron a SARA son generados por parte del administrador,
         quien supervisa al secretario de infraestructura municipal tenoendo así la medición del impacto de los proyectos.
     </td>
     <td width="35%" valign="top">
