@@ -8,41 +8,35 @@
 <a href="../principal.php">Principal</a></li>
 <h2>Indicador General de Intervención</h2>
 <?php
-include("../back/conexion.php"); 
-$conexion = conectarse();
+include("../back/conexion.php");$conexion = conectarse();
 // 1. Conexión a MySQL
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
 }
 // SQL BASE + JOIN NUEVO
-$sql = "
-SELECT
-    v.departamento,
-    v.municipio,
-    v.junta AS vereda,
-/* TOTALES REALES (DESDE tpryact) */
-    COUNT(DISTINCT a.idpry) AS total_proyectos,
-    SUM(a.presupuesto)           AS monto,
-    SUM(a.cntpersonas)           AS participantes,
-    COUNT(a.idact)               AS total_actividades,
-/* OBJETIVOS DESEADOS (juntasdsc) */
-    IFNULL(jd.proyectos, 0)      AS proyectos_deseados,
-    IFNULL(jd.presupuesto, 0)    AS presupuesto_deseado,
-    IFNULL(jd.participantes, 0)  AS participantes_deseados,
-/* GII (40% - 30% - 30%) */
-    (   0.4 * IF(jd.proyectos > 0, COUNT(DISTINCT a.idpry) / jd.proyectos,0)
-      + 0.3 * IF(jd.presupuesto > 0, SUM(a.presupuesto) / jd.presupuesto,0)
-      + 0.3 * IF(jd.participantes > 0, (SUM(a.cntpersonas)/COUNT(a.idact)) / jd.participantes,0)
+$w_proyectos = 0.4;
+$w_presupues = 0.3;
+$w_participa = 0.3;
+$sql = " SELECT
+    v.departamento, v.municipio,v.junta AS vereda,
+    /* TOTALES REALES */
+    COUNT(distinct a.idpry) AS total_proyectos,    SUM(a.presupuesto) AS monto,
+    SUM(a.cntpersonas)      AS participantes,      COUNT(a.idact)     AS total_actividades,
+    /* OBJETIVOS DESEADOS */
+    IFNULL(jd.proyectos,0)  AS proyectos_deseados, IFNULL(jd.presupuesto, 0) AS presupuesto_deseado,
+    IFNULL(jd.participantes, 0) AS participantes_deseados,
+    /* GII PARAMETRIZADO */
+    (   {$w_proyectos} * IF(jd.proyectos > 0, COUNT(DISTINCT a.idpry) /jd.proyectos,0)
+      + {$w_presupues} * IF(jd.presupuesto > 0, SUM(a.presupuesto) /jd.presupuesto,0)
+      + {$w_participa} * IF(jd.participantes>0 AND COUNT(a.idact)>0,(SUM(a.cntpersonas)/NULLIF(COUNT(a.idact),0))/jd.participantes,0)
     ) * 100 AS GII
-
 FROM pryact a
 INNER JOIN vproyectosxjunta v ON v.idproyecto = a.idpry
-LEFT JOIN juntasdsc jd
-       ON jd.idjnt = v.idjunta WHERE 1 = 1
-/* FILTROS DINÁMICOS */
+LEFT JOIN juntasdsc jd ON jd.idjnt = v.idjunta
 GROUP BY v.departamento, v.municipio, v.junta
-ORDER BY v.departamento ASC,v.municipio ASC, v.junta ASC
+ORDER BY v.departamento ASC, v.municipio ASC, v.junta ASC
 LIMIT 0, 20; ";
+//print $sql;
 // ORDENAMIENTO POR GII
 if (isset($_GET['order'])) {
     if ($_GET['order'] === 'gii_asc') {

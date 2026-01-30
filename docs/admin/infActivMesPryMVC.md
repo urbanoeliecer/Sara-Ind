@@ -9,7 +9,7 @@ Un ejemplo es presentada en la figura
 
 ![Inf. Mensual de actividades por proyecto](../img/a2.jpg)
 
-El modelo y la vista está en back y no tiene markdown debido a que se presentan en la figura
+El modelo y la vista está en back y no tiene markdown 
 
 ![MVC](../img/mvc.jpg)
 
