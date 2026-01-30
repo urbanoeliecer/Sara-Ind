@@ -1,15 +1,15 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>SARA II - Indicadores de Gestión Comunitaria Rural</title>
+<title>SARA - Indicadores de Gestión Comunitaria Rural</title>
 <link rel="stylesheet" href="../back/estilos.css">
 </head>
 <body>
 <table width="100%" cellpadding="15">
 <tr>
     <td width="65%" valign="top" rowspan="3">
-        <h2>SARA II - Descripción</h2>
-        Aplicativo web basado en arquitectura orientada a servicios para la medición del impacto
+        <h2>SARA-Ind - Descripción</h2>
+        SARA es un aplicativo web basado en arquitectura orientada a servicios para la medición del impacto
         de proyectos de infraestructura rural en juntas de acción comunal veredales.
         <br><br>
         Su descripción es presentada en: <a href="https://sara-indicadores.readthedocs.io">MkDocs</a> 

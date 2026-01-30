@@ -4,13 +4,13 @@ $rol = $_GET['rol'] ?? 0;
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<title>Sara II - Ind. de Intervenciones Consoliado</title>
+<title>SARA - Ind. de Intervenciones Consoliado</title>
 <link rel="stylesheet" href="../back/estilos.css">
 <script src="../back/vstInter.js"></script>
 </head>
 <body>
 <a href="../principal.php">Principal</a><br>
-<h2>Sara II - Informe de Intervenciones planteadas</h2>
+<h2>Ind. de Intervenciones planteadas</h2>
 <form id="formFiltros">
     <input type="hidden" name="rol" value="<?= $rol ?>">
     Fecha inicio: <input type="date" id="fecha_inicio" name="fecha_inicio">

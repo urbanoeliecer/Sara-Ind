@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 $host = "localhost";
-$dbname = "bdsara20"; // Nombre de tu base de datos
+$dbname = "bdsaraind"; // Nombre de tu base de datos
 $username = "root"; // Tu usuario de base de datos
 $password = ""; // Tu contraseña (si no tienes, está vacía)
 // Usando PDO para la conexión
@@ -19,7 +19,7 @@ function Conectarse()
 {
     // Establecer la conexión a la base de datos
     $host = "localhost";
-    $dbname = "bdsara20"; // Nombre de tu base de datos
+    $dbname = "bdsaraind"; // Nombre de tu base de datos
     $username = "root"; // Tu usuario de base de datos
     $password = ""; // Tu contraseña (si no tienes, está vacía)
     if (!($link = mysqli_connect("localhost","root",""))){

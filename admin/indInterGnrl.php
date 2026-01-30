@@ -1,12 +1,12 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Sara II - Ind. de Intervención General</title>
+<title>SARA - Ind. de Intervención General</title>
 <link rel="stylesheet" href="../back/estilos.css">
 </head>
 <body>
 <a href="../principal.php">Principal</a></li>
-<h2>Indicador General de Intervención</h2>
+<h2>Ind. General de Intervención</h2>
 <?php
 include("../back/conexion.php");$conexion = conectarse();
 // 1. Conexión a MySQL

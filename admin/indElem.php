@@ -1,10 +1,10 @@
 <html lang="es">
 <head><meta charset="UTF-8">
-<title>Sara II - Informe de Ubicaciones</title>
+<title>SARA - Ind. de Ubicaciones</title>
 <link rel="stylesheet" href="../back/estilos.css">
 </head><body>
 <a href="../principal.php">Principal</a>
-<h2>Inf. Graf. Ubicaciones</h2>
+<h2>Ind. de Ubicaciones</h2>
 <form method="post">
     Departamento: 
     <select name="iddepartamento">

@@ -1,12 +1,12 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Sara II - Ind. Co-relación de Ejecución</title>
+<title>SARA - Indicador de Co-relación de Ejecución</title>
 <link rel="stylesheet" href="../back/estilos.css">
 </head>
 <body>
 <a href="../principal.php">Principal</a></li>
-<h2>Sara II - Indicador de Co-relación de Ejecución</h2>
+<h2>Ind. de Co-relación de Ejecución</h2>
 <?php
 // === consolidado.php ===
 // modo: departamento / municipio / junta

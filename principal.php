@@ -2,11 +2,11 @@
 include("back/conexion.php"); 
 $link = conectarse();
 session_start(); ?>
-<html><head><meta><title>SaraII - Indicadores de Administración Comunitaria Rural</title></head><body>
+<html><head><meta><title>SARA - Ind. de Administración Comunitaria Rural</title></head><body>
 <table width="100%" cellpadding="15">
 <tr>
 <td width="35%" valign="top">
-<h2>SARA II - Observaciones</h2>
+<h2>SARA-Ind - Observaciones</h2>
 <br>
 Este Demo es presentado datos de diciembre de 2025 y enero de 2026.<br><br>
 Se debe tener en cuenta que este módulo ya se integró a SARA en su framework Laravel, pero aquí se presentan de manera concreta en PHP y JavaScript básico para facilitar la comprensión, y se agregaron páginas de login, de validación de credenciales y de menú principal, además, solo dos de los informes fueron realizados con estructura MVC. 
@@ -24,9 +24,9 @@ if (isset($_SESSION["usuario"])) {
         <ul>
         <li><a href="admin/indCorelEjec.php">Ind. de Corelación de Ejecución</a></li>  
         <li><a href="admin/indInterGnrl.php">Ind. de Intervención General</a></li>
-        <li><a href="admin/infPryMVC.php">Inf. de Proyectos por JAC</a></li>
-        <li><a href="admin/infActivMesPryMVC.php">Inf. Mensual de Activ. por JAC </a></li>
-        <li><a href="admin/infElem.php">Inf. de Infraestructura por JAC</a></li>        
+        <li><a href="admin/indPryMVC.php">Ind. de Proyectos por JAC</a></li>
+        <li><a href="admin/indActivMesPryMVC.php">Ind. Mensual de Activ. por JAC </a></li>
+        <li><a href="admin/indElem.php">Ind. de Infraestructura por JAC</a></li>        
         </ul>
     </nav>    
     <div class="container">

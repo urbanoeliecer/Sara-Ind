@@ -3,7 +3,7 @@ function conect() {
     $servername = "127.0.0.1";
     $username = "root";
     $password = "";
-    $dbname = "bdsara20";     
+    $dbname = "bdsaraind";     
     $cn = new mysqli($servername, $username, $password, $dbname);
     return $cn;
 }

@@ -1,4 +1,4 @@
-# SARA II - Menu
+# SARA-Ind - Menu
 
 Based on the results achieved with SARA I and the increased adoption of the system by JACs, there is a need to incorporate new functionalities aimed at users from territorial entities. 
 
@@ -30,7 +30,7 @@ The options are:
 <ol>
 <li>Correlational Intervention Indicator</li>
 <li>Overall Intervention Indicator</li>
-<li>Municipal Intervention Report (MVC)</li>
-<li>Monthly Activity Report by Project (MVC)</li>
-<li>Infrastructure Report by JAC</li>
+<li>Municipal Intervention Indicator (MVC)</li>
+<li>Monthly Activity by Project Indicator(MVC)</li>
+<li>Infrastructure by JAC Indicator</li>
 </ol>

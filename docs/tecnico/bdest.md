@@ -1,6 +1,6 @@
 # Base de datos Sistema SARA
 
-La base de datos de Sara II puede ser comprendida leyendola en el siguiente orden según las entidades:
+La base de datos de Sara-Ind puede ser comprendida leyendola en el siguiente orden según las entidades:
 
 1. Las **juntas** son la entidad beneficiaria sobre la que se generan y tienen:
 2. **proyectos** (con atributos como idjunta, fecha de inicio y final, presupuesto, cantidad de beneficiarios)

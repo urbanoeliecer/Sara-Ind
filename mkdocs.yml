@@ -1,9 +1,9 @@
-site_name: SARA II - Rural Indicators
+site_name: SARA-Ind - Rural Indicators
 theme:
   name: material
   language: en
 
-repo_url: https://github.com/urbanoeliecer/Sara00 
+repo_url: https://github.com/urbanoeliecer/Sara-Ind 
 
 extra_css: 
   - styles/extra.css
@@ -18,9 +18,9 @@ nav:
   - Principal Panel : principal.md
   - Correlational Intervention Indicator: admin/indCorelEjec.md
   - Overall Intervention Indicator: admin/indInterGnrl.md
-  - Municipal Intervention Report (MVC: admin/infPryMVC.md
-  - Monthly Activ. by Project Report (MVC): admin/infActivMesPryMVC.md
-  - Infrastructure by JAC Report: admin/infElem.md
+  - Municipal Intervention Report (MVC: admin/indPryMVC.md
+  - Monthly Activ. by Project Report (MVC): admin/indActivMesPryMVC.md
+  - Infrastructure by JAC Report: admin/indElem.md
   - Back:
     - Conection: back/conexion.md
     - Styles: back/estilos.md

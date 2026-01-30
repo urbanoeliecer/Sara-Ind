@@ -1,9 +1,9 @@
 <html lang="es"><head><meta charset="UTF-8">
-<title>Sara II - Informe mensual de actividades</title>
+<title>SARA - Ind. mensual de actividades</title>
 <link rel="stylesheet" href="../back/estilos.css">
 </head><body>
 <a href="../principal.php">Principal</a></li>
-<h2>Informe Mensual de Actividades por Proyecto</h2>
+<h2>Ind. Mensual de Actividades por Proyecto</h2>
 <form method="post">
     Fecha inicio:<input type="date" name="fecha_inicio">
     Fecha fin:<input type="date" name="fecha_fin">
