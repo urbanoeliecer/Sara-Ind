@@ -1,12 +1,11 @@
 
-# Informe de Proyectos (MVC)
+# Project Report (MVC)
 
-Muestra los proyectos registrados, fue hecho com MVC muy similar a como se describio en <b></b>
+This report displays the registered projects. It was developed using the MVC pattern, in a manner very similar to what was described in <b></b>.
 
-Muestra el Total proyectos, Total monto, Total beneficiarios que surgen de los filtros aplicados, los cuales dependen del rol de quien de los genera tal y como se expreso en <b>roles</b>
+It shows the total number of projects, total budget amount, and total number of beneficiaries resulting from the applied filters, which depend on the role of the user generating the report, as described in <b>roles</b>.
 
-En esta sección se detallan los indicadores de intervención en infraestructura 
-apoyados por la Alcaldía y ejecutados por las JAC.
+This section details the infrastructure intervention indicators supported by the Mayor’s Office and executed by the Community Action Boards (JACs).
 
-Tiene su controlador php y javascript en back y modelo en back
+It includes its PHP and JavaScript controllers on the backend, as well as the model on the backend.
 ![Informe de proyectos](../img/c2.jpg)

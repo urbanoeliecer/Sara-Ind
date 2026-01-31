@@ -1,37 +1,34 @@
-# Indicador de intervención general
+# General Intervention Indicator
 
-El Indicador general de intervención (**GII**) se define como un indicador sintético que resume el desempeño global de la intervención en una comunidad, es el más importante e integra los distintos indicadores normalizados mediante una combinación lineal ponderada que se calcula para cada comunidad; se calcula mediante la siguiente expresión:
+The General Intervention Indicator (GII) is defined as a synthetic indicator that summarizes the overall performance of the intervention in a community. It is the most important indicator and integrates the different normalized indicators through a weighted linear combination calculated for each community. It is computed using the following expression:
 
 **GIIᵢ = pP · Pᵢ + pT · Tᵢ + pB · Bᵢ**
 
-A partir de los siguientes indicadores:
+Based on the following indicators:
 
-1. Pᵢ: indicador normalizado de Presupuesto
+1. Pᵢ: normalized Budget indicator
 
-2. Tᵢ: indicador normalizado de Tiempo
+2. Tᵢ: normalized Time indicator
 
-3. Bᵢ: indicador normalizado de Beneficiarios
+3. Bᵢ: normalized Beneficiaries indicator
 
-Que se calcula a apartir de dividir el alcanzado en cada proyecto con el esperado similar a la 
-ecuación solo que aquí es con la meta y comparable con las demás JAC del informe.
+Each component is calculated by dividing the achieved value of each project by its expected value, similarly to Equation 1. In this case, predefined goals are used, allowing comparison across the Community Action Boards (JACs). For a community i and an item j.
 
-Para una comunidad i y un ítem j, el indicador de ítem se calcula mediante la siguiente expresión:
+**Iᵢⱼ = Achieved valueᵢⱼ / Goalᵢⱼ**	
 
-**Iᵢⱼ = Valor alcanzadoᵢⱼ / Metaᵢⱼ**
+The report presents a table listing projects by Department, Municipality, and Rural Area, including the number of projects, the budget amount, and the total number of beneficiaries. For the last three items, comparative charts are also presented alongside the list.
 
-El informe presenta una tabla con el listado de proyectos por Departamento, Municipio, Vereda, cantidad de Proyectos, el monto, el total de beneficiarios, de los tres ultimos presenta graficas comparativa con el listado.
+The figure includes the following sections:
 
-La figura tiene las siguientes secciones:
+1. GII indicator
 
-1. Indicador GII
+2. Number of activities carried out during the filtered time period
 
-2. Cantidad de actividades realizadas en el periodo de tiempo filtrado
+3. Project distribution
 
-3. Relación de proyectos
+4. Budget distribution
 
-4. Relación de presupuesto
+5. Participant distribution
 
-5. Relación de participantes
-
-Un ejemplo a mediados de enero de 2026 es presentada en la figura.
+An example from mid-January 2026 is shown in the figure.
 ![Indicador de intervención general](../img/c3.jpg)

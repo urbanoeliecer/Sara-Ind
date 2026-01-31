@@ -1,4 +1,5 @@
-# Conexión a la BD
-Presenta la funcion de conexion a la base de datos que es usada para todas la páginas.
-function Conectarse()
-Presenta los parametros de la BD y ejecuta el comando mysqli_connect
+# Database Connection
+
+This section presents the database connection function used by all pages.
+
+The Conectarse() function defines the database parameters and executes the mysqli_connect command.

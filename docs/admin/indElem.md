@@ -1,11 +1,11 @@
-# Informe Gráfico de Ubicaciones
+# Infrastructure Report
 
-Muestra con grafico el resumen de ubicaciones por junta
+This report displays a graphical summary of locations by community board.
 
-Presenta una tabla con filas agrupadas para Departamento, Municipio, Junta, cantidad de elementos y detalla el tipo de elemento y la cantidad registrados
+It presents a table with grouped rows by Department, Municipality, and Community Board, including the number of elements and a detailed breakdown of the type of element and the recorded quantity.
 
-El informe tiene opciones de filtro como:
+The report includes filtering options.
 
-Un ejemplo a mediados de enero de 2026 es presentada en la figura.
+An example from mid-January 2026 is shown in the figure.
 
 ![Informe de Elementos](../img/a3.jpg)

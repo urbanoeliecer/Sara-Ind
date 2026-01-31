@@ -22,7 +22,7 @@ The system aims to enhance the management of information for community projects,
 
 6. Projects benefit the entire community.
 
-![Structure of the Rural Community Administration System](img/1.jpg)
+![Structure of the Rural Community Administration System](../img/1.jpg)
 
 # Cloud Architecture
 
@@ -39,7 +39,7 @@ A summary of the architecture requirements is as follows (points 3 and 4 can be 
 4. Generate activity reports by project with filters for community, projects, date range, activity types, observations, multimedia, etc. Additionally, generate merged lists and graphs for com-munities, activities, users and funds.
  
 
-![Simplified Use Case Diagram](img/2.jpg)
+![Simplified Use Case Diagram](../img/2.jpg)
 
 
 The process is described in the activity diagram in Figure 4. It has three starting points based on the diamonds, corresponding to different moments:

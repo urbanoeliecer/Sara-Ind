@@ -1,10 +1,11 @@
-# Indicador de co-relación de ejecución
+# Correlational Intervention
 
-El indicador de intervención de correlación permite obtener el alcance porcentual obtenido en las cerdas desde los proyectos, e l presupuesto y la cantidad de participantes (diferente a los beneficiarios). Un ejemplo es presentado en la figura 5 en donde se observa, por ejemplo, que Mutiscua tiene el 50% de los proyectos con respecto a los presentados en el listado, el 25% con respecto al presupuesto y el 60% con respecto a los participantes.
+The correlation-based intervention indicator allows estimating the percentage of coverage achieved in the areas through projects, budget, and number of participants (different from beneficiaries). An example is shown in Figure 5, where it can be observed, for instance, that Mutiscua accounts for 50% of the projects with respect to those listed, 25% with respect to the budget, and 60% with respect to the participants.
 
-Los Indicadores de Ítems se definen como una medida del grado de cumplimiento de las metas establecidas para cada comunidad y cada ítem de intervención. Este enfoque permite evaluar el desempeño de manera objetiva y comparable y calcular para una comunidad i y un ítem j, el ítem se calcula mediante la siguiente expresión:
+Item Indicators are defined as a measure of the degree of compliance with the goals established for each community and each intervention item. This approach enables objective and comparable performance evaluation. For a community i and an item j, the indicator is calculated using the following expression:
 
-**Iᵢⱼ = Valor realᵢⱼ / Máximo valor entre las JAC del informeᵢⱼ**
+**Iᵢⱼ = Real valueᵢⱼ / Maximum value among the JACs in the reportᵢⱼ**
 
-El indicador Iᵢⱼ puede tomar valores mayores que 1 cuando la meta definida es superada, lo cual permite identificar escenarios de sobrecumplimiento y eficiencia adicional.
+The indicator Iᵢⱼ may take values greater than 1 when the defined goal is exceeded, which makes it possible to identify scenarios of overachievement and additional efficiency.
+
 ![Indicador de co-relación de ejecución](../img/c1.jpg)

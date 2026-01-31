@@ -1,20 +1,19 @@
+# Monthly Project Activity Report
 
-# Inf. Mensual de Actividades por Proyecto (tabular) 
+This is one of the two pages developed using the MVC pattern. It presents a table listing project activities with the following fields:
+#, Project, Beneficiaries, Department, Municipality, Community Board, Month, Assigned and Executed Budget, Average Beneficiaries per Month, Number of Hours Dedicated, and Number of Activities Carried Out.
 
-Es una de los dos paginas hechas en MVC. Presenta una tabla con el listado de actividades con:
-Id, Proyecto, Benefiniciairos, Departamento, Municipio, Junta, Mes, Presupuesto asignado y ejecutados, beneficiarios promedios por mes, Cantidad de Horas dedicadas, Cantidad de actividades realziadas.
-Un ejemplo es presentada en la figura. El modelo y la vista está en back y no tiene markdown 
-
+An example is shown in the figure. The model and the view are implemented on the backend and do not use Markdown.
 ![Inf. Mensual de actividades por proyecto](../img/a2.jpg)
 
 ![MVC](../img/mvc.jpg)
 
-Los pasos son:
+The steps are as follows:
 
-1. El usuario llega al controlador
+1. The user reaches the controller.
 
-2. el controlador dialoga con el modelo
+2. The controller interacts with the model.
 
-3. el controlador selecciona una vista
+3. The controller selects a view.
 
-4. la vista genera la salida usando los datos que controlador obtuvo del modelo
+4. The view generates the output using the data that the controller obtained from the model.
