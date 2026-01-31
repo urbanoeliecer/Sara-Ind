@@ -1,20 +1,18 @@
-# Entorno de Programación
+# Programming Environment
 
-La figura muestra como se está programando dos informes, sin y con MVC como se observa en la figura 15, en los apartados 1 y 2. A la izquierda se observan los componentes del proyecto organizados según la jerarquía.
+The figure shows how two reports are being developed, one without MVC and one with MVC, as illustrated in Figure 15, sections 1 and 2. On the left side, the project components are organized according to their hierarchy.
 
-1 presenta el controlador de detalle del indicador RGI, encargado de construir la consulta SQL principal, procesar los resultados y preparar la información que será presentada posteriormente en la vista. Aquí se observa la construcción de la consulta SQL, una consulta que integra información real y deseada de los proyectos comunitario, los filtros, el formulario, etc.
+Section 1 presents the controller for the RGI indicator detail, which is responsible for building the main SQL query, processing the results, and preparing the information that will later be displayed in the view. This section shows the construction of the SQL query, which integrates actual and expected information from community projects, including filters, forms, and related elements.
 
-2 presenta los tres archivos necesarios del informe mensual de actividades por proyecto 
+Section 2 presents the three required files for the monthly project activity report.
 
-Son un puente entre la capa de datos y la presentación y así su diseño permite separar claramente la Lógica de negocio, el acceso a datos y la representación visual para mejorar la mantenibilidad y escalabilidad. 
+These components act as a bridge between the data layer and the presentation layer. Their design allows for a clear separation of business logic, data access, and visual representation, thereby improving maintainability and scalability.
 
-Estos cumplen con el rol de:
+They fulfill the following roles:
 
-a. Controlador de análisis
+a. Analysis controller
+b. Calculation of strategic indicators for decision making
+c. Visual representation
 
-b. Calcular de indicadores estratégicos para la toma de decisiones
-
-c. Brindar la representación visual
-
-A la izquierda es presentada los componetes del proyectos organizados según la jerarquía.
+On the left, the project components are presented organized according to their hierarchy.
 ![Entorno](../img/0.jpg)

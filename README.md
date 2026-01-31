@@ -14,4 +14,3 @@ SARA aims to:
 - Provide transparent and structured information for decision-making  by territorial entities and community organizations.
 
 The project documentation is available at: <a href="https://sara-indicadores.readthedocs.io">MkDocs</a>
-The source code repository is available at: <a href="https://github.com/urbanoeliecer/Sara-Ind">GitHub</a>

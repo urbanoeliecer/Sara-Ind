@@ -1,9 +1,15 @@
-# Roles en la Intervención Rural
-En el sistema, los participantes se dividen según el ente que representan:
-### 1. Ente Territorial (Alcaldía)
-* **Supervisor:** Valida los indicadores de dinero gastado.
-* **Técnico:** Registra las herramientas pesadas utilizadas.
+# Roles
 
-### 2. Comunidad (Junta de Acción Comunal)
-* **Presidente JAC:** Registra los participantes de la vereda.
-* **Tesorero:** Reporta el dinero de fondos propios invertido.
+SARA is now organized into two main modules: SARA-Reg, for project data registration, and SARA-Ind, which focuses on the  generation if multiple indicators.
+
+In SARA-Ind, there is only one role, although it may be assigned to different municipalities and one or more departments. This role is called Administrator, and it is responsible for generating the indicators.
+
+In SARA-Reg, the roles are:
+
+### Territorial Authority 
+1. **Supervisor**: Validates the reported expenditure indicators.
+
+# Community (Community Action Board – JAC)
+
+2. **JAC President**: Registers the participants from the rural community.
+3. **Treasurer**: Reports the amount of own funds invested.

@@ -1,18 +1,17 @@
-# Base de datos Sistema SARA
+# SARAInd - Database
 
-La base de datos de Sara-Ind puede ser comprendida leyendola en el siguiente orden según las entidades:
+The database is presented in Figure and can be understood by reading it in the order:
 
-1. Las **juntas** son la entidad beneficiaria sobre la que se generan y tienen:
-2. **proyectos** (con atributos como idjunta, fecha de inicio y final, presupuesto, cantidad de beneficiarios)
-3. descripción de metas del proyecto (**tuntasdsc**) con atributos como idjunta y cantidad de proyectos, participantes y presupuesto.
-4. Tiene **usuarios** para saber quien puede acceder a SARA y el rol que le pertenece
-5.  en donde uno de ellos puede ser el **representante** por un periodo de tiempo.
-6. Además, el proyecto tiene **elementos** que son intervenidos por la comunidad que,
-7. se asocian (**telementosproyectos**) a los proyectos, en los que se realizan,  
-8. actividades que son realizadas por usuarios (**pryact**).
-9. La junta está adscrita a un **municipio**,
-10. que está adscrito a un **departamento**
-11. Cada proyecto debe asociarse a una junta y para ello se construyó una vista (**vproyectosjunta**).
-
+1. Community action boards (**juntas**) are beneficiary community-based entities responsible for implementing projects in coordination with territorial entities.
+2. **Projectos**, with attributes such as JAC Id, start and end dates, budget, and beneficiaries.
+3. Project goal descriptions (**juntasdsc**), with attributes such as ID, execution periods, status, and goals per municipality, per JAC, and per period, in terms of number of projects, participants, and budget.
+4. **Usuario**s are included to determine who can access and the role assigned to each user.
+5. One of these users may act as a **representantes** for a defined period.
+6. In addition, each project includes **elementos** that are intervened by the community.
+7. These elements are associated with projects (**telementosproyectos**).
+8. Activities executed by users are recorded for each project (**pryact**).
+9. Each JAC is associated with a municipality.
+10. Each municipality is associated with a department.
+11. Each project must be associated with a JAC, and to facilitate data querying, a database view was created with the required attributes for indicators generation **vproyectosjunta**).
 
 ![Estructura](../img/bd.jpg)
