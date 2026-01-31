@@ -1,4 +1,4 @@
-# SARA-Ind - Index 
+# Index 
 
 SARA is a Web Application based on a Service-Oriented Architecture for Measuring the Impact of Rural Infrastructure Projects in Community Action Boards, is a web-based application developed as a result of Project 4271 of the VIE at UIS, its source code repository is hosted at <a href="https://github.com/urbanoeliecer/Sara-Ind" target="_blank" rel="noopener">github</a>.
 

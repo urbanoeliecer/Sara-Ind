@@ -1,4 +1,4 @@
-# SARA-Ind - Menu
+# Principal page
 
 Based on the results achieved with SARA-Reg and the increased adoption of the system by JACs, there is a need to incorporate new functionalities aimed at users from territorial entities. 
 
