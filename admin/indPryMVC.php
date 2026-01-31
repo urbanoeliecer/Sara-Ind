@@ -1,4 +1,13 @@
 <?php
+session_start();
+if (!isset($_SESSION["usuario"])) {
+    echo "Debe iniciar sesión. Será redirigido al <a href='../index.php'>login</a>.";
+    header("refresh:3;url=../index.php");
+    exit;
+}
+else {
+?>
+<?php
 $rol = $_GET['rol'] ?? 0;
 ?>
 <html lang="es">
@@ -41,4 +50,6 @@ $rol = $_GET['rol'] ?? 0;
     }
 </script>
 </body>
-</html>
+</html><?php
+}
+?>

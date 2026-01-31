@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION["usuario"])) {
+    echo "Debe iniciar sesión. Será redirigido al <a href='../index.php'>login</a>.";
+    header("refresh:3;url=../index.php");
+    exit;
+}
+else {
+?>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -8,7 +17,8 @@
 <a href="../principal.php">Principal</a></li>
 <h2>Ind. General de Intervención</h2>
 <?php
-include("../back/conexion.php");$conexion = conectarse();
+include("../back/conexion.php");
+$conexion = conectarse();
 // 1. Conexión a MySQL
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
@@ -158,4 +168,8 @@ $fila++;
 endwhile;
 ?>
 </tbody>
-</table>
+</table><?php
+mysqli_close($conexion); //CERRAR CONEXIÓN
+}
+
+?>

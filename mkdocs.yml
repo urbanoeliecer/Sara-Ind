@@ -17,14 +17,14 @@ nav:
   - Index: index.md
   - Principal Panel : principal.md
   - Correlational Intervention: admin/indCorelEjec.md
-  - Overall Intervention: admin/indInterGnrl.md
+  - General Intervention: admin/indInterGnrl.md
   - Municipal Intervention (MVC): admin/indPryMVC.md
   - Monthly Activ. by Project (MVC): admin/indActivMesPryMVC.md
   - Infrastructure by JAC: admin/indElem.md
   - Back:
     - Conection: back/conexion.md
     - Styles: back/estilos.md
-  - Definición:
+  - Definition:
     - BD structure: tecnico/bdest.md
     - Code: tecnico/entorno.md
     - Profiles: tecnico/roles.md

@@ -1,4 +1,12 @@
-<html lang="es"><head><meta charset="UTF-8">
+<?php
+session_start();
+if (!isset($_SESSION["usuario"])) {
+    echo "Debe iniciar sesión. Será redirigido al <a href='../index.php'>login</a>.";
+    header("refresh:3;url=../index.php");
+    exit;
+}
+else {
+?><html lang="es"><head><meta charset="UTF-8">
 <title>SARA - Ind. mensual de actividades</title>
 <link rel="stylesheet" href="../back/estilos.css">
 </head><body>
@@ -29,4 +37,6 @@ $datos = $model->obtenerInforme($fechaInicio, $fechaFin, $idDepartamento);
 //4. PASAR A LA VISTA 
 require_once "../back/vstActiv.php"; ?>
 </body>
-</html>
+</html><?php
+}
+?>

@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION["usuario"])) {
+    echo "Debe iniciar sesión. Será redirigido al <a href='../index.php'>login</a>.";
+    header("refresh:3;url=../index.php");
+    exit;
+}
+else {
+?>
 <html lang="es">
 <head><meta charset="UTF-8">
 <title>SARA - Ind. de Ubicaciones</title>
@@ -108,6 +117,7 @@ foreach ($data as $row) {
 </body>
 </html>
 <?php
-// 5. CERRAR CONEXIÓN
-mysqli_close($conexion);
+mysqli_close($conexion); //CERRAR CONEXIÓN
+}
+
 ?>

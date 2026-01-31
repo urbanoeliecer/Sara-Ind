@@ -1,7 +1,3 @@
-<?php 
-include("back/conexion.php"); 
-$link = conectarse();
-session_start(); ?>
 <html><head><meta><title>SARA - Ind. de Administración Comunitaria Rural</title></head><body>
 <table width="100%" cellpadding="15">
 <tr>
@@ -14,9 +10,17 @@ Se debe tener en cuenta que este módulo ya se integró a SARA en su framework L
 La arquitectura de SARA es:<img src="docs/img/sara.jpg">
 </td>
 <td width="65%" valign="top">
-<h2>Menú</h2>
 <?php
-if (isset($_SESSION["usuario"])) {
+include("back/conexion.php"); 
+$link = conectarse();
+session_start();
+if (!isset($_SESSION["usuario"])) {
+    echo "Debe iniciar sesión. Será redirigido al <a href='index.php'>login</a>.";
+    header("refresh:3;url=index.php");
+    exit;
+}
+else {
+    echo '<h2>Menú</h2>';
     echo 'Estas como: '.$_SESSION["usuario"];
     ?>
     &nbsp;<a href="logOut.php">Cerrar sesión</a>
@@ -38,10 +42,6 @@ if (isset($_SESSION["usuario"])) {
         ?>
         </div>
     </div><?php
-}
-else {
-    echo 'La sesión está cerrada, debe volver a iniciarla<br>';
-    echo '<a href="index.php">Iniciar sesión</a>';
 }
 ?>
 </td>

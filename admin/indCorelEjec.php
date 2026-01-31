@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION["usuario"])) {
+    echo "Debe iniciar sesión. Será redirigido al <a href='../index.php'>login</a>.";
+    header("refresh:3;url=../index.php");
+    exit;
+}
+else {
+?>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -255,7 +264,9 @@ $resultado->data_seek(0);
         </a>
     <?php endfor; ?>
 </div>
-
 </body>
-</html>
+</html><?php
+mysqli_close($conn); //CERRAR CONEXIÓN
+}
+?>
 

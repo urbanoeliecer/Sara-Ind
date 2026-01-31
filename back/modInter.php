@@ -3,9 +3,16 @@ function conect() {
     $servername = "127.0.0.1";
     $username = "root";
     $password = "";
-    $dbname = "bdsaraind";     
-    $cn = new mysqli($servername, $username, $password, $dbname);
-    return $cn;
+    $bd = "bdsaraind";     
+    if (!($cn= mysqli_connect($servername,$username,$password,$bd,4097))){
+        echo "Error conectando a la base de datos.";
+        exit();
+    }
+   if (!mysqli_select_db($cn,$bd)){
+        echo "Error seleccionando la base de datos.";
+        exit();
+   }
+   return $cn;
 }
 //Departamentos
 function obtenerDepartamentos() {
