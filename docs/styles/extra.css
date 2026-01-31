@@ -21,6 +21,6 @@
 }
 /* Quitar espacio extra entre ítems de listas numeradas */
 .md-typeset ol li {
-  margin-bottom: 0.3em !important;;   
+  margin-top: 0.3em !important;;   
   margin-bottom: 0em !important;
 }
