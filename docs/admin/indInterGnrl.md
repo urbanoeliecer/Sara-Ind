@@ -4,6 +4,7 @@ The General Intervention Indicator (GII) is defined as a synthetic indicator tha
 
 **GIIᵢ = pP · Pᵢ + pT · Tᵢ + pB · Bᵢ**
 
+
 Based on the following indicators:
 
 1. Pᵢ: normalized Budget indicator
@@ -18,6 +19,7 @@ Each component is calculated by dividing the achieved value of each project by i
 
 The report presents a table listing projects by Department, Municipality, and Rural Area, including the number of projects, the budget amount, and the total number of beneficiaries. For the last three items, comparative charts are also presented alongside the list.
 
+
 The figure includes the following sections:
 
 1. GII indicator
@@ -31,4 +33,5 @@ The figure includes the following sections:
 5. Participant distribution
 
 An example from mid-January 2026 is shown in the figure.
+
 ![Indicador de intervención general](../img/c3.jpg)

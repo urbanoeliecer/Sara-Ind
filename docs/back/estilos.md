@@ -1,3 +1,3 @@
-# Markdown Cheat Sheet (Example File)
+# Markdown 
 
-This is a **generic Markdown template** showcasing essential formatting features.
+The Markdown showcasing essential formatting features.
