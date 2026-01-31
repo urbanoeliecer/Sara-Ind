@@ -6,7 +6,10 @@ Based on its use by several boards, the system was extended with a specialized m
 SARA was developed as part of Project 4271 of the VIE by: **Urbano Eliécer Gómez-Prada**
 
 School of Systems Engineering, Universidad Industrial de Santander
+
 Bucaramanga – Colombia, [uegomezp@uis.edu.co](mailto:uegomezp@uis.edu.co), 2026
+
+SARA is now organized into two main modules: SARA-Reg, for project data registration, and SARA-Ind, which focuses on the  generation if multiple indicators.
 
 SARA generates reports and intervention indicators related to rural infrastructure based on the information managed within SARA, a cloud-based architecture designed to support the management of rural community projects. carried out by Community Action Boards (Juntas de Acción Comunal, JAC), with the support of territorial entities. 
 

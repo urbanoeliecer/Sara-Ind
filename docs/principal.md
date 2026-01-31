@@ -1,6 +1,6 @@
 # SARA-Ind - Menu
 
-Based on the results achieved with SARA I and the increased adoption of the system by JACs, there is a need to incorporate new functionalities aimed at users from territorial entities. 
+Based on the results achieved with SARA-Reg and the increased adoption of the system by JACs, there is a need to incorporate new functionalities aimed at users from territorial entities. 
 
 The SARA architecture is composed of the following components presented in the figure:
 <ol>

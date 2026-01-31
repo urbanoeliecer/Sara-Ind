@@ -2,7 +2,7 @@
 
 SARA-Ind generates five indicators based on the records created in SARA-Reg.
 A summary of SARA-Reg is presented in [https://doi.org/10.26507/paper.4844](https://doi.org/10.26507/paper.4844).
-.
+
 These are:
 
 # Community management system
@@ -24,7 +24,7 @@ The system aims to enhance the management of information for community projects,
 
 ![Structure of the Rural Community Administration System](img/1.jpg)
 
-#3.2	Cloud Architecture
+# Cloud Architecture
 
 The cloud architecture developed is a prototype, a first version that will transition to the adoption phase by the community. This architecture supports the proposed management system and involves applications for project management, initially focusing on community projects and climate variable measurement. 
  
