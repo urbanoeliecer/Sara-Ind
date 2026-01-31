@@ -49,3 +49,11 @@ The process is described in the activity diagram in Figure 4. It has three start
 2. When the community president assigns activities, members, and/or tools, occurring when se-lects the project.
 
 3. When a community member replaces the president of the community board.
+
+# Tecnique Requirements
+
+SARA requires a MySQL database, a local server environment such as XAMPP, and the source code available in this GitHub repository.
+
+The system is designed to run on Windows and requires PHP and Apache (included in XAMPP) to be properly configured.
+
+Once the environment is set up, the project can be deployed by importing the database and configuring the application according to the provided source code.
