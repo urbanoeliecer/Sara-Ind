@@ -28,9 +28,9 @@ else {
         <ul>
         <li><a href="admin/indCorelEjec.php">Ind. de Corelación de Ejecución</a></li>  
         <li><a href="admin/indInterGnrl.php">Ind. de Intervención General</a></li>
-        <li><a href="admin/indPryMVC.php">Ind. de Proyectos por JAC</a></li>
-        <li><a href="admin/indActivMesPryMVC.php">Ind. Mensual de Activ. por JAC </a></li>
-        <li><a href="admin/indElem.php">Ind. de Infraestructura por JAC</a></li>        
+        <li><a href="admin/indPryMVC.php">Ind. de Proyectos(consolidado)</a></li>
+        <li><a href="admin/indActivMesPryMVC.php">Ind. de Actividades (mensual)</a></li>
+        <li><a href="admin/indElem.php">Ind. de Infraestructura (consolidado)</a></li>        
         </ul>
     </nav>    
     <div class="container">
