@@ -2,7 +2,7 @@
 
 The General Intervention Indicator (GII) is defined as a synthetic indicator that summarizes the overall performance of the intervention in a community. It is the most important indicator and integrates the different normalized indicators through a weighted linear combination calculated for each community. It is computed using the following expression:
 
-**GIIᵢ = pP · Pᵢ + pT · Tᵢ + pB · Bᵢ**
+**GIIᵢ = (pP · Pᵢ) + (pT · Tᵢ) + (pB · Bᵢ)**
 
 
 Based on the following indicators:
