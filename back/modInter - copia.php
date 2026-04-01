@@ -4,7 +4,7 @@ function conect() {
     $username = "root";
     $password = "";
     $bd = "bdsaraind";     
-    if (!($cn= mysqli_connect($servername,$username,$password,$bd,3306))){
+    if (!($cn= mysqli_connect($servername,$username,$password,$bd,4097))){
         echo "Error conectando a la base de datos.";
         exit();
     }
@@ -60,19 +60,19 @@ function obtenerJuntas($idmunicipio) {
     return $data;
 }
 // CONSULTA DE PROYECTOS
-function consultarProyectos($fi, $ff) { //, $dep, $mun, $jun
+function consultarProyectos($fi, $ff, $dep, $mun, $jun) {
     $cn = conect();
     /* ===== FILTROS DINÁMICOS ===== */
-//    $where = "WHERE p.fechainicio BETWEEN '$fi' AND '$ff'";
-//    if ($dep) {
-//        $where .= " AND d.iddepartamento = '$dep'";
-//    }
-//    if ($mun) {
-//        $where .= " AND m.idmunicipio = '$mun'";
-//    }
-//    if ($jun) {
-//        $where .= " AND j.idjunta = '$jun'";
-//    }
+    $where = "WHERE p.fechainicio BETWEEN '$fi' AND '$ff'";
+    if ($dep) {
+        $where .= " AND d.iddepartamento = '$dep'";
+    }
+    if ($mun) {
+        $where .= " AND m.idmunicipio = '$mun'";
+    }
+    if ($jun) {
+        $where .= " AND j.idjunta = '$jun'";
+    }
     /* ===== RESUMEN ===== */
     $sqlResumen = "
         SELECT
@@ -83,15 +83,10 @@ function consultarProyectos($fi, $ff) { //, $dep, $mun, $jun
         JOIN juntas j ON p.idjunta = j.idjunta
         JOIN municipios m ON j.idmunicipio = m.idmunicipio
         JOIN departamentos d ON m.iddepartamento = d.iddepartamento
-        ";
-        //$where
-    //print $sqlResumen;
-    //exit();
+        $where
+    ";
     $resResumen = $cn->query($sqlResumen);
-    if (!$resResumen) {
-        return ["error" => $cn->error];
-    }
-    $resumen = $resResumen->fetch_assoc();
+    $resumen = $resResumen ? $resResumen->fetch_assoc() : null;
     /* ===== DETALLE ===== */
     $sqlDetalle = "
         SELECT
@@ -105,13 +100,10 @@ function consultarProyectos($fi, $ff) { //, $dep, $mun, $jun
         JOIN juntas j ON p.idjunta = j.idjunta
         JOIN municipios m ON j.idmunicipio = m.idmunicipio
         JOIN departamentos d ON m.iddepartamento = d.iddepartamento
+        $where
         ORDER BY d.nombre, m.nombre, j.nombre
     ";
-    //$where
     $rs = $cn->query($sqlDetalle);
-    if (!$rs) {
-        return ["error" => $cn->error];
-    }
     $detalle = [];
     while ($row = $rs->fetch_assoc()) {
         $detalle[] = $row;

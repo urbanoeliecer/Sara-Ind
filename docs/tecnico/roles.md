@@ -6,9 +6,11 @@ In SARA-Ind, there is only one role, although it may be assigned to different mu
 
 In SARA-Reg, the roles are:
 
-# Territorial Authority 
+**Territorial Authority**
+ 
 1. **Supervisor**: Validates the reported expenditure indicators.
 
-# Community (Community Action Board – JAC)
+**Community (Community Action Board – JAC)**
+
 1. **JAC President**: Registers the participants from the rural community.
 2. **Treasurer**: Reports the amount of own funds invested.

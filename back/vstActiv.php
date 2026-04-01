@@ -4,7 +4,7 @@ function mostrarTablaActividades($datos) {
 <table >
 <tr>
     <th>#</th>
-    <th>Id</th>
+    <th>IdProy</th>
     <th>Proyecto</th>
 
     <th>Depart.</th>
@@ -20,7 +20,7 @@ function mostrarTablaActividades($datos) {
     <th>Cant. Horas</th>
     <th>Cant. Activ.</th>
 </tr><?php
-$i = 1;
+$i = 0;
 if (!empty($datos)):
     foreach ($datos as $row):
         echo '<tr>';

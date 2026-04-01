@@ -35,7 +35,7 @@ $fechaInicio = $_GET['fecha_inicio'] ?? '';
 $fechaFin    = $_GET['fecha_fin'] ?? '';
 $departamento = $_GET['departamento'] ?? '';
 $agrupacion = $_GET['agrupacion'] ?? 'vereda'; // departamento / municipio / vereda
-$agruparAnyo = isset($_GET['agrupar_anio']) ? intval($_GET['agrupar_anio']) : 0;
+$agruparAnyo = 1; //isset($_GET['agrupar_anio']) ? intval($_GET['agrupar_anio']) : 0;
 $orden = $_GET['orden'] ?? '';
 // Paginación
 $pagina = isset($_GET['pagina']) ? max(1, intval($_GET['pagina'])) : 1;
@@ -76,7 +76,8 @@ $groupBy = " GROUP BY " . implode(", ", $groupFields);
 // 4. ORDER BY dinámico
 $orderBy = " ORDER BY ";
 // 1. Si agrupa por año, este orden siempre va primero
-if ($agruparAnyo == 1) {
+//if ($agruparAnyo == 1) 
+{
     $orderBy .= "YEAR(fechaInicio) ASC, ";
 }
 // 2. Orden manual por botones
@@ -219,7 +220,7 @@ $resultado->data_seek(0);
     </tr><?php 
     $contFil = 1;
     while ($row = $resultado->fetch_assoc()): ?>
-        <tr> <td><?= $contFil ?></td>
+        <tr><td><?= $contFil ?></td>
             <?php if ($agruparAnyo == 1): ?>
                 <td><?= $row['anio'] ?></td>
             <?php endif; ?>

@@ -15,7 +15,7 @@ Based on the following indicators:
 
 Each component is calculated by dividing the achieved value of each project by its expected value, similarly to Equation 1. In this case, predefined goals are used, allowing comparison across the Community Action Boards (JACs). For a community i and an item j.
 
-**Iᵢⱼ = Achieved valueᵢⱼ / Goalᵢⱼ**	
+**Iᵢ = (Sumatoria(Achieved valueⱼ)/number of projectsᵢ) / Goalᵢ**	
 
 The report presents a table listing projects by Department, Municipality, and Rural Area, including the number of projects, the budget amount, and the total number of beneficiaries. For the last three items, comparative charts are also presented alongside the list.
 

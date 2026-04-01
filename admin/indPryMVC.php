@@ -25,9 +25,10 @@ $rol = $_GET['rol'] ?? 0;
     Fecha inicio: <input type="date" id="fecha_inicio" name="fecha_inicio">
     Fecha final:  <input type="date" id="fecha_fin" name="fecha_fin">
     <br><br>
-    Departamento: <select name="iddepartamento" id="departamento" onchange="cargarMunicipios()"></select>
+    <!--Departamento: <select name="iddepartamento" id="departamento" onchange="cargarMunicipios()"></select>
     Municipio: <select name="idmunicipio" id="municipio" onchange="cargarJuntas()"></select>
     Junta: <select name="idjunta" id="junta"></select>
+    -->
     <button type="submit" id="consultar">Consultar</button>
 </form>
 <!-- Resumen y Detalles de los Proyectos -->
@@ -35,7 +36,8 @@ $rol = $_GET['rol'] ?? 0;
 <div id="detalle"></div>
 <script>
     // Función para validar y habilitar el botón de envío
-    function validar() {
+    function validar() 
+    {
         var dep = document.getElementById("departamento").value;
         var mun = document.getElementById("municipio").value;
         var jun = document.getElementById("junta").value;

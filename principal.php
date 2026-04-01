@@ -26,12 +26,12 @@ else {
     &nbsp;<a href="logOut.php">Cerrar sesión</a>
     <nav><?php // if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
         <ul>
-        <li><a href="admin/indCorelEjec.php">Ind. de Corelación de Ejecución</a></li>  
-        <li><a href="admin/indInterGnrl.php">Ind. de Intervención General</a></li>
-        <li><a href="admin/indPryMVC.php">Ind. de Proyectos por JAC</a></li>
-        <li><a href="admin/indActivMesPryMVC.php">Ind. Mensual de Activ. por JAC </a></li>
-        <li><a href="admin/indElem.php">Ind. de Infraestructura por JAC</a></li>        
-        </ul>
+        <li><a href="admin/indCorelEjec.php">Ind. de Corelación</a></li>  
+        <li><a href="admin/indInterGnrl.php">Ind. General</a></li>
+        <li><a href="admin/indElem.php">Ind. de Infraestructura</a></li>
+        <li><a href="admin/indPryMVC.php">Ind. de Proyectos</a></li>
+        <li><a href="admin/indActivMesPryMVC.php">Ind. Municipal</a></li>
+       </ul>
     </nav>    
     <div class="container">
         <div class="col-md-3"><?php

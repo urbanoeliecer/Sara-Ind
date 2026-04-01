@@ -23,15 +23,16 @@ switch ($accion) {
         $iddepartamento = $_POST['iddepartamento'] ?? null;
         $idmunicipio    = $_POST['idmunicipio']    ?? null;
         $idjunta        = $_POST['idjunta']        ?? null;
-        $resultado = consultarProyectos($fecha_inicio, $fecha_fin);
-
-        if (isset($resultado["error"])) {
-            echo json_encode(["error" => $resultado["error"]]);
-        } else {
-            echo json_encode($resultado);
-        }
-        exit;
-        // ,$iddepartamento,$idmunicipio,$idjunta
+        echo json_encode(
+            consultarProyectos(
+                $fecha_inicio,
+                $fecha_fin,
+                $iddepartamento,
+                $idmunicipio,
+                $idjunta
+            )
+        );
         break;
-    default: echo json_encode([]);
+    default:
+        echo json_encode([]);
 }
