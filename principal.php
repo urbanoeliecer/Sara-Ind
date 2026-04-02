@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <html><head><meta><title>SARA - Ind. de Administración Comunitaria Rural</title></head><body>
 <table width="100%" cellpadding="15">
 <tr>

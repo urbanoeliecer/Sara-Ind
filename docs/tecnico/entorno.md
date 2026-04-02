@@ -1,5 +1,7 @@
 # Programming Environment
 
+instrucciones de instalación
+
 The figure shows how two reports are being developed, one without MVC and one with MVC, as illustrated in Figure, sections 1 and 2. On the left side, the project components are organized according to their hierarchy.
 
 Section 1 presents the controller for the RGI indicator detail, which is responsible for building the main SQL query, processing the results, and preparing the information that will later be displayed in the view. This section shows the construction of the SQL query, which integrates actual and expected information from community projects, including filters, forms, and related elements.

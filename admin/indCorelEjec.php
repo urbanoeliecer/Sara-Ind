@@ -26,7 +26,7 @@ $conn = conectarse();
 //  Filtro por departamento
 //  Agrupa por: departamento / municipio / vereda (junta)
 //  Reglas especiales por tipo de agrupación
-//  Opción para agrupar por año (YEAR(fechaInicio))
+//  Opción para agrupar por año
 //  Paginador con orden dinámico según agrupación
 //  Usa la vista consolidada que generamos
 
@@ -52,7 +52,7 @@ if ($departamento !== '') {
 // 3. GROUP BY dinámico y seguro
 $groupFields = [];
 if ($agruparAnyo == 1) {
-    $groupFields[] = "YEAR(fechaInicio)";
+    $groupFields[] = "anio";
 }
 switch ($agrupacion) {
     case 'vereda':
@@ -78,7 +78,7 @@ $orderBy = " ORDER BY ";
 // 1. Si agrupa por año, este orden siempre va primero
 //if ($agruparAnyo == 1) 
 {
-    $orderBy .= "YEAR(fechaInicio) ASC, ";
+    $orderBy .= "departamento, municipio, vereda, anio DESC, ";
 }
 // 2. Orden manual por botones
 switch ($orden) {
@@ -112,7 +112,7 @@ switch ($orden) {
 // 5. Columnas a seleccionar según agrupación
 $selectCols = [];
 if ($agruparAnyo == 1) {
-    $selectCols[] = "YEAR(fechaInicio) AS anio";
+    $selectCols[] = "anio";
 }
 switch ($agrupacion) {
     case 'vereda':
@@ -133,12 +133,13 @@ switch ($agrupacion) {
         break;
 }
 $selectCols[] = "COUNT(DISTINCT idProyecto) AS total_proyectos";
-$selectCols[] = "SUM(monto) AS monto";
-$selectCols[] = "SUM(Beneficiarios) AS beneficiarios";
+$selectCols[] = "SUM(total_actividades) AS total_actividades";
+$selectCols[] = "SUM(total_presupuesto) AS monto";
+$selectCols[] = "SUM(total_beneficiarios) AS beneficiarios";
 $selectSQL = implode(", ", $selectCols);
 // 6. SQL final
 $sql = "SELECT $selectSQL
-        FROM vproyectosxjunta
+        FROM vproyectosxjuntaxanio
         $where
         $groupBy
         $orderBy
@@ -148,7 +149,7 @@ $resultado = $conn->query($sql);
 // Para paginador
 $sqlTotal = "SELECT COUNT(*) AS total FROM (
                 SELECT 1
-                FROM vproyectosxjunta
+                FROM vproyectosxjuntaxanio
                 $where
                 $groupBy
             ) AS sub";
@@ -187,16 +188,18 @@ $totalPaginas = ceil($totalRows / $porPagina);
 // Obtener máximos reales para barras
 $maxProy = 0;
 $maxBen  = 0;
+$maxact = 0;
 $maxMon  = 0;
 $resultado->data_seek(0);
 while($r = $resultado->fetch_assoc()){
     if ($r['total_proyectos'] > $maxProy) $maxProy = $r['total_proyectos'];
+    if ($r['total_actividades'] > $maxact) $maxact = $r['total_actividades'];
     if ($r['beneficiarios'] > $maxBen) $maxBen  = $r['beneficiarios'];
     if ($r['monto'] > $maxMon) $maxMon  = $r['monto'];
 }
 $resultado->data_seek(0);
 ?>
-<table>
+<table style="padding:0px !important; margin:0px !important; line-height:1 !important;">
     <tr><th>#</th>
         <?php if ($agruparAnyo == 1): ?>
             <th>Año</th>
@@ -215,43 +218,51 @@ $resultado->data_seek(0);
             <th>Vereda</th>
         <?php endif; ?>
         <th>Proyectos</th><th>-</th>
+        <th>Actividades</th><th>-</th>
         <th>Dinero</th><th>-</th>
         <th>Benef.</th><th>-</th>
     </tr><?php 
     $contFil = 1;
     while ($row = $resultado->fetch_assoc()): ?>
-        <tr><td><?= $contFil ?></td>
-            <?php if ($agruparAnyo == 1): ?>
-                <td><?= $row['anio'] ?></td>
-            <?php endif; ?>
-
-            <?php if ($agrupacion == 'departamento'): ?>
-                <td><?= $row['departamento'] ?></td>
-                <td><?= $row['total_municipios'] ?></td>
-                <td><?= $row['total_veredas'] ?></td>
-
-            <?php elseif ($agrupacion == 'municipio'): ?>
-                <td><?= $row['departamento'] ?></td>
-                <td><?= $row['municipio'] ?></td>
-                <td><?= $row['total_juntas'] ?></td>
-
-            <?php else: ?>
-                <td><?= $row['departamento'] ?></td>
-                <td><?= $row['municipio'] ?></td>
-                <td><?= $row['vereda'] ?></td>
-            <?php endif;
-            $a0 = $maxProy>0? intval(($row['total_proyectos']/$maxProy)*100):0;	
+        <tr><td><?= $contFil ?></td><?php //260331
+            if ($agruparAnyo == 1) {
+                echo '<td>' . $row['anio'] . '</td>';
+            }
+            if ($contFil % 2 == 0) {
+                //echo '<td colspan="5">';
+            }
+            else {
+                if ($agrupacion == 'departamento') {
+                    echo '<td>' . $row['departamento'] . '</td>';
+                    echo '<td>' . $row['total_municipios'] . '</td>';
+                    echo '<td>' . $row['total_veredas'] . '</td>';
+                } elseif ($agrupacion == 'municipio') {
+                    echo '<td>' . $row['departamento'] . '</td>';
+                    echo '<td>' . $row['municipio'] . '</td>';
+                    echo '<td>' . $row['total_juntas'] . '</td>';
+                } else {
+                    echo '<td rowspan="2">' . $row['departamento'] . '</td>';
+                    echo '<td rowspan="2">' . $row['municipio'] . '</td>';
+                    echo '<td rowspan="2">' . $row['vereda'] . '</td>';
+                }
+                $a0 = $maxProy > 0 ? intval(($row['total_proyectos'] / $maxProy) * 100) : 0;
+                $img0 = '<img src="../img/barra.png" height="16" width="' . $a0 . '">';
+                echo '<td  rowspan="2" align="right">' . $row['total_proyectos'] . '</td>';
+                echo '<td rowspan="2">' . $img0 . '</td>';
+            }
+            $aa = $maxact>0? intval(($row['total_actividades']/$maxact)*100):0;
             $a1 = $maxMon>0? intval(($row['monto']/$maxMon)*100):0;    
             $a2 = $maxBen>0? intval(($row['beneficiarios']/$maxBen)*100):0;
-            $img0 = '<img src="../img/barra.png" height="20" width="'.$a0.'">'; 
-            $img1 = '<img src="../img/barra.png" height="20" width="'.$a1.'">';
-            $img2 = '<img src="../img/barra.png" height="20" width="'.$a2.'">';
-	    ?>
-            <td><?= $row['total_proyectos'] ?></td>
-	    <td><?= $img0; ?></td>
-            <td><?= number_format($row['monto']) ?></td>
+            
+            $imga = '<img src="../img/barra.png" height="16" width="'.$aa.'">'; 
+            $img1 = '<img src="../img/barra.png" height="16" width="'.$a1.'">';
+            $img2 = '<img src="../img/barra.png" height="16" width="'.$a2.'">';
+            ?>
+            <td align="right"><?= $row['total_actividades'] ?></td>
+	    <td><?= $imga; ?></td>
+            <td align="right"><?= number_format($row['monto']) ?></td>
             <td><?= $img1; ?></td>
-            <td><?= $row['beneficiarios'] ?></td>
+            <td align="right"><?= $row['beneficiarios'] ?></td>
             <td><?= $img2; ?></td>
         </tr>
     <?php $contFil++; 

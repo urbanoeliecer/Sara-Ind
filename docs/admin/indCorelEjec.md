@@ -9,3 +9,7 @@ Item Indicators are defined as a measure of the degree of compliance with the go
 The indicator Iᵢⱼ may take values greater than 1 when the defined goal is exceeded, which makes it possible to identify scenarios of overachievement and additional efficiency.
 
 ![Indicador de co-relación de ejecución](../img/c1.jpg)
+
+The indicator can be grouped by month or year.
+
+![Indicador de co-relación de ejecución por año](../img/c11.jpg)
