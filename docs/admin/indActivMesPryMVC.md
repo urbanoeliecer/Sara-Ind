@@ -16,4 +16,5 @@ The steps are as follows:
 3. The controller selects a view.
 
 4. The view generates the output using the data that the controller obtained from the model.
+
 ![MVC](../img/mvc.jpg)
