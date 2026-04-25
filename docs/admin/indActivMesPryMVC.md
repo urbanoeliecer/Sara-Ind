@@ -6,10 +6,10 @@ Project, Beneficiaries, Department, Municipality, Community Board, Month, Assign
 
 Model and View are implemented on the backend and do not use Markdown.An example is shown in the figure. 
 ![Inf. Mensual de actividades por proyecto](../img/a2.jpg)
+
 The steps are as follows:
 
-<ol>
-<il>1. The user reaches the controller.
+1. The user reaches the controller.
 
 2. The controller interacts with the model.
 
@@ -17,5 +17,7 @@ The steps are as follows:
 
 4. The view generates the output using the data that the controller obtained from the model.
 
+The process is shown in the following figure.
 
+ 
 ![MVC](../img/mvc.jpg)
