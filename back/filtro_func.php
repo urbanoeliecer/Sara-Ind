@@ -39,11 +39,7 @@ function obtenerMunicipios($Iddpto = null) {
 }
 
 // PAGINACIÓN
-<<<<<<< HEAD
 function contarPaginas($tipoInforme,$fchInc, $fchFin, $Iddpto = null, $Idmnc = null) {
-=======
-function contarPaginas($fchInc, $fchFin, $Iddpto = null, $Idmnc = null) {
->>>>>>> 6f49c9e17a7cd17b5280ddf9a6134f672a23c957
     $cn = conectarse();
     $where = "WHERE p.fechainicio BETWEEN '$fchInc' AND '$fchFin'";
     if ($Iddpto !== null && $Iddpto !== '') {
@@ -52,7 +48,6 @@ function contarPaginas($fchInc, $fchFin, $Iddpto = null, $Idmnc = null) {
     if ($Idmnc !== null && $Idmnc !== '') {
         $where .= " AND m.idmunicipio = '$Idmnc'";
     }
-<<<<<<< HEAD
     switch ($tipoInforme) {
         //
         case 'juntas':
@@ -104,7 +99,6 @@ function contarPaginas($fchInc, $fchFin, $Iddpto = null, $Idmnc = null) {
             $sql = "SELECT 1 as total";
         break;
     }
-=======
     $sql = "
         SELECT COUNT(*) as total
         FROM (
@@ -117,7 +111,6 @@ function contarPaginas($fchInc, $fchFin, $Iddpto = null, $Idmnc = null) {
             GROUP BY j.idjunta
         ) t
     ";
->>>>>>> 6f49c9e17a7cd17b5280ddf9a6134f672a23c957
     $row = $cn->query($sql)->fetch_assoc();
     $registrosPorPagina = 10;
     return max(1, ceil($row['total'] / $registrosPorPagina));
