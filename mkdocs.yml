@@ -16,11 +16,9 @@ markdown_extensions:
 nav:
   - Index: index.md
   - Principal Panel : principal.md
-  - Correlational Intervention: admin/indCorelEjec.md
   - General Intervention: admin/indInterGnrl.md
-  - Municipal Intervention (MVC): admin/indPryMVC.md
-  - Monthly Activ. by Project (MVC): admin/indActivMesPryMVC.md
-  - Infrastructure by JAC: admin/indElem.md
+  - Correlational Intervention: admin/indCorelEjec.md
+  - Monthly Activ. by Project (MVC): admin/indActivC.md
   - Back:
     - Conection: back/conexion.md
     - Styles: back/estilos.md

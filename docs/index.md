@@ -4,12 +4,10 @@ SARA is a Web Application based on a Service-Oriented Architecture for Measuring
 
 Based on its use by several boards, the system was extended with a specialized module for indicator generation and analysis. As a result, SARA is now organized into two main modules: SARA-Reg, for project data registration, and SARA-Ind, which focuses on indicator generation.
 
-<ol>
 <li>SARA was developed as part of Project 4271 of the VIE by: **Urbano Eliécer Gómez-Prada**</li>
 <li>School of Systems Engineering, Universidad Industrial de Santander</li>
 <li>Bucaramanga – Colombia, [uegomezp@uis.edu.co](mailto:uegomezp@uis.edu.co)</li>
 <li>2026</li>
-</ol>
 
 SARA is now organized into two main modules: SARA-Reg, for project data registration, and SARA-Ind, which focuses on the  generation if multiple indicators.
 

@@ -31,13 +31,10 @@ $pgn    = $f["pgn"];
 $departamentos = obtenerDepartamentos();
 $municipios    = obtenerMunicipios($Iddpto);
 // 3. paginación
-print $totalPaginas = contarPaginas('gii',$fchInc, $fchFin, $Iddpto, $Idmnc);
+$totalPaginas = contarPaginas($fchInc, $fchFin, $Iddpto, $Idmnc);
 
 require_once "../back/filtro.php"; 
 
-$porPagina = 30;
-$offset = ($pgn - 1) * $porPagina;
-    
 $where = "WHERE v.fechaInicio BETWEEN '$fchInc' AND '$fchFin'";
 if ($Iddpto !== null && $Iddpto !== '') {
     $where .= " AND v.iddepartamento = '$Iddpto'";
@@ -52,107 +49,29 @@ if ($conexion->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
 }
 // SQL BASE + JOIN NUEVO
-// 260429 ponerle el filtro
-// 260429 me arreglarias este para agregarle el año en la columna 4 y que lo agrupe por año ya que las metas son anuales
 $w_proyectos = 0.4;
 $w_presupues = 0.3;
 $w_participa = 0.3;
-
-$sql = "
-
--- 🔹 DETALLE POR AÑO
-SELECT
-    v.departamento,
-    v.municipio,
-    v.junta AS vereda,
-    YEAR(a.fecha) AS anio,
-
-    GROUP_CONCAT(
-        DISTINCT CONCAT(p.nombre, ' (', DATE_FORMAT(p.fechaInicio, '%Y-%m-%d'), ')')
-        ORDER BY p.fechaInicio ASC
-        SEPARATOR '<br>'
-    ) AS proyectos_fechas,
-
-    COUNT(DISTINCT a.idpry) AS total_proyectos,
-    SUM(a.presupuesto) AS monto,
-    SUM(a.cntpersonas) AS participantes,
-    COUNT(a.idact) AS total_actividades,
-
-    IFNULL(jd.proyectos,0) AS proyectos_deseados,
-    IFNULL(jd.presupuesto, 0) AS presupuesto_deseado,
+$sql = " SELECT
+    v.departamento, v.municipio,v.junta AS vereda,
+    /* TOTALES REALES */
+    COUNT(distinct a.idpry) AS total_proyectos,    SUM(a.presupuesto) AS monto,
+    SUM(a.cntpersonas)      AS participantes,      COUNT(a.idact)     AS total_actividades,
+    /* OBJETIVOS DESEADOS */
+    IFNULL(jd.proyectos,0)  AS proyectos_deseados, IFNULL(jd.presupuesto, 0) AS presupuesto_deseado,
     IFNULL(jd.participantes, 0) AS participantes_deseados,
-
-    (
-        " . $w_proyectos . " * IF(jd.proyectos > 0, COUNT(DISTINCT a.idpry) / jd.proyectos, 0)
-      + " . $w_presupues . " * IF(jd.presupuesto > 0, SUM(a.presupuesto) / jd.presupuesto, 0)
-      + " . $w_participa . " * IF(jd.participantes > 0 AND COUNT(a.idact) > 0,
-            (SUM(a.cntpersonas) / NULLIF(COUNT(a.idact),0)) / jd.participantes, 0)
+    /* GII PARAMETRIZADO */
+    (   {$w_proyectos} * IF(jd.proyectos > 0, COUNT(DISTINCT a.idpry) /jd.proyectos,0)
+      + {$w_presupues} * IF(jd.presupuesto > 0, SUM(a.presupuesto) /jd.presupuesto,0)
+      + {$w_participa} * IF(jd.participantes>0 AND COUNT(a.idact)>0,(SUM(a.cntpersonas)/NULLIF(COUNT(a.idact),0))/jd.participantes,0)
     ) * 100 AS GII
-
 FROM pryact a
 INNER JOIN vproyectosxjunta v ON v.idproyecto = a.idpry
-INNER JOIN proyectos p ON p.idproyecto = v.idproyecto
 LEFT JOIN juntasdsc jd ON jd.idjnt = v.idjunta
-
 $where
-
-GROUP BY 
-    v.departamento, 
-    v.municipio, 
-    v.junta, 
-    YEAR(a.fecha)
-
-UNION ALL
-
--- 🔹 TOTAL POR JUNTA (🔥 AQUÍ ESTÁ EL CAMBIO)
-SELECT
-    v.departamento,
-    v.municipio,
-    v.junta AS vereda,      -- 👈 se mantiene la junta
-    'TOTAL' AS anio,        -- 👈 solo el año cambia
-
-    GROUP_CONCAT(
-        DISTINCT CONCAT(p.nombre, ' (', DATE_FORMAT(p.fechaInicio, '%Y-%m-%d'), ')')
-        ORDER BY p.fechaInicio ASC
-        SEPARATOR '<br>'
-    ) AS proyectos_fechas,
-
-    COUNT(DISTINCT a.idpry),
-    SUM(a.presupuesto),
-    SUM(a.cntpersonas),
-    COUNT(a.idact),
-
-    IFNULL(jd.proyectos,0),
-    IFNULL(jd.presupuesto, 0),
-    IFNULL(jd.participantes, 0),
-
-    (
-        " . $w_proyectos . " * IF(jd.proyectos > 0, COUNT(DISTINCT a.idpry) / jd.proyectos, 0)
-      + " . $w_presupues . " * IF(jd.presupuesto > 0, SUM(a.presupuesto) / jd.presupuesto, 0)
-      + " . $w_participa . " * IF(jd.participantes > 0 AND COUNT(a.idact) > 0,
-            (SUM(a.cntpersonas) / NULLIF(COUNT(a.idact),0)) / jd.participantes, 0)
-    ) * 100
-
-FROM pryact a
-INNER JOIN vproyectosxjunta v ON v.idproyecto = a.idpry
-INNER JOIN proyectos p ON p.idproyecto = v.idproyecto
-LEFT JOIN juntasdsc jd ON jd.idjnt = v.idjunta
-
-$where
-
-GROUP BY 
-    v.departamento, 
-    v.municipio, 
-    v.junta
-
-ORDER BY 
-    departamento,
-    municipio,
-    vereda,
-    anio
-
-
-LIMIT $offset, $porPagina ";
+GROUP BY v.departamento, v.municipio, v.junta
+ORDER BY v.departamento ASC, v.municipio ASC, v.junta ASC
+LIMIT 0, 20; ";
 //print $sql;
 // ORDENAMIENTO POR GII
 if (isset($_GET['order'])) {
@@ -183,13 +102,11 @@ function barra($porcentaje) {
     <th>Municipio</th>
     <th>Vereda</th>
 
-    <th>Año</th>
     <th>GII</th>
     <th>Gráfica</th>
     
-    <th># Act.</th>
-    <th>Prys & Fechas</th>
-    <th># Proy.</th>
+    <th>Activ.</th>
+    <th>Proy.</th>
     <th>Meta</th>
     <th>%</th>
     <th>Gráfica</th>
@@ -199,7 +116,7 @@ function barra($porcentaje) {
     <th>%</th>
     <th>Gráfica</th>
 
-    <th>Prm. Bnf.</th>
+    <th>Prom. Benef.</th>
     <th>Meta</th>
     <th>%</th>
     <th>Gráfica</th>
@@ -219,12 +136,9 @@ while ($row = mysqli_fetch_assoc($result)):
     <td><?= $row['departamento'] ?></td>
     <td><?= $row['municipio'] ?></td>
     <td><?= $row['vereda'] ?></td>
-
-    <td><?= $row['anio'] ?></td>
     <td><strong><?= round($row['GII']) ?>%</strong></td>
     <td><img src="<?= barra($row['GII']) ?>" class="barra" width="<?= min(100, $row['GII']) ?>%" style="height:16px;" ></td>
-    <td><?= $row['total_actividades'] ?></td>
-    <td><?= $row['proyectos_fechas'] ?></td>
+    <td><strong><?= $row['total_actividades'] ?></strong></td>
     <td><?= $row['total_proyectos'] ?></td>
     <td><?= $row['proyectos_deseados'] ?></td>
     <td><?= round($pProy) ?>%</td>

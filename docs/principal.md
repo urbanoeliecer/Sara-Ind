@@ -28,9 +28,7 @@ Accordingly, the following information consolidation criteria are defined:<br>
 
 The options are:
 <ol>
-<li>Correlational Intervention Indicator</li>
 <li>Overall Intervention Indicator</li>
-<li>Municipal Intervention Indicator (MVC)</li>
-<li>Monthly Activity by Project Indicator(MVC)</li>
+<li>Correlational Intervention Indicator</li>
 <li>Infrastructure by JAC Indicator</li>
 </ol>

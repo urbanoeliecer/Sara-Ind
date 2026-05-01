@@ -1,11 +1,12 @@
 <?php
-session_start();
-if (!isset($_SESSION["usuario"])) {
-    echo "Debe iniciar sesión. Será redirigido al <a href='../index.php'>login</a>.";
-    header("refresh:3;url=../index.php");
-    exit;
-}
-else {
+//session_start();
+//if (!isset($_SESSION["usuario"])) {
+//    echo "Debe iniciar sesión. Será redirigido al <a href='../index.php'>login</a>.";
+//    header("refresh:3;url=../index.php");
+//    exit;
+//}
+//else 
+{
 ?>
 <html lang="es">
 <head>
@@ -144,7 +145,7 @@ $sql = "SELECT $selectSQL
         $groupBy
         $orderBy
         LIMIT $offset, $porPagina";
-//print $sql;
+print $sql;
 $resultado = $conn->query($sql);
 // Para paginador
 $sqlTotal = "SELECT COUNT(*) AS total FROM (
