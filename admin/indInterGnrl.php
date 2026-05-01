@@ -31,7 +31,7 @@ $pgn    = $f["pgn"];
 $departamentos = obtenerDepartamentos();
 $municipios    = obtenerMunicipios($Iddpto);
 // 3. paginación
-print $totalPaginas = contarPaginas('gii',$fchInc, $fchFin, $Iddpto, $Idmnc);
+$totalPaginas = contarPaginas('gii',$fchInc, $fchFin, $Iddpto, $Idmnc);
 
 require_once "../back/filtro.php"; 
 
@@ -182,23 +182,21 @@ function barra($porcentaje) {
     <th>Depart.</th>
     <th>Municipio</th>
     <th>Vereda</th>
-
     <th>Año</th>
     <th>GII</th>
     <th>Gráfica</th>
-    
     <th># Act.</th>
+
     <th>Prys & Fechas</th>
+
     <th># Proy.</th>
     <th>Meta</th>
     <th>%</th>
     <th>Gráfica</th>
-
     <th>Presup.</th>
     <th>Deseado</th>
     <th>%</th>
     <th>Gráfica</th>
-
     <th>Prm. Bnf.</th>
     <th>Meta</th>
     <th>%</th>
@@ -219,24 +217,21 @@ while ($row = mysqli_fetch_assoc($result)):
     <td><?= $row['departamento'] ?></td>
     <td><?= $row['municipio'] ?></td>
     <td><?= $row['vereda'] ?></td>
-
     <td><?= $row['anio'] ?></td>
     <td><strong><?= round($row['GII']) ?>%</strong></td>
     <td><img src="<?= barra($row['GII']) ?>" class="barra" width="<?= min(100, $row['GII']) ?>%" style="height:16px;" ></td>
     <td><?= $row['total_actividades'] ?></td>
+    
     <td><?= $row['proyectos_fechas'] ?></td>
+
     <td><?= $row['total_proyectos'] ?></td>
     <td><?= $row['proyectos_deseados'] ?></td>
     <td><?= round($pProy) ?>%</td>
     <td><img src="<?= barra($pProy) ?>" width="<?= min(100, round($pProy)) ?>%" style="height:16px;"></td>
-
     <td><?= number_format($row['monto'],0) ?></td>
     <td><?= number_format($row['presupuesto_deseado'],0) ?></td>
     <td><?= round($pPres) ?>%</td>
-    <td>
-        <img src="<?= barra($pPres) ?>" width="<?= min(100, round($pPres)) ?>%" style="height:16px;">
-    </td>
-
+    <td><img src="<?= barra($pPres) ?>" width="<?= min(100, round($pPres)) ?>%" style="height:16px;"></td>
     <td><?= $pPart ?></td>
     <td><?= $row['participantes_deseados'] ?></td>
     <td><?= round($pBene) ?>%</td>
