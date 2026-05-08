@@ -30,7 +30,7 @@ function obtenerMunicipios($iddpt = null) {
     if ($iddpt !== null && $iddpt !== '') {
         $where = "WHERE idspr = '$iddpt'";
     }
-    print $sql ="SELECT idsst, name FROM systems $where ORDER BY name";
+    $sql ="SELECT idsst, name FROM systems $where ORDER BY name";
     $rs = $cn->query($sql);
 
     $data = [];

@@ -1,26 +1,24 @@
 <html lang="es"><head><meta charset="UTF-8">
 <title>SARA - Ind. Consolidado</title>
 <link rel="stylesheet" href="../back/estilos.css">
-</head><body>
-<a href="../principal.php">Principal</a></li>
-<h2>Ind. Consolidado</h2>
-<?php
-require_once "../back/filtro.php"; 
+</head><body><a href="../principal.php">Principal</a></li>
+<h2>Ind. Consolidado</h2><?php
+require_once "../functions/filtro.php"; 
 if (isset($resultado["error"])) {
-    echo "<p>Error: {$resultado["error"]}</p>";
-    exit;
+    echo "<p>Error: {$resultado["error"]}</p>"; exit;
 }
+// consulta (implementada en el modelo)
 $datos = consultarProyectosxMes($fchInc, $fchFin, $iddpt, $idmnc, $pgn);
-
+// cabecera de la tabla
 //$headers = ["#", "Mes", "Depart.", "Municipio", "Junta", "Id", "Proyecto", "$ Ej.", "$ Prs.", "-", "Pers. Ej.", "Pers. Prs.", "-", "Horas Ej.", "Horas Prs.", "-", "Activ. Ej.", "Activ. Prs.", "-"];
 $headers = ["#", "Month", "Super.", "System", "Community", "Id", "Project", "$ Exec.", "$ Plan.", "-", "Part. Exec.", "Part. Plan.", "-", "Hours Exec.", "Hours Plan.", "-", "Activ. Exec.", "Activ. Plan.", "-"];
-
 echo 'Ind. por Mes<br><br><table><tr>';
 foreach($headers as $h){ 
     echo '<th>'.$h.'</th>';
 } 
 $i = 0;
 if (!empty($datos)):
+    // detalle de la tabla, pinta las filas con los datos
     foreach ($datos as $row):
         echo '<tr>';
         $i++;
@@ -59,20 +57,15 @@ if (!empty($datos)):
         echo '</td>';
         echo '</tr>';
     endforeach;
-else:
-?>
-<tr><td colspan="13">No hay información</td></tr>
-<?php endif; ?>
-</table>
-<?php
+else: 
+echo '<tr><td colspan="13">No hay información</td></tr>';
+endif;
+echo '</table>';
 // consulta (la implementas tú en el modelo)
 $resultado = consultarProyectosxAño($fchInc, $fchFin, $iddpt, $idmnc, $pgn);
 // calcular máximos (igual que antes)
-$maxProy = 0; 
-$maxBen  = 0; 
-$maxMon  = 0;  
-$maxHor = 0;
-$maxAct = 0;
+$maxProy = 0; $maxBen  = 0; $maxMon  = 0;  
+$maxHor = 0;  $maxAct = 0;
 if ($resultado) {
     $resultado->data_seek(0);
     while($r = $resultado->fetch_assoc()){

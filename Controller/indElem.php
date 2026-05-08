@@ -9,16 +9,11 @@ if (!isset($_SESSION["usuario"])) {
 <html lang="es">
 <head><meta charset="UTF-8">
 <title>SARA - Ind. de Elementos</title>
-<link rel="stylesheet" href="../back/estilos.css">
+<link rel="stylesheet" href="../functions/estilos.css">
 </head><body>
 <a href="../principal.php">Principal</a>
-<h2>Ind. de Elementos</h2>
-<?php
-// 1. CONEXIÓN A LA BD
-include("../back/conexion.php"); 
-
-require_once "../back/filtro_func.php";
-
+<h2>Ind. de Elementos</h2><?php
+require_once "../functions/filtro_func.php";
 // 1. obtener filtros (CENTRALIZADO)
 $f = obtenerFiltros();
 $fchInc = $f["fchInc"];
@@ -32,7 +27,7 @@ $municipios    = obtenerMunicipios($iddpt);
 // 3. paginación
 $totalPaginas = contarPaginas('elements', $fchInc, $fchFin, $iddpt, $idmnc);
 
-require_once "../back/filtro.php"; 
+require_once "../functions/filtro.php"; 
 
 $where = "WHERE p.startdate BETWEEN '$fchInc' AND '$fchFin'";
 if ($iddpt !== null && $iddpt !== '') {
@@ -41,70 +36,50 @@ if ($iddpt !== null && $iddpt !== '') {
 if ($idmnc !== null && $idmnc !== '') {
     $where .= " AND m.idsst = '$idmnc'";
 }
-
 $conexion = conectarse();
 // 2. CONSULTA
 $sql = "
 SELECT 
     d.name AS departamento,
-
     m.name AS municipio,
-
     j.name AS junta,
-
     e.idelement,
-
     e.addressname AS elemento,
-
     t.typeelementname AS tipo,
-
     COUNT(DISTINCT p.idprj) AS total,
-
     GROUP_CONCAT(
         DISTINCT p.name
         ORDER BY p.name
         SEPARATOR '<br>'
     ) AS proyectos,
-
     GROUP_CONCAT(
         DISTINCT DATE_FORMAT(p.startdate, '%Y-%m-%d')
         ORDER BY p.startdate
         SEPARATOR '<br>'
     ) AS fechas_proyectos
-
 FROM elements e
-
 INNER JOIN projectelements pe
     ON pe.idelement = e.idelement
-
 INNER JOIN projects p
     ON p.idprj = pe.idprj
     AND p.startdate BETWEEN '2024-09-02' AND '9999-12-31'
-
 INNER JOIN communities j
     ON j.idcommunity = p.idcommunity
-
 INNER JOIN systems m
     ON m.idsst = j.idsst
-
 INNER JOIN supersystems d
     ON d.idspr = m.idspr
-
 INNER JOIN telementoscls c
     ON e.idelementocls = c.idelementocls
-
 INNER JOIN telementostip t
     ON c.idtipoactivo = t.idtipoactivo
-
 $where
-
 GROUP BY 
     e.idelement,
     d.name,
     m.name,
     j.name,
     t.typeelementname
-
 ORDER BY 
     d.name ASC,
     m.name ASC,
@@ -160,11 +135,10 @@ foreach ($data as $row) {
         <td><?= $row['fechas_proyectos'] ?></td>
     </tr>
 <?php $fila++; 
-    } ?>
+} ?>
 </table>
 </body>
 </html>
 <?php
 mysqli_close($conexion); //CERRAR CONEXIÓN
-
 ?>

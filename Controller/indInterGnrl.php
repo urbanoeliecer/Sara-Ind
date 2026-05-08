@@ -6,19 +6,16 @@ if (!isset($_SESSION["usuario"])) {
     exit;
 }
 ?>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<title>SARA - Ind. de Intervención General</title>
+<html lang="es"><head>
+<meta charset="UTF-8"><title>SARA - Ind. de Intervención General</title>
 <link rel="stylesheet" href="../back/estilos.css">
-</head>
-<body>
+</head><body>
 <a href="../principal.php">Principal</a></li>
 <h2>Ind. General de Intervención</h2>
 <?php
-include("../back/conexion.php");
-
-require_once "../back/filtro_func.php";
+include("../functions/conexion.php");
+require_once "../functions/filtro_func.php";
+require_once "../functions/filtro.php"; 
 
 // 1. obtener filtros (CENTRALIZADO)
 $f = obtenerFiltros();
@@ -32,8 +29,6 @@ $departamentos = obtenerDepartamentos();
 $municipios    = obtenerMunicipios($iddpt);
 // 3. paginación
 $totalPaginas = contarPaginas('gii',$fchInc, $fchFin, $iddpt, $idmnc);
-
-require_once "../back/filtro.php"; 
 
 $porPagina = 30;
 $offset = ($pgn - 1) * $porPagina;
@@ -180,7 +175,7 @@ while ($row = mysqli_fetch_assoc($result)):
     $pPart = number_format($row['participantes']/$row['total_actividades'],1);
     $pBene = porcentaje($pPart, $row['participantes_deseados']);
 ?>
-<tr <?php if ($row['anio'] == 'TOTAL') echo 'style="background-color:#d9edf7; font-weight:bold;"'; ?>>
+<tr <?php if ($row['anio'] == 'TOTAL') echo 'style="background-color:#d9edf7;"'; ?>>
     <td><?= $fila ?></td>
     <td><?= $row['departamento'] ?></td>
     <td><?= $row['municipio'] ?></td>

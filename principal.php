@@ -11,7 +11,7 @@ La arquitectura de SARA es:<img src="docs/img/sara.jpg">
 </td>
 <td width="65%" valign="top">
 <?php
-include("back/conexion.php"); 
+include("functions/conexion.php"); 
 $link = conectarse();
 session_start();
 if (!isset($_SESSION["usuario"])) {
@@ -27,10 +27,10 @@ else {
     <nav><?php // if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
         <ul>
         <!-- <li><a href="admin/indCorelEjec.php">Ind. de Corelación</a></li> --> 
-        <li><a href="admin/indInterGnrl.php">Ind. General</a></li>
-        <li><a href="admin/indElem.php">Ind. de Infraestructura</a></li>
+        <li><a href="controller/indInterGnrl.php">Ind. General</a></li>
+        <li><a href="controller/indElem.php">Ind. de Infraestructura</a></li>
         <!--<li><a href="admin/indIntPry.php">Ind. de Proyectos</a></li>-->
-        <li><a href="admin/indActiv.php">Ind. Proyectos</a></li>
+        <li><a href="controller/indActiv.php">Ind. Proyectos</a></li>
        </ul>
     </nav>    
     <div class="container">
