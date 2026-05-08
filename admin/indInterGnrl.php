@@ -24,14 +24,14 @@ require_once "../back/filtro_func.php";
 $f = obtenerFiltros();
 $fchInc = $f["fchInc"];
 $fchFin = $f["fchFin"];
-$Iddpto = $f["Iddpto"];
-$Idmnc  = $f["Idmnc"];
+$iddpt = $f["iddpt"];
+$idmnc  = $f["idmnc"];
 $pgn    = $f["pgn"];
 // 2. combos para el filtro
 $departamentos = obtenerDepartamentos();
-$municipios    = obtenerMunicipios($Iddpto);
+$municipios    = obtenerMunicipios($iddpt);
 // 3. paginación
-$totalPaginas = contarPaginas('gii',$fchInc, $fchFin, $Iddpto, $Idmnc);
+$totalPaginas = contarPaginas('gii',$fchInc, $fchFin, $iddpt, $idmnc);
 
 require_once "../back/filtro.php"; 
 
@@ -39,11 +39,11 @@ $porPagina = 30;
 $offset = ($pgn - 1) * $porPagina;
     
 $where = "WHERE v.startdate BETWEEN '$fchInc' AND '$fchFin'";
-if ($Iddpto !== null && $Iddpto !== '') {
-    $where .= " AND v.iddepartamento = '$Iddpto'";
+if ($iddpt !== null && $iddpt !== '') {
+    $where .= " AND v.idspr = '$iddpt'";
 }
-if ($Idmnc !== null && $Idmnc !== '') {
-    $where .= " AND v.idmunicipio = '$Idmnc'";
+if ($idmnc !== null && $idmnc !== '') {
+    $where .= " AND v.idmunicipio = '$idmnc'";
 }
     
 $conexion = conectarse();

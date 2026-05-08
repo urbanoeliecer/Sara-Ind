@@ -23,23 +23,23 @@ require_once "../back/filtro_func.php";
 $f = obtenerFiltros();
 $fchInc = $f["fchInc"];
 $fchFin = $f["fchFin"];
-$Iddpto = $f["Iddpto"];
-$Idmnc  = $f["Idmnc"];
+$iddpt = $f["iddpt"];
+$idmnc  = $f["idmnc"];
 $pgn    = $f["pgn"];
 // 2. combos para el filtro
 $departamentos = obtenerDepartamentos();
-$municipios    = obtenerMunicipios($Iddpto);
+$municipios    = obtenerMunicipios($iddpt);
 // 3. paginación
-$totalPaginas = contarPaginas('elements', $fchInc, $fchFin, $Iddpto, $Idmnc);
+$totalPaginas = contarPaginas('elements', $fchInc, $fchFin, $iddpt, $idmnc);
 
 require_once "../back/filtro.php"; 
 
 $where = "WHERE p.startdate BETWEEN '$fchInc' AND '$fchFin'";
-if ($Iddpto !== null && $Iddpto !== '') {
-    $where .= " AND d.iddepartamento = '$Iddpto'";
+if ($iddpt !== null && $iddpt !== '') {
+    $where .= " AND d.idspr = '$iddpt'";
 }
-if ($Idmnc !== null && $Idmnc !== '') {
-    $where .= " AND m.idmunicipio = '$Idmnc'";
+if ($idmnc !== null && $idmnc !== '') {
+    $where .= " AND m.idsst = '$idmnc'";
 }
 
 $conexion = conectarse();

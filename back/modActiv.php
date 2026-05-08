@@ -1,15 +1,15 @@
 <?php
 // CONSULTA CON FILTRO DE FECHAS
-function consultarProyectosxJunta($fchInc, $fchFin, $Iddpto = null, $Idmnc = null, $pgn = 1) {
+function consultarProyectosxJunta($fchInc, $fchFin, $iddpt = null, $idmnc = null, $pgn = 1) {
     $cn = conectarse();
     $registrosPorPagina = 10;
     $offset = ($pgn - 1) * $registrosPorPagina;
     $where = "WHERE p.startdate BETWEEN '$fchInc' AND '$fchFin'";
-    if ($Iddpto !== null && $Iddpto !== '') {
-        $where .= " AND d.iddepartamento = '$Iddpto'";
+    if ($iddpt !== null && $iddpt !== '') {
+        $where .= " AND d.idspr = '$iddpt'";
     }
-    if ($Idmnc !== null && $Idmnc !== '') {
-        $where .= " AND m.idmunicipio = '$Idmnc'";
+    if ($idmnc !== null && $idmnc !== '') {
+        $where .= " AND m.idsst = '$idmnc'";
     }
     $sqlDetalle = "
     SELECT 
@@ -58,16 +58,16 @@ ORDER BY
     return ["detalle" => $detalle];
 }
 
-function consultarProyectosxAño($fchInc, $fchFin, $Iddpto, $Idmnc, $pgn) {
+function consultarProyectosxAño($fchInc, $fchFin, $iddpt, $idmnc, $pgn) {
     $cn = conectarse();
     $porPagina = 20;
     $offset = ($pgn - 1) * $porPagina;
     $where = "WHERE v.startdate BETWEEN '$fchInc' AND '$fchFin'";
-    if ($Iddpto !== null && $Iddpto !== '') {
-        $where .= " AND iddepartamento = '$Iddpto'";
+    if ($iddpt !== null && $iddpt !== '') {
+        $where .= " AND idspr = '$iddpt'";
     }
-    if ($Idmnc !== null && $Idmnc !== '') {
-        $where .= " AND idmunicipio = '$Idmnc'";
+    if ($idmnc !== null && $idmnc !== '') {
+        $where .= " AND idmunicipio = '$idmnc'";
     }
 $sql = "
 SELECT 
@@ -121,16 +121,16 @@ LIMIT $offset, $porPagina
 return $cn->query($sql);
 }
 
-function consultarProyectosxMes($fchInc, $fchFin, $Iddpto, $Idmnc, $pgn) {
+function consultarProyectosxMes($fchInc, $fchFin, $iddpt, $idmnc, $pgn) {
 $cn = conectarse();
 $porPagina = 20;
 $offset = ($pgn - 1) * $porPagina;
 $where = "WHERE p.startdate BETWEEN '$fchInc' AND '$fchFin'";
-if ($Iddpto !== null && $Iddpto !== '') {
-    $where .= " AND d.iddepartamento = '$Iddpto'";
+if ($iddpt !== null && $iddpt !== '') {
+    $where .= " AND d.idspr = '$iddpt'";
 }
-if ($Idmnc !== null && $Idmnc !== '') {
-    $where .= " AND m.idmunicipio = '$Idmnc'";
+if ($idmnc !== null && $idmnc !== '') {
+    $where .= " AND m.idsst = '$idmnc'";
 }
 $sql = "
 SELECT

@@ -14,14 +14,14 @@ require_once "../back/filtro_func.php";
 $f = obtenerFiltros();
 $fchInc = $f["fchInc"];
 $fchFin = $f["fchFin"];
-$Iddpto = $f["Iddpto"];
-$Idmnc  = $f["Idmnc"];
+$iddpt = $f["iddpt"];
+$idmnc  = $f["idmnc"];
 $pgn    = $f["pgn"];
 // 2. combos para el filtro
 $departamentos = obtenerDepartamentos();
-$municipios    = obtenerMunicipios($Iddpto);
+$municipios    = obtenerMunicipios($iddpt);
 // 3. paginación
-$totalPaginas = contarPaginas('',$fchInc, $fchFin, $Iddpto, $Idmnc);
+$totalPaginas = contarPaginas('',$fchInc, $fchFin, $iddpt, $idmnc);
 // 4. cargar vista
 require_once "../back/vstActiv.php"; ?>
 </body>

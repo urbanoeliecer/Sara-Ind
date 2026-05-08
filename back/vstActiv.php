@@ -10,7 +10,7 @@ if (isset($resultado["error"])) {
     echo "<p>Error: {$resultado["error"]}</p>";
     exit;
 }
-$datos = consultarProyectosxMes($fchInc, $fchFin, $Iddpto, $Idmnc, $pgn);
+$datos = consultarProyectosxMes($fchInc, $fchFin, $iddpt, $idmnc, $pgn);
 
 //$headers = ["#", "Mes", "Depart.", "Municipio", "Junta", "Id", "Proyecto", "$ Ej.", "$ Prs.", "-", "Pers. Ej.", "Pers. Prs.", "-", "Horas Ej.", "Horas Prs.", "-", "Activ. Ej.", "Activ. Prs.", "-"];
 $headers = ["#", "Month", "Super.", "System", "Community", "Id", "Project", "$ Exec.", "$ Plan.", "-", "Part. Exec.", "Part. Plan.", "-", "Hours Exec.", "Hours Plan.", "-", "Activ. Exec.", "Activ. Plan.", "-"];
@@ -66,7 +66,7 @@ else:
 </table>
 <?php
 // consulta (la implementas tú en el modelo)
-$resultado = consultarProyectosxAño($fchInc, $fchFin, $Iddpto, $Idmnc, $pgn);
+$resultado = consultarProyectosxAño($fchInc, $fchFin, $iddpt, $idmnc, $pgn);
 // calcular máximos (igual que antes)
 $maxProy = 0; 
 $maxBen  = 0; 
@@ -129,7 +129,7 @@ endwhile;
 ?>
 </table>
 <?php
-$resultado = consultarProyectosxJunta($fchInc, $fchFin, $Iddpto, $Idmnc, $pgn);
+$resultado = consultarProyectosxJunta($fchInc, $fchFin, $iddpt, $idmnc, $pgn);
 $datos = $resultado["detalle"];
 // 🔹 calcular máximos
 $maxProy = 0;

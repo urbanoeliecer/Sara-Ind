@@ -4,14 +4,14 @@ require_once __DIR__ . "/conexion.php";
 function obtenerFiltros() {
     $fchInc = (!empty($_POST['fecha_inicio'])) ? $_POST['fecha_inicio'] : '2024-12-01';
     $fchFin = $_POST['fecha_fin'] ?? '9999-12-31';
-    $Iddpto = $_POST['idspr'] ?? null;
-    $Idmnc  = $_POST['idsst'] ?? null;
+    $iddpt = $_POST['iddpt'] ?? null;
+    $idmnc  = $_POST['idmnc'] ?? null;
     $pgn    = max(1, ($_POST['pagina'] ?? 1));
     if ($fchInc && $fchFin && $fchInc > $fchFin) {
         echo "Error: rango de fechas inválido";
         exit;
     }
-    return compact("fchInc", "fchFin", "Iddpto", "Idmnc", "pgn");
+    return compact("fchInc", "fchFin", "iddpt", "idmnc", "pgn");
 }
 
 // DEPARTAMENTOS
@@ -24,14 +24,14 @@ function obtenerDepartamentos() {
 }
 
 // MUNICIPIOS (dependen del departamento)
-function obtenerMunicipios($Iddpto = null) {
+function obtenerMunicipios($iddpt = null) {
     $cn = conectarse();
     $where = "";
-    if ($Iddpto !== null && $Iddpto !== '') {
-        $where = "WHERE idspr = '$Iddpto'";
+    if ($iddpt !== null && $iddpt !== '') {
+        $where = "WHERE idspr = '$iddpt'";
     }
-
-    $rs = $cn->query("SELECT idsst, name FROM systems $where ORDER BY name");
+    print $sql ="SELECT idsst, name FROM systems $where ORDER BY name";
+    $rs = $cn->query($sql);
 
     $data = [];
     while ($row = $rs->fetch_assoc()) $data[] = $row;
@@ -39,17 +39,17 @@ function obtenerMunicipios($Iddpto = null) {
 }
 
 // PAGINACIÓN
-function contarPaginas($tipoInforme,$fchInc, $fchFin, $Iddpto = null, $Idmnc = null) {
+function contarPaginas($tipoInforme,$fchInc, $fchFin, $iddpt = null, $idmnc = null) {
 $cn = conectarse();
 
 $where = "WHERE p.startdate BETWEEN '$fchInc' AND '$fchFin'";
 
-if ($Iddpto !== null && $Iddpto !== '') {
-    $where .= " AND d.idspr = '$Iddpto'";
+if ($iddpt !== null && $iddpt !== '') {
+    $where .= " AND d.idspr = '$iddpt'";
 }
 
-if ($Idmnc !== null && $Idmnc !== '') {
-    $where .= " AND m.idsst = '$Idmnc'";
+if ($idmnc !== null && $idmnc !== '') {
+    $where .= " AND m.idsst = '$idmnc'";
 }
 
 switch ($tipoInforme) {

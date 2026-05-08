@@ -1,33 +1,28 @@
 <form method="POST">
-
     Fecha inicio:
     <input type="date" name="fecha_inicio" value="<?= $fchInc ?>">
-
     Fecha fin:
     <input type="date" name="fecha_fin" value="<?= $fchFin ?>">
-
     Departamento:
-    <select name="iddepartamento" onchange="this.form.submit()">
+    <select name="iddpt" onchange="this.form.submit()">
         <option value="">Todos</option>
         <?php foreach ($departamentos as $d): ?>
             <option value="<?= $d['idspr'] ?>"
-                <?= ($Iddpto == $d['idspr']) ? 'selected' : '' ?>>
+                <?= ($iddpt == $d['idspr']) ? 'selected' : '' ?>>
                 <?= $d['name'] ?>
             </option>
         <?php endforeach; ?>
     </select>
-
     Municipio:
-    <select name="idmunicipio">
+    <select name="idmnc">
         <option value="">Todos</option>
         <?php foreach ($municipios as $m): ?>
             <option value="<?= $m['idsst'] ?>"
-                <?= ($Idmnc == $m['idsst']) ? 'selected' : '' ?>>
+                <?= ($idmnc == $m['idsst']) ? 'selected' : '' ?>>
                 <?= $m['name'] ?>
             </option>
         <?php endforeach; ?>
     </select>
-
     Página:
     <select name="pagina">
         <?php for ($i = 1; $i <= $totalPaginas; $i++): ?>
