@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $link = conectarse();
     $user = $_POST['txtusr'];
     $pass = hash("sha256",$_POST['txtpass']);
-    $ssql = "select idusuario,idperfil from usuarios where usuario='$user' and pass='$pass'";
+    $ssql = "select iduser,idperfil from users where usuario='$user' and pass='$pass'";
     $array = mysqli_query($link,$ssql);
     while ($f = mysqli_fetch_array($array)) {
         session_start();

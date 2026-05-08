@@ -4,8 +4,8 @@ require_once __DIR__ . "/conexion.php";
 function obtenerFiltros() {
     $fchInc = (!empty($_POST['fecha_inicio'])) ? $_POST['fecha_inicio'] : '2024-12-01';
     $fchFin = $_POST['fecha_fin'] ?? '9999-12-31';
-    $Iddpto = $_POST['iddepartamento'] ?? null;
-    $Idmnc  = $_POST['idmunicipio'] ?? null;
+    $Iddpto = $_POST['idspr'] ?? null;
+    $Idmnc  = $_POST['idsst'] ?? null;
     $pgn    = max(1, ($_POST['pagina'] ?? 1));
     if ($fchInc && $fchFin && $fchInc > $fchFin) {
         echo "Error: rango de fechas inválido";
@@ -17,7 +17,7 @@ function obtenerFiltros() {
 // DEPARTAMENTOS
 function obtenerDepartamentos() {
     $cn = conectarse();
-    $rs = $cn->query("SELECT iddepartamento, nombre FROM departamentos ORDER BY nombre");
+    $rs = $cn->query("SELECT idspr, name FROM supersystems ORDER BY name");
     $data = [];
     while ($row = $rs->fetch_assoc()) $data[] = $row;
     return $data;
@@ -28,10 +28,10 @@ function obtenerMunicipios($Iddpto = null) {
     $cn = conectarse();
     $where = "";
     if ($Iddpto !== null && $Iddpto !== '') {
-        $where = "WHERE iddepartamento = '$Iddpto'";
+        $where = "WHERE idspr = '$Iddpto'";
     }
 
-    $rs = $cn->query("SELECT idmunicipio, nombre FROM municipios $where ORDER BY nombre");
+    $rs = $cn->query("SELECT idsst, name FROM systems $where ORDER BY name");
 
     $data = [];
     while ($row = $rs->fetch_assoc()) $data[] = $row;
@@ -40,78 +40,97 @@ function obtenerMunicipios($Iddpto = null) {
 
 // PAGINACIÓN
 function contarPaginas($tipoInforme,$fchInc, $fchFin, $Iddpto = null, $Idmnc = null) {
-    $cn = conectarse();
-    $where = "WHERE p.fechainicio BETWEEN '$fchInc' AND '$fchFin'";
-    if ($Iddpto !== null && $Iddpto !== '') {
-        $where .= " AND d.iddepartamento = '$Iddpto'";
-    }
-    if ($Idmnc !== null && $Idmnc !== '') {
-        $where .= " AND m.idmunicipio = '$Idmnc'";
-    }
-    switch ($tipoInforme) {
-        //
-        case 'juntas':
+$cn = conectarse();
+
+$where = "WHERE p.startdate BETWEEN '$fchInc' AND '$fchFin'";
+
+if ($Iddpto !== null && $Iddpto !== '') {
+    $where .= " AND d.idspr = '$Iddpto'";
+}
+
+if ($Idmnc !== null && $Idmnc !== '') {
+    $where .= " AND m.idsst = '$Idmnc'";
+}
+
+switch ($tipoInforme) {
+
+    // 🔵 INFORME 1: por comunidades
+    case 'juntas':
+
         $sql = "SELECT COUNT(*) as total
             FROM (
-                SELECT j.idjunta
-                FROM proyectos p
-                JOIN juntas j ON p.idjunta = j.idjunta
-                JOIN municipios m ON j.idmunicipio = m.idmunicipio
-                JOIN departamentos d ON m.iddepartamento = d.iddepartamento
+                SELECT j.idcommunity
+                FROM projects p
+                JOIN communities j ON p.idcommunity = j.idcommunity
+                JOIN systems m ON j.idsst = m.idsst
+                JOIN supersystems d ON m.idspr = d.idspr
                 $where
-                GROUP BY j.idjunta) t";
-            break;
-        // 🔵 INFORME 2: por elemento
-        case 'elementos':
-            $sql = "
-                SELECT COUNT(*) as total
-                FROM (
-                    SELECT e.idelemento
-                    FROM elementos e
-                    JOIN tproyectoselementos pe ON pe.idelemento = e.idelemento
-                    JOIN proyectos p ON p.idproyecto = pe.idproyecto
-                    JOIN juntas j ON j.idjunta = p.idjunta
-                    JOIN municipios m ON j.idmunicipio = m.idmunicipio
-                    JOIN departamentos d ON m.iddepartamento = d.iddepartamento
-                    $where
-                    GROUP BY e.idelemento
-                ) t
-            ";
-        break;
-        case 'Gii':
-            $sql = "
-                SELECT COUNT(*) as total
-                FROM (
-                    SELECT v.junta, YEAR(a.fecha)
-                    FROM pryact a
-                    JOIN vproyectosxjunta v ON v.idproyecto = a.idpry
-                    JOIN proyectos p ON p.idproyecto = v.idproyecto
-                    JOIN juntas j ON j.idjunta = p.idjunta
-                    JOIN municipios m ON j.idmunicipio = m.idmunicipio
-                    JOIN departamentos d ON m.iddepartamento = d.iddepartamento
-                    $where
-                    GROUP BY v.junta, YEAR(a.fecha)
-                ) t
-            ";
-        break;
-        // 🔴 DEFAULT (por si no envías nada)
-        default:
-            $sql = "SELECT 1 as total";
-        break;
-    }
-    $sql = "
-        SELECT COUNT(*) as total
-        FROM (
-            SELECT j.idjunta
-            FROM proyectos p
-            JOIN juntas j ON p.idjunta = j.idjunta
-            JOIN municipios m ON j.idmunicipio = m.idmunicipio
-            JOIN departamentos d ON m.iddepartamento = d.iddepartamento
-            $where
-            GROUP BY j.idjunta
-        ) t
-    ";
-    $row = $cn->query($sql)->fetch_assoc();
+                GROUP BY j.idcommunity
+            ) t";
+
+    break;
+
+    // 🔵 INFORME 2: por elemento
+    case 'elementos':
+
+        $sql = "
+            SELECT COUNT(*) as total
+            FROM (
+                SELECT e.idelement
+                FROM elements e
+                JOIN projectelements pe ON pe.idelement = e.idelement
+                JOIN projects p ON p.idproject = pe.idproject
+                JOIN communities j ON j.idcommunity = p.idcommunity
+                JOIN systems m ON j.idsst = m.idsst
+                JOIN supersystems d ON m.idspr = d.idspr
+                $where
+                GROUP BY e.idelement
+            ) t
+        ";
+
+    break;
+
+    // 🔵 INFORME 3: GII
+    case 'Gii':
+
+        $sql = "
+            SELECT COUNT(*) as total
+            FROM (
+                SELECT v.community, YEAR(a.date)
+                FROM prjact a
+                JOIN vprojectsxcommunityxyear v ON v.idproject = a.idprj
+                JOIN projects p ON p.idproject = v.idproject
+                JOIN communities j ON j.idcommunity = p.idcommunity
+                JOIN systems m ON j.idsst = m.idsst
+                JOIN supersystems d ON m.idspr = d.idspr
+                $where
+                GROUP BY v.community, YEAR(a.date)
+            ) t
+        ";
+
+    break;
+
+    // 🔴 DEFAULT
+    default:
+
+        $sql = "SELECT 1 as total";
+
+    break;
+}
+
+$sql = "
+    SELECT COUNT(*) as total
+    FROM (
+        SELECT j.idcommunity
+        FROM projects p
+        JOIN communities j ON p.idcommunity = j.idcommunity
+        JOIN systems m ON j.idsst = m.idsst
+        JOIN supersystems d ON m.idspr = d.idspr
+        $where
+        GROUP BY j.idcommunity
+    ) t
+";
+$row = $cn->query($sql)->fetch_assoc();
     $registrosPorPagina = 10;
     return max(1, ceil($row['total'] / $registrosPorPagina));
 }

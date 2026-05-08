@@ -1,14 +1,10 @@
 <?php
 // CONSULTA CON FILTRO DE FECHAS
 function consultarProyectosxJunta($fchInc, $fchFin, $Iddpto = null, $Idmnc = null, $pgn = 1) {
-
     $cn = conectarse();
-
     $registrosPorPagina = 10;
     $offset = ($pgn - 1) * $registrosPorPagina;
-
-    $where = "WHERE p.fechainicio BETWEEN '$fchInc' AND '$fchFin'";
-
+    $where = "WHERE p.startdate BETWEEN '$fchInc' AND '$fchFin'";
     if ($Iddpto !== null && $Iddpto !== '') {
         $where .= " AND d.iddepartamento = '$Iddpto'";
     }
@@ -17,46 +13,48 @@ function consultarProyectosxJunta($fchInc, $fchFin, $Iddpto = null, $Idmnc = nul
     }
     $sqlDetalle = "
     SELECT 
-        d.nombre AS departamento,
-        m.nombre AS municipio,
-        j.nombre AS junta,
-        MIN(p.fechainicio) AS fechainicio,
-        COUNT(DISTINCT p.idProyecto) AS proyectos,
-        GROUP_CONCAT(
-            DISTINCT CONCAT(p.nombre, ' (', DATE_FORMAT(p.fechainicio, '%Y-%m-%d'), ')')
-            ORDER BY p.fechainicio ASC
-            SEPARATOR '<br> '
-        ) AS proyectos_fechas,
-        SUM(p.monto) AS monto,
-        SUM(p.beneficiarios) AS beneficiarios,
-        COUNT(pa.idact) AS total_actividades,
-        COALESCE(SUM(pa.horas),0) AS total_horas
-    FROM proyectos p
-    JOIN juntas j 
-        ON p.idjunta = j.idjunta
-    JOIN municipios m 
-        ON j.idmunicipio = m.idmunicipio
-    JOIN departamentos d 
-        ON m.iddepartamento = d.iddepartamento
-    LEFT JOIN pryact pa 
-        ON pa.idpry = p.idproyecto
-    $where
-    GROUP BY 
-        d.nombre, 
-        m.nombre, 
-        j.nombre
-    ORDER BY 
-        d.nombre, 
-        m.nombre, 
-        j.nombre
+    d.name AS departamento,
+    m.name AS municipio,
+    j.name AS junta,
+    MIN(p.startdate) AS fechainicio,
+    COUNT(DISTINCT p.idprj) AS proyectos,
+    GROUP_CONCAT(
+        DISTINCT CONCAT(
+            p.name,
+            ' (',
+            DATE_FORMAT(p.startdate, '%Y-%m-%d'),
+            ')'
+        )
+        ORDER BY p.startdate ASC
+        SEPARATOR '<br> '
+    ) AS proyectos_fechas,
+    SUM(p.amount) AS monto,
+    SUM(p.beneficiaries) AS beneficiarios,
+    COUNT(pa.idact) AS total_actividades,
+    COALESCE(SUM(pa.hours),0) AS total_horas
+FROM projects p
+JOIN communities j
+    ON p.idcommunity = j.idcommunity
+JOIN systems m
+    ON j.idsst = m.idsst
+JOIN supersystems d
+    ON m.idspr = d.idspr
+LEFT JOIN prjact pa
+    ON pa.idprj = p.idprj
+$where
+GROUP BY
+    d.name,
+    m.name,
+    j.name
+ORDER BY
+    d.name,
+    m.name,
+    j.name
     LIMIT $offset, $registrosPorPagina
     ";
-
     $rs = $cn->query($sqlDetalle);
-
     $detalle = [];
     while ($row = $rs->fetch_assoc()) $detalle[] = $row;
-
     return ["detalle" => $detalle];
 }
 
@@ -64,7 +62,7 @@ function consultarProyectosxAño($fchInc, $fchFin, $Iddpto, $Idmnc, $pgn) {
     $cn = conectarse();
     $porPagina = 20;
     $offset = ($pgn - 1) * $porPagina;
-    $where = "WHERE v.fechaInicio BETWEEN '$fchInc' AND '$fchFin'";
+    $where = "WHERE v.startdate BETWEEN '$fchInc' AND '$fchFin'";
     if ($Iddpto !== null && $Iddpto !== '') {
         $where .= " AND iddepartamento = '$Iddpto'";
     }
@@ -73,37 +71,53 @@ function consultarProyectosxAño($fchInc, $fchFin, $Iddpto, $Idmnc, $pgn) {
     }
 $sql = "
 SELECT 
-    v.anio,
-    v.departamento,
-    v.municipio,
-    v.junta AS vereda,
-    COUNT(DISTINCT v.idProyecto) AS total_proyectos,
+    v.year AS anio,
+    v.supersystem AS departamento,
+    v.system AS municipio,
+    v.community AS vereda,
+
+    COUNT(DISTINCT v.idprj) AS total_proyectos,
+
     GROUP_CONCAT(
-        DISTINCT CONCAT(p.nombre, ' (', DATE_FORMAT(v.fechaInicio, '%Y-%m-%d'), ')')
-        ORDER BY v.fechaInicio ASC
+        DISTINCT CONCAT(
+            p.name,
+            ' (',
+            DATE_FORMAT(v.startdate, '%Y-%m-%d'),
+            ')'
+        )
+        ORDER BY v.startdate ASC
         SEPARATOR '<br>'
     ) AS proyectos_fechas,
-    SUM(v.total_actividades) AS total_actividades,
-    SUM(v.total_horas) AS total_horas,
-    SUM(v.total_presupuesto) AS monto,
-    SUM(v.total_beneficiarios) AS beneficiarios
-FROM vproyectosxjuntaxanio v
-LEFT JOIN proyectos p 
-    ON p.idproyecto = v.idProyecto
+
+    SUM(v.totalactivities) AS total_actividades,
+
+    SUM(v.totalhours) AS total_horas,
+
+    SUM(v.totalbudget) AS monto,
+
+    SUM(v.totalparticipants) AS beneficiarios
+
+FROM vprojectsxcommunityxyear v
+
+LEFT JOIN projects p
+    ON p.idprj = v.idprj
+
 $where
-GROUP BY 
-    v.anio, 
-    v.departamento, 
-    v.municipio, 
-    v.junta
-ORDER BY 
-    v.departamento, 
-    v.municipio, 
-    vereda, 
-    v.anio DESC
+
+GROUP BY
+    v.year,
+    v.supersystem,
+    v.system,
+    v.community
+
+ORDER BY
+    v.supersystem,
+    v.system,
+    vereda,
+    v.year DESC
 LIMIT $offset, $porPagina
     ";
-$sql;
+//print $sql;
 return $cn->query($sql);
 }
 
@@ -111,7 +125,7 @@ function consultarProyectosxMes($fchInc, $fchFin, $Iddpto, $Idmnc, $pgn) {
 $cn = conectarse();
 $porPagina = 20;
 $offset = ($pgn - 1) * $porPagina;
-$where = "WHERE p.fechaInicio BETWEEN '$fchInc' AND '$fchFin'";
+$where = "WHERE p.startdate BETWEEN '$fchInc' AND '$fchFin'";
 if ($Iddpto !== null && $Iddpto !== '') {
     $where .= " AND d.iddepartamento = '$Iddpto'";
 }
@@ -120,40 +134,72 @@ if ($Idmnc !== null && $Idmnc !== '') {
 }
 $sql = "
 SELECT
-    p.idproyecto,
-    p.nombre AS nombreproyecto,
-    p.beneficiarios,
-    d.iddepartamento,
-    d.nombre AS departamento,
-    m.nombre AS municipio,
-    j.nombre AS junta,
-    DATE_FORMAT(a.fecha, '%Y-%m') AS mes,
-    p.monto AS presupuesto,
-    SUM(a.presupuesto) AS total_presupuesto,
-    p.beneficiarios as personas,
-    SUM(a.cntpersonas) AS total_personas,
-    p.horas as horas,
-    SUM(a.horas) AS total_horas,
-    p.actividades as actividades,
+    p.idprj,
+
+    p.name AS nombreproyecto,
+
+    p.beneficiaries,
+
+    d.idspr AS iddepartamento,
+
+    d.name AS departamento,
+
+    m.name AS municipio,
+
+    j.name AS junta,
+
+    DATE_FORMAT(a.date, '%Y-%m') AS mes,
+
+    p.amount AS presupuesto,
+
+    SUM(a.budget) AS total_presupuesto,
+
+    p.beneficiaries AS personas,
+
+    SUM(a.participants) AS total_personas,
+
+    p.hours AS horas,
+
+    SUM(a.hours) AS total_horas,
+
+    p.activities AS actividades,
+
     COUNT(a.idact) AS total_actividades
-FROM pryact a
-JOIN proyectos p ON a.idpry = p.idproyecto
-JOIN juntas j ON p.idjunta = j.idjunta
-JOIN municipios m ON j.idmunicipio = m.idmunicipio
-JOIN departamentos d ON m.iddepartamento = d.iddepartamento
+
+FROM prjact a
+
+JOIN projects p
+    ON a.idprj = p.idprj
+
+JOIN communities j
+    ON p.idcommunity = j.idcommunity
+
+JOIN systems m
+    ON j.idsst = m.idsst
+
+JOIN supersystems d
+    ON m.idspr = d.idspr
+
 $where
+
 GROUP BY
-    p.idproyecto,
-    YEAR(a.fecha),
-    MONTH(a.fecha),
-    d.iddepartamento,
-    d.nombre,
-    m.nombre,
-    j.nombre,
-    p.nombre,
-    p.beneficiarios,
-    p.monto
-ORDER BY d.nombre, m.nombre, p.nombre, mes, p.idproyecto
+    p.idprj,
+    YEAR(a.date),
+    MONTH(a.date),
+    d.idspr,
+    d.name,
+    m.name,
+    j.name,
+    p.name,
+    p.beneficiaries,
+    p.amount
+
+ORDER BY
+    d.name,
+    m.name,
+    p.name,
+    mes,
+    p.idprj
 ";
 return $cn->query($sql);
 }

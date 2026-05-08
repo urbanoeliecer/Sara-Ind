@@ -38,7 +38,7 @@ require_once "../back/filtro.php";
 $porPagina = 30;
 $offset = ($pgn - 1) * $porPagina;
     
-$where = "WHERE v.fechaInicio BETWEEN '$fchInc' AND '$fchFin'";
+$where = "WHERE v.startdate BETWEEN '$fchInc' AND '$fchFin'";
 if ($Iddpto !== null && $Iddpto !== '') {
     $where .= " AND v.iddepartamento = '$Iddpto'";
 }
@@ -57,102 +57,95 @@ if ($conexion->connect_error) {
 $w_proyectos = 0.4;
 $w_presupues = 0.3;
 $w_participa = 0.3;
-
 $sql = "
-
--- 🔹 DETALLE POR AÑO
 SELECT
-    v.departamento,
-    v.municipio,
-    v.junta AS vereda,
-    YEAR(a.fecha) AS anio,
-
+    v.supersystem AS departamento,
+    v.system AS municipio,
+    v.community AS vereda,
+    YEAR(a.date) AS anio,
     GROUP_CONCAT(
-        DISTINCT CONCAT(p.nombre, ' (', DATE_FORMAT(p.fechaInicio, '%Y-%m-%d'), ')')
-        ORDER BY p.fechaInicio ASC
+        DISTINCT CONCAT(p.name, ' (', DATE_FORMAT(p.startdate, '%Y-%m-%d'), ')')
+        ORDER BY p.startdate ASC
         SEPARATOR '<br>'
     ) AS proyectos_fechas,
-
-    COUNT(DISTINCT a.idpry) AS total_proyectos,
-    SUM(a.presupuesto) AS monto,
-    SUM(a.cntpersonas) AS participantes,
+    COUNT(DISTINCT a.idprj) AS total_proyectos,
+    SUM(a.budget) AS monto,
+    SUM(a.participants) AS participantes,
     COUNT(a.idact) AS total_actividades,
-
-    IFNULL(jd.proyectos,0) AS proyectos_deseados,
-    IFNULL(jd.presupuesto, 0) AS presupuesto_deseado,
-    IFNULL(jd.participantes, 0) AS participantes_deseados,
-
+    IFNULL(cd.projects,0) AS proyectos_deseados,
+    IFNULL(cd.budget,0) AS presupuesto_deseado,
+    IFNULL(cd.participants,0) AS participantes_deseados,
     (
-        " . $w_proyectos . " * IF(jd.proyectos > 0, COUNT(DISTINCT a.idpry) / jd.proyectos, 0)
-      + " . $w_presupues . " * IF(jd.presupuesto > 0, SUM(a.presupuesto) / jd.presupuesto, 0)
-      + " . $w_participa . " * IF(jd.participantes > 0 AND COUNT(a.idact) > 0,
-            (SUM(a.cntpersonas) / NULLIF(COUNT(a.idact),0)) / jd.participantes, 0)
+        " . $w_proyectos . " * IF(cd.projects > 0,
+            COUNT(DISTINCT a.idprj) / cd.projects, 0)
+      + " . $w_presupues . " * IF(cd.budget > 0,
+            SUM(a.budget) / cd.budget, 0)
+      + " . $w_participa . " * IF(cd.participants > 0
+            AND COUNT(a.idact) > 0,
+            (SUM(a.participants) / NULLIF(COUNT(a.idact),0)) / cd.participants,
+            0)
     ) * 100 AS GII
-
-FROM pryact a
-INNER JOIN vproyectosxjunta v ON v.idproyecto = a.idpry
-INNER JOIN proyectos p ON p.idproyecto = v.idproyecto
-LEFT JOIN juntasdsc jd ON jd.idjnt = v.idjunta
-
+FROM prjact a
+INNER JOIN vprojectsxcommunityxyear v
+    ON v.idprj = a.idprj
+INNER JOIN projects p
+    ON p.idprj = v.idprj
+LEFT JOIN communitiesdesc cd
+    ON cd.idcommunity = v.idcommunity
 $where
-
-GROUP BY 
-    v.departamento, 
-    v.municipio, 
-    v.junta, 
-    YEAR(a.fecha)
-
+GROUP BY
+    v.supersystem,
+    v.system,
+    v.community,
+    YEAR(a.date)
 UNION ALL
-
--- 🔹 TOTAL POR JUNTA (🔥 AQUÍ ESTÁ EL CAMBIO)
 SELECT
-    v.departamento,
-    v.municipio,
-    v.junta AS vereda,      -- 👈 se mantiene la junta
-    'TOTAL' AS anio,        -- 👈 solo el año cambia
-
+    v.supersystem AS departamento,
+    v.system AS municipio,
+    v.community AS vereda,
+    'TOTAL' AS anio,
     GROUP_CONCAT(
-        DISTINCT CONCAT(p.nombre, ' (', DATE_FORMAT(p.fechaInicio, '%Y-%m-%d'), ')')
-        ORDER BY p.fechaInicio ASC
+        DISTINCT CONCAT(p.name, ' (', DATE_FORMAT(p.startdate, '%Y-%m-%d'), ')')
+        ORDER BY p.startdate ASC
         SEPARATOR '<br>'
     ) AS proyectos_fechas,
-
-    COUNT(DISTINCT a.idpry),
-    SUM(a.presupuesto),
-    SUM(a.cntpersonas),
+    COUNT(DISTINCT a.idprj),
+    SUM(a.budget),
+    SUM(a.participants),
     COUNT(a.idact),
-
-    IFNULL(jd.proyectos,0),
-    IFNULL(jd.presupuesto, 0),
-    IFNULL(jd.participantes, 0),
-
+    IFNULL(cd.projects,0),
+    IFNULL(cd.budget,0),
+    IFNULL(cd.participants,0),
     (
-        " . $w_proyectos . " * IF(jd.proyectos > 0, COUNT(DISTINCT a.idpry) / jd.proyectos, 0)
-      + " . $w_presupues . " * IF(jd.presupuesto > 0, SUM(a.presupuesto) / jd.presupuesto, 0)
-      + " . $w_participa . " * IF(jd.participantes > 0 AND COUNT(a.idact) > 0,
-            (SUM(a.cntpersonas) / NULLIF(COUNT(a.idact),0)) / jd.participantes, 0)
+        " . $w_proyectos . " * IF(cd.projects > 0,
+            COUNT(DISTINCT a.idprj) / cd.projects, 0)
+
+      + " . $w_presupues . " * IF(cd.budget > 0,
+            SUM(a.budget) / cd.budget, 0)
+
+      + " . $w_participa . " * IF(cd.participants > 0
+            AND COUNT(a.idact) > 0,
+            (SUM(a.participants) / NULLIF(COUNT(a.idact),0)) / cd.participants,
+            0)
     ) * 100
-
-FROM pryact a
-INNER JOIN vproyectosxjunta v ON v.idproyecto = a.idpry
-INNER JOIN proyectos p ON p.idproyecto = v.idproyecto
-LEFT JOIN juntasdsc jd ON jd.idjnt = v.idjunta
-
+FROM prjact a
+INNER JOIN vprojectsxcommunityxyear v
+    ON v.idprj = a.idprj
+INNER JOIN projects p
+    ON p.idprj = v.idprj
+LEFT JOIN communitiesdesc cd
+    ON cd.idcommunity = v.idcommunity
 $where
-
-GROUP BY 
-    v.departamento, 
-    v.municipio, 
-    v.junta
-
-ORDER BY 
+GROUP BY
+    v.supersystem,
+    v.system,
+    v.community
+ORDER BY
     departamento,
     municipio,
     vereda,
     anio
-
-
-LIMIT $offset, $porPagina ";
+LIMIT $offset, $porPagina";
 //print $sql;
 // ORDENAMIENTO POR GII
 if (isset($_GET['order'])) {
@@ -174,37 +167,12 @@ function barra($porcentaje) {
     if ($porcentaje < 75) return '../img/barranaranja.png';
     return '../img/barraverde.png';
 }
-?>
-<table class="table table-bordered table-striped">
-<thead>
-<tr>
-    <th>#</th>
-    <th>Depart.</th>
-    <th>Municipio</th>
-    <th>Vereda</th>
-    <th>Año</th>
-    <th>GII</th>
-    <th>Gráfica</th>
-    <th># Act.</th>
-
-    <th>Prys & Fechas</th>
-
-    <th># Proy.</th>
-    <th>Meta</th>
-    <th>%</th>
-    <th>Gráfica</th>
-    <th>Presup.</th>
-    <th>Deseado</th>
-    <th>%</th>
-    <th>Gráfica</th>
-    <th>Prm. Bnf.</th>
-    <th>Meta</th>
-    <th>%</th>
-    <th>Gráfica</th>
-</tr>
-</thead>
-<tbody>
-<?php
+//$headers = ["#", "Super.", "Sistema", "Comunidad", "Año", "GII", "Gráfica", "# Activ.", "Prys & Fechas", "# Proy.", "Meta", "%", "Gráfica", "Presup.", "Deseado", "%", "Gráfica", "Prom. Benef.", "Meta", "%", "Gráfica"];
+$headers = ["#", "Super.", "System", "Community", "Year", "GII", "Chart", "# Activ.", "Prjs & Dates", "# Prj.", "Goal", "%", "Chart", "Budget", "Desired", "%", "Chart", "Avg. Benef.", "Goal", "%", "Chart"];
+echo '<table class="table table-bordered table-striped"><thead><tr>';
+foreach($headers as $h){ 
+    echo '<th>'.$h.'</th>';
+} 
 $fila = 1;
 while ($row = mysqli_fetch_assoc($result)):
     $pProy = porcentaje($row['total_proyectos'], $row['proyectos_deseados']);
@@ -212,7 +180,7 @@ while ($row = mysqli_fetch_assoc($result)):
     $pPart = number_format($row['participantes']/$row['total_actividades'],1);
     $pBene = porcentaje($pPart, $row['participantes_deseados']);
 ?>
-<tr>
+<tr <?php if ($row['anio'] == 'TOTAL') echo 'style="background-color:#d9edf7; font-weight:bold;"'; ?>>
     <td><?= $fila ?></td>
     <td><?= $row['departamento'] ?></td>
     <td><?= $row['municipio'] ?></td>

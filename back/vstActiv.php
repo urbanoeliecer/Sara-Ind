@@ -11,26 +11,14 @@ if (isset($resultado["error"])) {
     exit;
 }
 $datos = consultarProyectosxMes($fchInc, $fchFin, $Iddpto, $Idmnc, $pgn);
-?>
-Ind. por Mes<br><br>
-<table >
-<tr>
-    <th>#</th>
-    <th>Mes</th>
-    <th>Depart.</th>
-    <th>Municipio</th>
-    <th>Junta</th>
-    <th>Id</th>
-    <th>Proyecto</th>
-    <th>$ Ej.</th>
-    <th>$ Prs.</th><th>-
-    <th>Pers. Ej.</th>
-    <th>Pers. Prs.</th><th>-
-    <th>Horas Ej.</th>
-    <th>Horas Prs.</th><th>-
-    <th>Activ. Ej.</th>
-    <th>Activ. Prs.</th><th>-
-</tr><?php
+
+//$headers = ["#", "Mes", "Depart.", "Municipio", "Junta", "Id", "Proyecto", "$ Ej.", "$ Prs.", "-", "Pers. Ej.", "Pers. Prs.", "-", "Horas Ej.", "Horas Prs.", "-", "Activ. Ej.", "Activ. Prs.", "-"];
+$headers = ["#", "Month", "Super.", "System", "Community", "Id", "Project", "$ Exec.", "$ Plan.", "-", "Part. Exec.", "Part. Plan.", "-", "Hours Exec.", "Hours Plan.", "-", "Activ. Exec.", "Activ. Plan.", "-"];
+
+echo 'Ind. por Mes<br><br><table><tr>';
+foreach($headers as $h){ 
+    echo '<th>'.$h.'</th>';
+} 
 $i = 0;
 if (!empty($datos)):
     foreach ($datos as $row):
@@ -41,7 +29,7 @@ if (!empty($datos)):
         echo '<td>'.$row["departamento"].'</td>';
         echo '<td>'.$row["municipio"].'</td>';
         echo '<td>'.$row["junta"].'</td>';
-        echo '<td align="right">'.$row["idproyecto"].'</td>';
+        echo '<td align="right">'.$row["idprj"].'</td>';
         echo '<td>'.$row["nombreproyecto"].'</td>';
         echo '<td align="right">'.number_format($row["total_presupuesto"],0).'</td>';
         echo '<td align="right">'.number_format($row["presupuesto"],0).'</td>';
@@ -69,8 +57,6 @@ if (!empty($datos)):
         else $var = 0;
         echo '<img src="../img/barra.png" height="16" width="'.$var.'"> '.$var.'%';
         echo '</td>';
-        
-        
         echo '</tr>';
     endforeach;
 else:
@@ -98,23 +84,12 @@ if ($resultado) {
     }
     $resultado->data_seek(0);
 }
-?>
-<br>Ind. por Año<br><br>
-<table style="padding:0px !important; margin:0px !important; line-height:1 !important;">
-<tr>
-    <th>#</th>
-    <th>Año</th>
-    <th>Depart.</th>
-    <th>Municipio</th>
-    <th>Vereda</th>
-    <th>Cnt. Pry.</th>
-    <th>Proyectos</th><th>-</th>
-    <th>Dinero</th><th>-</th>
-    <th>Benef.</th><th>-</th>
-    <th>Horas</th><th>-</th>
-    <th>Activ.</th><th>-</th>
-</tr>
-<?php
+//$headers = ["#", "Año", "Depart.", "Municipio", "Vereda", "Cnt. Pry.", "Proyectos", "-", "Dinero", "-", "Benef.", "-", "Horas", "-", "Activ.", "-"];
+$headers = ["#", "Year", "Super.", "System", "Community", "Cnt. Prj.", "Projects", "-", "Budget", "-", "Partic.", "-", "Hours", "-", "Activ.", "-"];
+echo '<br>Ind. por Año<br><br><table style="padding:0px !important; margin:0px !important; line-height:1 !important;"><tr>';
+foreach($headers as $h){ 
+    echo '<th>'.$h.'</th>';
+} 
 $contFil = 1;
 if ($resultado) {
 while ($row = $resultado->fetch_assoc()):
@@ -169,22 +144,15 @@ foreach ($datos as $d) {
     if ($d['total_horas'] > $maxHoras) $maxHoras = $d['total_horas'];
     if ($d['total_actividades'] > $maxAct) $maxAct = $d['total_actividades'];
 }
-?>
-<br>Ind. por Junta<br><br>
-<table>
-<tr>
-    <th>#</th>
-    <th>Depart.</th>
-    <th>Municipio</th>
-    <th>Vereda</th>
-    <th>Cnt. Pry.</th>
-    <th>Proyectos</th><th>-</th>
-    <th>Dinero</th><th>-</th>
-    <th>Benef.</th><th>-</th>
-    <th>Horas</th><th>-</th>
-    <th>Activ.</th><th>-</th>
-</tr>
-<?php
+
+
+echo '<br>Ind. por Junta<br><br><table><tr>';
+//$headers = ["#", "Depart.", "Municipio", "Vereda", "Cnt. Pry.", "Proyectos", "-", "Dinero", "-", "Benef.", "-", "Horas", "-", "Activ.", "-"];
+$headers = ["#", "Super.", "System", "Community", "Cnt. Prj.", "Projects", "-", "Budget", "-", "Benef.", "-", "Hours", "-", "Activ.", "-"];
+foreach($headers as $h){ 
+    echo '<th>'.$h.'</th>';
+} 
+
 $fila = 1;
 foreach ($datos as $d) {
     // porcentajes

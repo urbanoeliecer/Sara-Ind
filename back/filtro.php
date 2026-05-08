@@ -10,9 +10,9 @@
     <select name="iddepartamento" onchange="this.form.submit()">
         <option value="">Todos</option>
         <?php foreach ($departamentos as $d): ?>
-            <option value="<?= $d['iddepartamento'] ?>"
-                <?= ($Iddpto == $d['iddepartamento']) ? 'selected' : '' ?>>
-                <?= $d['nombre'] ?>
+            <option value="<?= $d['idspr'] ?>"
+                <?= ($Iddpto == $d['idspr']) ? 'selected' : '' ?>>
+                <?= $d['name'] ?>
             </option>
         <?php endforeach; ?>
     </select>
@@ -21,9 +21,9 @@
     <select name="idmunicipio">
         <option value="">Todos</option>
         <?php foreach ($municipios as $m): ?>
-            <option value="<?= $m['idmunicipio'] ?>"
-                <?= ($Idmnc == $m['idmunicipio']) ? 'selected' : '' ?>>
-                <?= $m['nombre'] ?>
+            <option value="<?= $m['idsst'] ?>"
+                <?= ($Idmnc == $m['idsst']) ? 'selected' : '' ?>>
+                <?= $m['name'] ?>
             </option>
         <?php endforeach; ?>
     </select>

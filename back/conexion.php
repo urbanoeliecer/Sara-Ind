@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 // Parámetros de conexión (UNIFICADOS)
 define('DB_HOST', '127.0.0.1');   // Importante: no usar localhost
 define('DB_PORT', 3306);          // Puerto real de MySQL
-define('DB_NAME', 'bdsaraind');   // Base de datos
+define('DB_NAME', 'bdsara11');   // Base de datos
 define('DB_USER', 'root');     // Usuario
 define('DB_PASS', '');     // Contraseña
 // * CONEXIÓN PDO (para informes nuevos)
