@@ -38,8 +38,7 @@ if ($idmnc !== null && $idmnc !== '') {
 }
 $conexion = conectarse();
 // 2. CONSULTA
-$sql = "
-SELECT 
+$sql = "SELECT 
     d.name AS departamento,
     m.name AS municipio,
     j.name AS junta,
@@ -58,21 +57,14 @@ SELECT
         SEPARATOR '<br>'
     ) AS fechas_proyectos
 FROM elements e
-INNER JOIN projectelements pe
-    ON pe.idelement = e.idelement
-INNER JOIN projects p
-    ON p.idprj = pe.idprj
+INNER JOIN projectelements pe ON pe.idelement = e.idelement
+INNER JOIN projects p ON p.idprj = pe.idprj
     AND p.startdate BETWEEN '2024-09-02' AND '9999-12-31'
-INNER JOIN communities j
-    ON j.idcommunity = p.idcommunity
-INNER JOIN systems m
-    ON m.idsst = j.idsst
-INNER JOIN supersystems d
-    ON d.idspr = m.idspr
-INNER JOIN telementoscls c
-    ON e.idelementocls = c.idelementocls
-INNER JOIN telementostip t
-    ON c.idtipoactivo = t.idtipoactivo
+INNER JOIN communities j ON j.idcommunity = p.idcommunity
+INNER JOIN systems m ON m.idsst = j.idsst
+INNER JOIN supersystems d ON d.idspr = m.idspr
+INNER JOIN telementclss c ON e.idelementcls = c.idelementcls
+INNER JOIN telementstypes t ON c.idtype = t.idtype
 $where
 GROUP BY 
     e.idelement,

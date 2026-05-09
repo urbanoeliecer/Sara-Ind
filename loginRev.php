@@ -1,11 +1,11 @@
 <?php
-include("back/conexion.php"); 
+include("functions/conexion.php"); 
 $sesion = 0;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $link = conectarse();
     $user = $_POST['txtusr'];
     $pass = hash("sha256",$_POST['txtpass']);
-    $ssql = "select iduser,idperfil from users where usuario='$user' and pass='$pass'";
+    $ssql = "select idusr,rol from users where usr= '$user' and pass= '$pass'";
     $array = mysqli_query($link,$ssql);
     while ($f = mysqli_fetch_array($array)) {
         session_start();

@@ -89,7 +89,7 @@ function consultarProyectosxAño($fchInc, $fchFin, $iddpt, $idmnc, $pgn) {
         $where .= " AND idspr = '$iddpt'";
     }
     if ($idmnc !== null && $idmnc !== '') {
-        $where .= " AND idmunicipio = '$idmnc'";
+        $where .= " AND idsst = '$idmnc'";
     }
 $sql = "
 SELECT 

@@ -138,7 +138,6 @@ foreach ($datos as $d) {
     if ($d['total_actividades'] > $maxAct) $maxAct = $d['total_actividades'];
 }
 
-
 echo '<br>Ind. por Junta<br><br><table><tr>';
 //$headers = ["#", "Depart.", "Municipio", "Vereda", "Cnt. Pry.", "Proyectos", "-", "Dinero", "-", "Benef.", "-", "Horas", "-", "Activ.", "-"];
 $headers = ["#", "Super.", "System", "Community", "Cnt. Prj.", "Projects", "-", "Budget", "-", "Benef.", "-", "Hours", "-", "Activ.", "-"];
@@ -160,7 +159,6 @@ foreach ($datos as $d) {
     $pBenef = round($pBenef);
     $pHoras = round($pHoras);
     $pAct = round($pAct);
-
     
     echo "<tr>
         <td>$fila</td>

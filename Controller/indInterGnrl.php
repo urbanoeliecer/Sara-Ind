@@ -17,7 +17,7 @@ include("../functions/conexion.php");
 require_once "../functions/filtro_func.php";
 require_once "../functions/filtro.php"; 
 
-// 1. obtener filtros (CENTRALIZADO)
+// 1. obtener vakires filtros (CENTRALIZADO)
 $f = obtenerFiltros();
 $fchInc = $f["fchInc"];
 $fchFin = $f["fchFin"];
@@ -46,9 +46,6 @@ $conexion = conectarse();
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
 }
-// SQL BASE + JOIN NUEVO
-// 260429 ponerle el filtro
-// 260429 me arreglarias este para agregarle el año en la columna 4 y que lo agrupe por año ya que las metas son anuales
 $w_proyectos = 0.4;
 $w_presupues = 0.3;
 $w_participa = 0.3;
@@ -85,7 +82,7 @@ INNER JOIN vprojectsxcommunityxyear v
     ON v.idprj = a.idprj
 INNER JOIN projects p
     ON p.idprj = v.idprj
-LEFT JOIN communitiesdesc cd
+LEFT JOIN communitiesdsc cd
     ON cd.idcommunity = v.idcommunity
 $where
 GROUP BY
@@ -128,7 +125,7 @@ INNER JOIN vprojectsxcommunityxyear v
     ON v.idprj = a.idprj
 INNER JOIN projects p
     ON p.idprj = v.idprj
-LEFT JOIN communitiesdesc cd
+LEFT JOIN communitiesdsc cd
     ON cd.idcommunity = v.idcommunity
 $where
 GROUP BY
@@ -141,15 +138,6 @@ ORDER BY
     vereda,
     anio
 LIMIT $offset, $porPagina";
-//print $sql;
-// ORDENAMIENTO POR GII
-if (isset($_GET['order'])) {
-    if ($_GET['order'] === 'gii_asc') {
-        $sql .= " ORDER BY GII ASC";
-    } elseif ($_GET['order'] === 'gii_desc') {
-        $sql .= " ORDER BY GII DESC";
-    }
-}
 // print $sql;
 $result = mysqli_query($conexion, $sql);
 // FUNCIONES
