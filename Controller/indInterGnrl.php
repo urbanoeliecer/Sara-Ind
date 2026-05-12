@@ -41,7 +41,7 @@ if ($iddpt !== null && $iddpt !== '') {
     $where .= " AND v.idspr = '$iddpt'";
 }
 if ($idmnc !== null && $idmnc !== '') {
-    $where .= " AND v.idmunicipio = '$idmnc'";
+    $where .= " AND v.idsst = '$idmnc'";
 }
 //print $where;   
 $conexion = conectarse();
@@ -154,8 +154,8 @@ function barra($porcentaje) {
     return '../img/barraverde.png';
 }
 //$headers = ["#", "Super.", "Sistema", "Comunidad", "Año", "GII", "Gráfica", "# Activ.", "Prys & Fechas", "# Proy.", "Meta", "%", "Gráfica", "Presup.", "Deseado", "%", "Gráfica", "Prom. Benef.", "Meta", "%", "Gráfica"];
-$headers = ["#", "Super.", "System", "Community", "Year", "GII", "Chart", "# Activ.", "Prjs & Dates", "# Prj.", "Goal", "%", "Chart", "Budget", "Desired", "%", "Chart", "Avg. Part.", "Goal", "%", "Chart"];
-echo '<table class="table table-bordered table-striped"><thead><tr>';
+$headers = ["#", "Super.", "System", "Community", "Year", "GII", "Chart", "# Activ.", "Prjs & Dates", "# Prj.", "Goal", "%", "Chart", "Budget", "Goal", "%", "Chart", "Avg. Part.", "Goal", "%", "Chart"];
+echo 'Ind. General de Intervención (General Intervention Indicator)<br><br><table class="table table-bordered table-striped"><thead><tr>';
 foreach($headers as $h){ 
     echo '<th>'.$h.'</th>';
 } 
