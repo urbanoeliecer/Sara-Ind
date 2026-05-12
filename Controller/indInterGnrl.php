@@ -8,7 +8,7 @@ if (!isset($_SESSION["usuario"])) {
 ?>
 <html lang="es"><head>
 <meta charset="UTF-8"><title>SARA - Ind. de Intervención General</title>
-<link rel="stylesheet" href="../back/estilos.css">
+<link rel="stylesheet" href="../functions/estilos.css">
 </head><body>
 <a href="../principal.php">Principal</a></li>
 <h2>Ind. General de Intervención</h2>

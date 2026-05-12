@@ -1,3 +1,15 @@
+muchas gracias doctor XXX
+he aprovechado para mejorar la herramienta y el documento
+ahora tiene un generico, así es de mayor interes para los lectores
+
+la bd habla de comunidades y no de juntas, esto junto con las tablas que la describen, ademas su estructura está en ingles
+por tanto se cambió el codigo de los cinco indicadores y por sugerencia del ente territorial.
+
+deje solo las figuras mas importantes
+los filtros ahora si son una funcion que se invoca
+se eliminó el javascript para que sea mas facil de replicar
+actualicé el documento tecnico y el video, despues del min XXXX auqnue por supuesto ahora es otro
+
 # General Intervention Indicator
 
 The General Intervention Indicator (GII) is defined as a synthetic indicator that summarizes the overall performance of the intervention in a community. It is the most important indicator and integrates the different normalized indicators through a weighted linear combination calculated for each community. It is computed using the following expression:

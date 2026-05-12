@@ -1,6 +1,6 @@
 <html lang="es"><head><meta charset="UTF-8">
 <title>SARA - Ind. Consolidado</title>
-<link rel="stylesheet" href="../back/estilos.css">
+<link rel="stylesheet" href="../functions/estilos.css">
 </head><body><a href="../principal.php">Principal</a></li>
 <h2>Ind. Consolidado</h2><?php
 require_once "../functions/filtro.php"; 
@@ -12,7 +12,7 @@ $datos = consultarProyectosxMes($fchInc, $fchFin, $iddpt, $idmnc, $pgn);
 // cabecera de la tabla
 //$headers = ["#", "Mes", "Depart.", "Municipio", "Junta", "Id", "Proyecto", "$ Ej.", "$ Prs.", "-", "Pers. Ej.", "Pers. Prs.", "-", "Horas Ej.", "Horas Prs.", "-", "Activ. Ej.", "Activ. Prs.", "-"];
 $headers = ["#", "Month", "Super.", "System", "Community", "Id", "Project", "$ Exec.", "$ Plan.", "-", "Part. Exec.", "Part. Plan.", "-", "Hours Exec.", "Hours Plan.", "-", "Activ. Exec.", "Activ. Plan.", "-"];
-echo 'Ind. por Mes<br><br><table><tr>';
+echo 'Ind. según Metas<br><br><table><tr>';
 foreach($headers as $h){ 
     echo '<th>'.$h.'</th>';
 } 
@@ -79,20 +79,18 @@ if ($resultado) {
 }
 //$headers = ["#", "Año", "Depart.", "Municipio", "Vereda", "Cnt. Pry.", "Proyectos", "-", "Dinero", "-", "Benef.", "-", "Horas", "-", "Activ.", "-"];
 $headers = ["#", "Year", "Super.", "System", "Community", "Cnt. Prj.", "Projects", "-", "Budget", "-", "Partic.", "-", "Hours", "-", "Activ.", "-"];
-echo '<br>Ind. por Año<br><br><table style="padding:0px !important; margin:0px !important; line-height:1 !important;"><tr>';
+echo '<br>Ind. según listado<br><br><table style="padding:0px !important; margin:0px !important; line-height:1 !important;"><tr>';
 foreach($headers as $h){ 
     echo '<th>'.$h.'</th>';
 } 
 $contFil = 1;
 if ($resultado) {
 while ($row = $resultado->fetch_assoc()):
-
     $a0 = $maxProy > 0 ? intval(($row['total_proyectos'] / $maxProy) * 100) : 0;
     $aa = $maxAct > 0 ? intval(($row['total_actividades'] / $maxAct) * 100) : 0;
     $a1 = $maxMon > 0 ? intval(($row['monto'] / $maxMon) * 100) : 0;
     $a2 = $maxHor > 0 ? intval(($row['total_horas'] / $maxHor) * 100) : 0;
     $a3 = $maxBen > 0 ? intval(($row['beneficiarios'] / $maxBen) * 100) : 0;
-
     echo "<tr>
         <td>$contFil</td>
         <td>{$row['anio']}</td>        
@@ -102,21 +100,16 @@ while ($row = $resultado->fetch_assoc()):
         <td align='right'>{$row['total_proyectos']}</td>
         <td>{$row['proyectos_fechas']}</td>
         <td><img src='../img/barra.png' height='16' width='$a0'>&nbsp;{$a0}%</td>
-
         <td align='right'>" . number_format($row['monto']) . "</td>
         <td><img src='../img/barra.png' height='16' width='$a1'>&nbsp;{$a1}%</td>
-
         <td align='right'>{$row['beneficiarios']}</td>
         <td><img src='../img/barra.png' height='16' width='$a3'>&nbsp;{$a3}%</td>
-
         <td align='right'>{$row['total_horas']}</td>
         <td><img src='../img/barra.png' height='16' width='$a2'>&nbsp;{$a2}%</td>
         <td align='right'>{$row['total_actividades']}</td>
         <td><img src='../img/barra.png' height='16' width={$aa}>&nbsp;{$aa}%</td>
     </tr>";
-
     $contFil++;
-
 endwhile;
 }
 ?>
@@ -146,46 +139,216 @@ foreach($headers as $h){
 } 
 
 $fila = 1;
-foreach ($datos as $d) {
-    // porcentajes
-    $pProy = $maxProy ? ($d['proyectos'] * 100) / $maxProy : 0;
-    $pMonto = $maxMonto ? ($d['monto'] * 100) / $maxMonto : 0;
-    $pBenef = $maxBenef ? ($d['beneficiarios'] * 100) / $maxBenef : 0;
-    $pHoras = $maxHoras ? ($d['total_horas'] * 100) / $maxHoras : 0;
-    $pAct = $maxAct ? ($d['total_actividades'] * 100) / $maxAct : 0;
 
-    $pProy = round($pProy);
-    $pMonto = round($pMonto);
-    $pBenef = round($pBenef);
-    $pHoras = round($pHoras);
-    $pAct = round($pAct);
-    
+// =====================================================
+// 1. CALCULAR MAXIMOS POR SUPER
+// =====================================================
+
+$maximos = [];
+
+foreach ($datos as $d) {
+
+    $sup = $d['departamento'];
+
+    if (!isset($maximos[$sup])) {
+
+        $maximos[$sup] = [
+            'proyectos' => 0,
+            'monto' => 0,
+            'beneficiarios' => 0,
+            'horas' => 0,
+            'actividades' => 0
+        ];
+    }
+
+    $maximos[$sup]['proyectos'] =
+        max($maximos[$sup]['proyectos'], $d['proyectos']);
+
+    $maximos[$sup]['monto'] =
+        max($maximos[$sup]['monto'], $d['monto']);
+
+    $maximos[$sup]['beneficiarios'] =
+        max($maximos[$sup]['beneficiarios'], $d['beneficiarios']);
+
+    $maximos[$sup]['horas'] =
+        max($maximos[$sup]['horas'], $d['total_horas']);
+
+    $maximos[$sup]['actividades'] =
+        max($maximos[$sup]['actividades'], $d['total_actividades']);
+}
+
+// =====================================================
+// 2. RECORRER DATOS
+// =====================================================
+
+$depActual = '';
+
+foreach ($datos as $d) {
+
+    $sup = $d['departamento'];
+
+    // =================================================
+    // CAMBIO DE SUPER
+    // =================================================
+
+    if ($depActual != '' && $depActual != $sup) {
+
+        $m = $maximos[$depActual];
+
+        echo "
+        <tr style='background:#d9edf7;font-weight:bold;'>
+
+            <td colspan='4' align='right'>
+                MAX $depActual
+            </td>
+
+            <td align='right'>{$m['proyectos']}</td>
+            <td></td>
+            <td></td>
+
+            <td align='right'>" .
+                number_format($m['monto'],0,',','.') .
+            "</td>
+            <td></td>
+
+            <td align='right'>{$m['beneficiarios']}</td>
+            <td></td>
+
+            <td align='right'>{$m['horas']}</td>
+            <td></td>
+
+            <td align='right'>{$m['actividades']}</td>
+            <td></td>
+
+        </tr>";
+    }
+
+    $depActual = $sup;
+
+    // =================================================
+    // MAXIMOS DEL SUPER ACTUAL
+    // =================================================
+
+    $maxProy  = $maximos[$sup]['proyectos'];
+    $maxMonto = $maximos[$sup]['monto'];
+    $maxBenef = $maximos[$sup]['beneficiarios'];
+    $maxHoras = $maximos[$sup]['horas'];
+    $maxAct   = $maximos[$sup]['actividades'];
+
+    // =================================================
+    // PORCENTAJES
+    // =================================================
+
+    $pProy  = $maxProy  ? round(($d['proyectos'] * 100) / $maxProy) : 0;
+    $pMonto = $maxMonto ? round(($d['monto'] * 100) / $maxMonto) : 0;
+    $pBenef = $maxBenef ? round(($d['beneficiarios'] * 100) / $maxBenef) : 0;
+    $pHoras = $maxHoras ? round(($d['total_horas'] * 100) / $maxHoras) : 0;
+    $pAct   = $maxAct   ? round(($d['total_actividades'] * 100) / $maxAct) : 0;
+
+    // =================================================
+    // FILA NORMAL
+    // =================================================
+
     echo "<tr>
+
         <td>$fila</td>
+
         <td>{$d['departamento']}</td>
+
         <td>{$d['municipio']}</td>
+
         <td>{$d['junta']}</td>
+
         <td align='right'>{$d['proyectos']}</td>
+
         <td>{$d['proyectos_fechas']}</td>
-        
-        <td><img src='../img/barra.png' height='16' width={$pProy}>&nbsp;{$pProy}%</td>
+
+        <td>
+            <img src='../img/barra.png'
+                 height='16'
+                 width='{$pProy}'>
+            &nbsp;{$pProy}%
         </td>
-        <td align='right'>" . number_format($d['monto'], 0, ',', '.') . "</td>
-        <td><img src='../img/barra.png' height='16' width={$pMonto}>&nbsp;{$pMonto}%</td>
+
+        <td align='right'>" .
+            number_format($d['monto'],0,',','.') .
+        "</td>
+
+        <td>
+            <img src='../img/barra.png'
+                 height='16'
+                 width='{$pMonto}'>
+            &nbsp;{$pMonto}%
         </td>
+
         <td align='right'>{$d['beneficiarios']}</td>
-        <td><img src='../img/barra.png' height='16' width={$pBenef}>&nbsp;{$pBenef}%</td>
-    
+
+        <td>
+            <img src='../img/barra.png'
+                 height='16'
+                 width='{$pBenef}'>
+            &nbsp;{$pBenef}%
+        </td>
+
         <td align='right'>{$d['total_horas']}</td>
-        <td><img src='../img/barra.png' height='16' width={$pHoras}>&nbsp;{$pHoras}%</td>
+
+        <td>
+            <img src='../img/barra.png'
+                 height='16'
+                 width='{$pHoras}'>
+            &nbsp;{$pHoras}%
+        </td>
+
         <td align='right'>{$d['total_actividades']}</td>
-        <td><img src='../img/barra.png' height='16' width={$pAct}>&nbsp;{$pAct}%</td>";
-        echo '</td>';
-        
-    echo '</tr>';
+
+        <td>
+            <img src='../img/barra.png'
+                 height='16'
+                 width='{$pAct}'>
+            &nbsp;{$pAct}%
+        </td>
+
+    </tr>";
 
     $fila++;
 }
+
+// =====================================================
+// ULTIMO SUPER
+// =====================================================
+
+if ($depActual != '') {
+
+    $m = $maximos[$depActual];
+
+    echo "
+    <tr style='background:#d9edf7;font-weight:bold;'>
+
+        <td colspan='4' align='right'>
+            MAX $depActual
+        </td>
+
+        <td align='right'>{$m['proyectos']}</td>
+        <td></td>
+        <td></td>
+
+        <td align='right'>" .
+            number_format($m['monto'],0,',','.') .
+        "</td>
+        <td></td>
+
+        <td align='right'>{$m['beneficiarios']}</td>
+        <td></td>
+
+        <td align='right'>{$m['horas']}</td>
+        <td></td>
+
+        <td align='right'>{$m['actividades']}</td>
+        <td></td>
+
+    </tr>";
+}
 ?>
+
 
 </table>

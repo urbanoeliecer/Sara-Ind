@@ -3,10 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/README.md</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/admin/indInterGnrl.php</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/back/vstActiv.php</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/back/modActiv.php</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/controller/indActiv.php</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/view/vstActiv.php</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/model/modActiv.php</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/controller/indInterGnrl.php</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/functions/filtro.php</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/functions/filtro_func.php</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/index.md</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/admin/indActiv.md</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/admin/indElem.md</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/admin/indInterGnrl.md</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/controller/indElem.php</file>
         </group>
     </open-files>
 </project-private>
