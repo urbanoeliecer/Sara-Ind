@@ -11,7 +11,7 @@ The SARA architecture is composed of the following components presented in the f
 <li>IoT sensors that collect climatic data from the rural area.</li>
 <li>A Google Maps component that allows the geographical identification of rural elements such as roads, properties, culverts, aqueducts, among others.</li>
 </ol>
-![Components of the SARA architecture](img/sara.jpg)
+![Components of the SARA architecture](img/fig2_saraArq.jpg)
 
 Access to information depends on the user’s administrative hierarchy, whether municipal, departmental, or national. 
 
@@ -24,7 +24,7 @@ Accordingly, the following information consolidation criteria are defined:<br>
 <li>When consolidating by municipality, the corresponding department is identified and the total number of Community Action Boards is calculated and displayed in a dedicated column.</li>
 </ol>
 
-![Filters](img/filtros.jpg)
+![Filters](img/fig0_filtros.jpg)
 
 The options are:
 <ol>

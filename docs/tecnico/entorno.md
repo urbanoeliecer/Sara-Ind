@@ -19,4 +19,4 @@ b. Calculation of strategic indicators for decision making
 c. Visual representation
 
 On the left, the project components are presented organized according to their hierarchy.
-![Entorno](../img/0.jpg)
+![Entorno](../img/fig0_EDS_old.jpg)

@@ -14,4 +14,4 @@ The database is presented in Figure and can be understood by reading it in the o
 10. Each municipality is associated with a department.
 11. Each project must be associated with a JAC, and to facilitate data querying, a database view was created with the required attributes for indicators generation **vproyectosjunta**).
 12. Each JAC should be assigned weights associated with budget allocation, user participation, and time dedication (**juntaspesos**). These weighted are used to compute an overall indicator.
-![Estructura](../img/bd.jpg)
+![Estructura](../img/fig3_bd_old.jpg)

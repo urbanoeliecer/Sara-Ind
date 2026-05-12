@@ -21,7 +21,7 @@ The system aims to enhance the management of information for community projects,
 
 6. Projects benefit the entire community.
 
-![Structure of the Rural Community Administration System](../img/1.jpg)
+![Structure of the Rural Community Administration System](../img/fig0_estruc.jpg)
 
 # Cloud Architecture
 

@@ -15,7 +15,6 @@ if (!isset($_SESSION["usuario"])) {
 <?php
 include("../functions/conexion.php");
 require_once "../functions/filtro_func.php";
-require_once "../functions/filtro.php"; 
 
 // 1. obtener vakires filtros (CENTRALIZADO)
 $f = obtenerFiltros();
@@ -30,6 +29,10 @@ $municipios    = obtenerMunicipios($iddpt);
 // 3. paginación
 $totalPaginas = contarPaginas('gii',$fchInc, $fchFin, $iddpt, $idmnc);
 
+require_once "../functions/filtro.php"; 
+
+
+
 $porPagina = 30;
 $offset = ($pgn - 1) * $porPagina;
     
@@ -40,7 +43,7 @@ if ($iddpt !== null && $iddpt !== '') {
 if ($idmnc !== null && $idmnc !== '') {
     $where .= " AND v.idmunicipio = '$idmnc'";
 }
-    
+//print $where;   
 $conexion = conectarse();
 // 1. Conexión a MySQL
 if ($conexion->connect_error) {
@@ -151,7 +154,7 @@ function barra($porcentaje) {
     return '../img/barraverde.png';
 }
 //$headers = ["#", "Super.", "Sistema", "Comunidad", "Año", "GII", "Gráfica", "# Activ.", "Prys & Fechas", "# Proy.", "Meta", "%", "Gráfica", "Presup.", "Deseado", "%", "Gráfica", "Prom. Benef.", "Meta", "%", "Gráfica"];
-$headers = ["#", "Super.", "System", "Community", "Year", "GII", "Chart", "# Activ.", "Prjs & Dates", "# Prj.", "Goal", "%", "Chart", "Budget", "Desired", "%", "Chart", "Avg. Benef.", "Goal", "%", "Chart"];
+$headers = ["#", "Super.", "System", "Community", "Year", "GII", "Chart", "# Activ.", "Prjs & Dates", "# Prj.", "Goal", "%", "Chart", "Budget", "Desired", "%", "Chart", "Avg. Part.", "Goal", "%", "Chart"];
 echo '<table class="table table-bordered table-striped"><thead><tr>';
 foreach($headers as $h){ 
     echo '<th>'.$h.'</th>';

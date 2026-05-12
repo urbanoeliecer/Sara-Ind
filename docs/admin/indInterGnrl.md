@@ -1,14 +1,3 @@
-muchas gracias doctor XXX
-he aprovechado para mejorar la herramienta y el documento
-ahora tiene un generico, así es de mayor interes para los lectores
-
-la bd habla de comunidades y no de juntas, esto junto con las tablas que la describen, ademas su estructura está en ingles
-por tanto se cambió el codigo de los cinco indicadores y por sugerencia del ente territorial.
-
-deje solo las figuras mas importantes
-los filtros ahora si son una funcion que se invoca
-se eliminó el javascript para que sea mas facil de replicar
-actualicé el documento tecnico y el video, despues del min XXXX auqnue por supuesto ahora es otro
 
 # General Intervention Indicator
 
@@ -46,4 +35,8 @@ The figure includes the following sections:
 
 An example from mid-January 2026 is shown in the figure.
 
-![Indicador de intervención general](../img/c3.jpg)
+![Indicador de intervención general](../img/fig5_indGnrl.jpg)
+
+An unfiltered example is also presented.
+
+![Ind consolidado ](../img/fig5_indGnrl_large.jpg)

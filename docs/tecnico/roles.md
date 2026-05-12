@@ -14,3 +14,7 @@ In SARA-Reg, the roles are:
 
 1. **JAC President**: Registers the participants from the rural community.
 2. **Treasurer**: Reports the amount of own funds invested.
+
+Los casos de uso son:
+
+![Estructura](../img/fig0_casoUso.jpg)
