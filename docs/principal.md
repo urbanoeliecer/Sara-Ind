@@ -20,7 +20,7 @@ This hierarchy determines whether the user can view municipal-level data, depart
 Accordingly, the following information consolidation criteria are defined:<br>
 <ol>
 <li>When consolidating data by rural areas, the corresponding municipality and department are identified.</li>
-<li>When consolidating by department, the total number of municipalities and the total number of rural areas are obtained.</li>
+<li>When consolidating by systems XXXXt, the total number of municipalities and the total number of rural areas are obtained.</li>
 <li>When consolidating by municipality, the corresponding department is identified and the total number of Community Action Boards is calculated and displayed in a dedicated column.</li>
 </ol>
 
@@ -28,7 +28,7 @@ Accordingly, the following information consolidation criteria are defined:<br>
 
 The options are:
 <ol>
-<li>Overall Intervention Indicator</li>
-<li>Correlational Intervention Indicator</li>
-<li>Infrastructure by JAC Indicator</li>
+<li>Interventions</li>
+<li>General</li>
+<li>Infrastructure or Elements</li>
 </ol>
