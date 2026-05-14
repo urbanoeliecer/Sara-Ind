@@ -6,14 +6,20 @@
             <file>file:/C:/xampp/htdocs/Sara-Ind/controller/indActiv.php</file>
             <file>file:/C:/xampp/htdocs/Sara-Ind/view/vstActiv.php</file>
             <file>file:/C:/xampp/htdocs/Sara-Ind/model/modActiv.php</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/controller/indInterGnrl.php</file>
             <file>file:/C:/xampp/htdocs/Sara-Ind/functions/filtro.php</file>
             <file>file:/C:/xampp/htdocs/Sara-Ind/functions/filtro_func.php</file>
             <file>file:/C:/xampp/htdocs/Sara-Ind/docs/index.md</file>
             <file>file:/C:/xampp/htdocs/Sara-Ind/docs/admin/indActiv.md</file>
             <file>file:/C:/xampp/htdocs/Sara-Ind/docs/admin/indElem.md</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/admin/indInterGnrl.md</file>
             <file>file:/C:/xampp/htdocs/Sara-Ind/controller/indElem.php</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/principal.md</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/functions/conexion.php</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/tecnico/bdest.md</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/back/estilos.md</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/back/conexion.md</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/tecnico/roles.md</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/tecnico/entorno.md</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/tecnico/req.md</file>
         </group>
     </open-files>
 </project-private>
