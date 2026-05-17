@@ -7,7 +7,7 @@ if (!isset($_SESSION["usuario"])) {
 }
 //0. Dependencias
 require_once "../functions/conexion.php"; 
-require_once "../model/ModActiv.php";
+require_once "../model/ModInterventions.php";
 require_once "../functions/filtro_func.php";
 //1. obtener filtros (CENTRALIZADO)
 $f = obtenerFiltros();
@@ -22,6 +22,6 @@ $municipios    = obtenerMunicipios($iddpt);
 //3. paginación
 $totalPaginas = contarPaginas('',$fchInc, $fchFin, $iddpt, $idmnc);
 //4. cargar vista
-require_once "../view/vstActiv.php"; ?>
+require_once "../view/vstInterventions.php"; ?>
 </body>
 </html>

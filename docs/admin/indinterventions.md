@@ -48,5 +48,5 @@ The steps are as follows:
 
 The process is shown in the following figure.
  
-![MVC](../img/fig6_mvc_old.jpg)
+![MVC](../img/fig6_mvc.jpg)
 

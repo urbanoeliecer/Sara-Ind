@@ -19,9 +19,9 @@ This hierarchy determines whether the user can view municipal-level data, depart
 
 Accordingly, the following information consolidation criteria are defined:<br>
 <ol>
-<li>When consolidating data by rural areas, the corresponding municipality and department are identified.</li>
-<li>When consolidating by systems XXXXt, the total number of municipalities and the total number of rural areas are obtained.</li>
-<li>When consolidating by municipality, the corresponding department is identified and the total number of Community Action Boards is calculated and displayed in a dedicated column.</li>
+<li>1. When consolidating by community, totals are obtained per system and supersystem.</li> 
+<li>2. When consolidating by supersystem, totals are obtained per system and community.</li> 
+<li>3. When consolidating by system, information is consolidated by community.</li>
 </ol>
 
 ![Filters](img/fig0_filtros.jpg)
