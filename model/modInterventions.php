@@ -35,8 +35,7 @@ if ($idmnc !== null && $idmnc !== '') {
     $where .= " AND m.idsst = '$idmnc'";
 }
 $sqlDetalle = "
-SELECT 
-d.name AS departamento,
+SELECT d.name AS departamento,
 m.name AS municipio,
 j.name AS junta,
 MIN(p.startdate) AS fechainicio,
