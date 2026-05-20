@@ -3,7 +3,7 @@
     <input type="date" name="fecha_inicio" value="<?= $fchInc ?>">
     Fecha fin:
     <input type="date" name="fecha_fin" value="<?= $fchFin ?>">
-    Departamento:
+    Super Sistema:
     <select name="iddpt" onchange="this.form.submit()">
         <option value="">Todos</option>
         <?php foreach ($departamentos as $d): ?>
@@ -13,7 +13,7 @@
             </option>
         <?php endforeach; ?>
     </select>
-    Municipio:
+    Sistema:
     <select name="idmnc">
         <option value="">Todos</option>
         <?php foreach ($municipios as $m): ?>

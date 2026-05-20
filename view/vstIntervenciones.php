@@ -18,14 +18,11 @@ foreach($headers as $h){
     echo '<th>'.$h.'</th>';
 } 
 $i = 0;
-
 if (!empty($datos)):
-
-    // 🔵 1. CONTAR ROWSPAN POR PROYECTO
+    // 1. CONTAR ROWSPAN POR PROYECTO
     $rowspans = [];
     $prev = null;
     $count = 0;
-
     foreach ($datos as $row) {
         if ($prev === $row['idprj']) {
             $count++;
@@ -40,11 +37,9 @@ if (!empty($datos)):
     if ($prev !== null) {
         $rowspans[$prev] = $count;
     }
-
-    // 🔵 2. IMPRIMIR TABLA
+    // 2. IMPRIMIR TABLA
     $printed = [];
     $i = 0;
-
     foreach ($datos as $row):
         $i++;
         if ($i % 2 == 0) {
@@ -53,32 +48,23 @@ if (!empty($datos)):
             echo '<tr>'; // fila impar
         }        
         echo '<td>'.$i.'</td>';
-
-        // 🟢 COLUMNAS AGRUPADAS (PLAN)
+        // COLUMNAS AGRUPADAS (PLAN)
         if (!isset($printed[$row['idprj']])) {
-
             $rs = $rowspans[$row['idprj']];
             $printed[$row['idprj']] = true;
-
             echo '<td rowspan="'.$rs.'">'.$row["mes"].'</td>';
             echo '<td rowspan="'.$rs.'">'.$row["departamento"].'</td>';
             echo '<td rowspan="'.$rs.'">'.$row["municipio"].'</td>';
             echo '<td rowspan="'.$rs.'">'.$row["junta"].'</td>';
             echo '<td rowspan="'.$rs.'" align="right">'.$row["idprj"].'</td>';
             echo '<td rowspan="'.$rs.'">'.$row["nombreproyecto"].'</td>';
-
-            // 👉 PLAN (AGRUPADO)
             echo '<td rowspan="'.$rs.'" align="right">'.number_format($row["presupuesto"],0).'</td>';
             echo '<td rowspan="'.$rs.'" align="right">'.$row['personas'].'</td>';
             echo '<td rowspan="'.$rs.'" align="right">'.$row['horas'].'</td>';
             echo '<td rowspan="'.$rs.'" align="right">'.$row["actividades"].'</td>';
         }
-
-        // 🔴 EJECUCIÓN (NO AGRUPADA)
-
-        // presupuesto ejecutado
+        // EJECUCIÓN (NO AGRUPADA)
         echo '<td align="right">'.number_format($row["total_presupuesto"],0).'</td>';
-
         // % presupuesto
         echo '<td>';
         $var = ($row['presupuesto'] > 0)
@@ -86,19 +72,15 @@ if (!empty($datos)):
             : 0;
         echo '<img src="../img/barra.png" height="16" width="'.$var.'"> '.$var.'%';
         echo '</td>';
-
         // personas ejecutadas
         echo '<td align="right">'.$row['total_personas'].'</td>';
-
         // % personas
         $var = ($row['personas'] > 0)
             ? round($row['total_personas']*100/$row['personas'],1)
             : 0;
         echo '<td><img src="../img/barra.png" height="16" width="'.$var.'"> '.$var.'%</td>';
-
         // horas ejecutadas
         echo '<td align="right">'.$row['total_horas'].'</td>';
-
         // % horas
         echo '<td>';
         $var = ($row['horas'] > 0)
@@ -106,10 +88,8 @@ if (!empty($datos)):
             : 0;
         echo '<img src="../img/barra.png" height="16" width="'.$var.'"> '.$var.'%';
         echo '</td>';
-
         // actividades ejecutadas
         echo '<td align="right">'.$row["total_actividades"].'</td>';
-
         // % actividades
         echo '<td>';
         $var = ($row['actividades'] > 0)
@@ -117,16 +97,8 @@ if (!empty($datos)):
             : 0;
         echo '<img src="../img/barra.png" height="16" width="'.$var.'"> '.$var.'%';
         echo '</td>';
-
         echo '</tr>';
-
     endforeach;
-
-
-
-
-
-
 else: 
 echo '<tr><td colspan="13">No hay información</td></tr>';
 endif;
