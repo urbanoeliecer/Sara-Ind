@@ -1,6 +1,7 @@
 # Principal page
 
-Based on the results achieved with SARA-Reg and the increased adoption of the system by JACs, there is a need to incorporate new functionalities aimed at users from territorial entities. 
+Based on the results achieved with SARA-Reg and the increased adoption, 
+there is a need to incorporate new functionalities aimed at users from territorial entities. 
 
 The SARA architecture is composed of the following components presented in the figure:
 <ol>
@@ -13,22 +14,12 @@ The SARA architecture is composed of the following components presented in the f
 </ol>
 ![Components of the SARA architecture](img/fig2_saraArq.jpg)
 
-Access to information depends on the user’s administrative hierarchy, whether municipal, departmental, or national. 
-
-This hierarchy determines whether the user can view municipal-level data, departmental data, or information from all departments, according to the filters loaded at login, as shown in Figure.
-
-Accordingly, the following information consolidation criteria are defined:<br>
-<ol>
-<li>1. When consolidating by community, totals are obtained per system and supersystem.</li> 
-<li>2. When consolidating by supersystem, totals are obtained per system and community.</li> 
-<li>3. When consolidating by system, information is consolidated by community.</li>
-</ol>
-
+All indicators are generated from data using the same set of filters, which can be applied by supersystem or system, by date range and page.
 ![Filters](img/fig0_filtros.jpg)
 
 The options are:
 <ol>
 <li>Interventions</li>
-<li>General</li>
-<li>Infrastructure or Elements</li>
+<li>General Intervention</li>
+<li>Infrastructure Intervention</li>
 </ol>
