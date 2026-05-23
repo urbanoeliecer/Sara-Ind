@@ -16,9 +16,10 @@ markdown_extensions:
 nav:
   - Index: index.md
   - Principal Panel : principal.md
-  - Interventions: admin/indInterventions.md
-  - General Intervention: admin/indInterGnrl.md
-  - Elements: admin/indElem.md
+  - Ind. General: admin/indInterGnrl.md
+  - Ind. de Infraestructura: admin/indElem.md
+  - Ind. de Interventions: admin/indIntervenciones.md
+
   - Back:
     - Conection: back/conexion.md
     - Styles: back/estilos.md
