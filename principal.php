@@ -30,7 +30,7 @@ else {
         <li><a href="controller/indInterGnrl.php">Ind. General</a></li>
         <li><a href="controller/indElem.php">Ind. de Infraestructura</a></li>
         <!--<li><a href="admin/indIntPry.php">Ind. de Proyectos</a></li>-->
-        <li><a href="controller/indIntervenciones.php">Ind. Intervenciones</a></li>
+        <li><a href="controller/indIntervenciones.php">Ind. de Intervenciones</a></li>
        </ul>
     </nav>    
     <div class="container">

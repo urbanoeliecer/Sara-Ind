@@ -9,23 +9,20 @@
 <tr>
     <td width="65%" valign="top" rowspan="3">
         <h2>SARA-Ind - Descripción</h2>
-        SARA es un aplicativo web basado en arquitectura orientada a servicios para la medición del impacto
-        de proyectos de infraestructura rural en juntas de acción comunal veredales.
+        SARA es un aplicativo web basado en arquitectura orientada a servicios para la medición del impacto de proyectos en diferentes niveles territoriales 
+        y períodos de tiempo auqnue inició con infraestructura rural en juntas de acción comunal veredales.
         <br><br>
         Su descripción es presentada en: <a href="https://sara-indicadores.readthedocs.io">MkDocs</a> 
         y su repositorio de código en: <a href="https://github.com/urbanoeliecer/Sara-Ind">Git</a>
         <br><br>
         Este aplicativo permite la generación de informes e indicadores de intervención en
-        infraestructura rural a partir de la información gestionada en <a href="https://acofipapers.org/index.php/eiei/article/view/4844">SARA</a>, una arquitectura
-        en la nube orientada a la administración de proyectos comunitarios rurales, compuesta por un sistema de
-        información que favorece la gestión de proyectos comunitarios veredales ejecutados por
-        las Juntas de Acción Comunal (JAC), con el apoyo de entidades territoriales.
+        infraestructura rural a partir de la información gestionada en <a href="https://acofipapers.org/index.php/eiei/article/view/4844">SARA</a>, 
+        una arquitectura en la nube orientada a la administración de proyectos comunitarios.
         <br><br>
         En este contexto, SARA-Ind amplía las capacidades del sistema original al ofrecer un módulo
         especializado para el análisis de indicadores, utilizando datos registrados en SARA.
         <br><br>
-        Los indicadores que se agregaron a SARA son generados por parte del administrador,
-        quien supervisa al secretario de infraestructura municipal tenoendo así la medición del impacto de los proyectos.
+        Los indicadores que se agregaron a SARA son generados por parte del administrador para obtener la medición del impacto de los proyectos.
     </td>
     <td width="35%" valign="top">
         <h2>Ingreso</h2>
@@ -45,11 +42,9 @@
         </form>
         Al ingresar podrá consultar:
         <ul>
-            <li>Indicador de Intervención Correlacional</li>
-            <li>Indicador General de Intervención</li>
-            <li>Informe de Proyectos por JAC</li>
-            <li>Informe Mensual de Actividades por Proyecto</li>
-            <li>Informe de Infraestructura</li>
+            <li>Ind. General</li>
+            <li>Ind. de Intervenciones</li>
+            <li>Indicador Infraestructura</li>
         </ul>
 <tr>    
     <td align="center">
