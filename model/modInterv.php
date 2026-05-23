@@ -1,15 +1,21 @@
 <?php
-function consultarProyectosxMes($fchInc, $fchFin, $iddpt, $idmnc, $pgn) {
+function consultarMetasxMes($fchInc, $fchFin, $iddpt, $idmnc, $pgn) {
 $cn = conectarse(); $porPagina = 20; $offset = ($pgn - 1) * $porPagina;
 // arma el where
 $where = "WHERE p.startdate BETWEEN '$fchInc' AND '$fchFin'";
 if ($iddpt !== null && $iddpt !== '') $where .= " AND d.idspr = '$iddpt'";
 if ($idmnc !== null && $idmnc !== '') $where .= " AND m.idsst = '$idmnc'";
 // Define el SQL
-$sql = " SELECT
-    p.idprj, p.name AS nombreproyecto, p.beneficiaries,
-    d.idspr AS iddepartamento, d.name AS departamento,
-    m.name AS municipio, j.name AS junta, DATE_FORMAT(a.date, '%Y-%m') AS mes,
+$sql = " 
+SELECT
+    p.idprj, 
+    p.name AS nombreproyecto, 
+    p.beneficiaries,
+    d.idspr AS iddepartamento, 
+    d.name AS departamento,
+    m.name AS municipio, 
+    j.name AS junta, 
+    DATE_FORMAT(a.date, '%Y-%m') AS mes,
     p.amount AS presupuesto, SUM(a.budget) AS total_presupuesto,
     p.beneficiaries AS personas, SUM(a.participants) AS total_personas,
     p.hours AS horas, SUM(a.hours) AS total_horas,
@@ -20,8 +26,11 @@ JOIN communities j ON p.idcommunity = j.idcommunity
 JOIN systems m ON j.idsst = m.idsst
 JOIN supersystems d ON m.idspr = d.idspr
 $where
-GROUP BY p.idprj, YEAR(a.date), MONTH(a.date), d.idspr, d.name,m.name,j.name, p.name, p.beneficiaries, p.amount
-ORDER BY d.name, m.name, p.name, mes, p.idprj ";
+GROUP BY 
+    p.idprj, YEAR(a.date), MONTH(a.date), d.idspr, d.name,
+    m.name,j.name, p.name, p.beneficiaries, p.amount
+ORDER BY 
+    d.name, m.name, p.name, mes, p.idprj ";
 return $cn->query($sql);
 }
 function consultarProyectosxJunta($fchInc, $fchFin, $iddpt = null, $idmnc = null, $pgn = 1) {
@@ -79,7 +88,7 @@ if ($idmnc !== null && $idmnc !== '') {
 }
 // buscar la 7    
 $sql = "SELECT 
-    v.year AS anio,
+    v.year AS anio, 
     v.supersystem AS departamento,
     v.system AS municipio,
     v.community AS vereda,

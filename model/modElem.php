@@ -1,19 +1,14 @@
 <?php
 require_once "../functions/conexion.php";
-
 function obtenerElementos($fchInc, $fchFin, $iddpt, $idmnc) {
-
     $conexion = conectarse();
-
     $where = "WHERE p.startdate BETWEEN '$fchInc' AND '$fchFin'";
-
     if (!empty($iddpt)) {
         $where .= " AND d.idspr = '$iddpt'";
     }
     if (!empty($idmnc)) {
         $where .= " AND m.idsst = '$idmnc'";
     }
-
     $sql = "SELECT 
         d.name AS departamento,
         m.name AS municipio,
@@ -35,21 +30,16 @@ function obtenerElementos($fchInc, $fchFin, $iddpt, $idmnc) {
     $where
     GROUP BY e.idelement, d.name, m.name, j.name, t.typeelementname
     ORDER BY d.name, m.name, j.name, t.typeelementname";
-
     $result = mysqli_query($conexion, $sql);
-
     $data = [];
     $maxTotal = 0;
-
     while ($row = mysqli_fetch_assoc($result)) {
         $data[] = $row;
         if ($row['total'] > $maxTotal) {
             $maxTotal = $row['total'];
         }
     }
-
     mysqli_close($conexion);
-
     return [
         "data" => $data,
         "maxTotal" => $maxTotal

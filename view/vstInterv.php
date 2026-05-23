@@ -8,7 +8,7 @@ if (isset($resultado["error"])) {
     echo "<p>Error: {$resultado["error"]}</p>"; exit;
 }
 // consulta (implementada en el modelo)
-$datos = consultarProyectosxMes($fchInc, $fchFin, $iddpt, $idmnc, $pgn);
+$datos = consultarMetasxMes($fchInc, $fchFin, $iddpt, $idmnc, $pgn);
 // cabecera de la tabla
 //$headers = ["#", "Mes", "Depart.", "Municipio", "Junta", "Id", "Proyecto", "$ Ej.", "$ Prs.", "-", "Pers. Ej.", "Pers. Prs.", "-", "Horas Ej.", "Horas Prs.", "-", "Activ. Ej.", "Activ. Prs.", "-"];
 $headers = ["#", "Month", "Super.", "System", "Community", "Id", "Project", "Budget", "Part.","Hours","Activ" ,"Budget", "-", "Part", "-", "Hours", "-","Activ", "-"];
@@ -291,7 +291,7 @@ foreach ($datos as $d) {
 if ($depActual != '') {
     $m = $maximos[$depActual];
     echo "<tr>
-        <td><td>$depActual</td><td colspan='2' align='right'>
+        <td><td colspan='3' align='right'>MAX $depActual</td>
         <td align='right'>{$m['proyectos']}</td>
         <td></td>
         <td></td>

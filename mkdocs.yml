@@ -18,7 +18,7 @@ nav:
   - Principal Panel : principal.md
   - Ind. General: admin/indInterGnrl.md
   - Ind. de Infraestructura: admin/indElem.md
-  - Ind. de Interventions: admin/indIntervenciones.md
+  - Ind. de Interventions: admin/indInterv.md
 
   - Back:
     - Conection: back/conexion.md

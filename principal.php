@@ -1,15 +1,15 @@
 <html><head><meta><title>SARA - Ind. de Administración Comunitaria Rural</title></head><body>
 <table width="100%" cellpadding="15">
 <tr>
-<td width="35%" valign="top">
+<td width="40%" valign="top">
 <h2>SARA - Ind. de Administración Comunitaria Rural</h2>
 <br>
 Este Demo es presentado datos de diciembre de 2025 y enero de 2026.<br><br>
 Se debe tener en cuenta que este módulo ya se integró a SARA en su framework Laravel, pero aquí se presentan de manera concreta en PHP y JavaScript básico para facilitar la comprensión, y se agregaron páginas de login, de validación de credenciales y de menú principal, además, solo dos de los informes fueron realizados con estructura MVC. 
 <br><br>
-La arquitectura de SARA es:<img src="docs/img/sara.jpg">
+La arquitectura de SARA es:<img src="docs/img/fig2_saraArq.jpg">
 </td>
-<td width="65%" valign="top">
+<td width="60%" valign="top">
 <?php
 include("functions/conexion.php"); 
 $link = conectarse();
@@ -30,7 +30,7 @@ else {
         <li><a href="controller/indInterGnrl.php">Ind. General</a></li>
         <li><a href="controller/indElem.php">Ind. de Infraestructura</a></li>
         <!--<li><a href="admin/indIntPry.php">Ind. de Proyectos</a></li>-->
-        <li><a href="controller/indIntervenciones.php">Ind. de Intervenciones</a></li>
+        <li><a href="controller/indInterv.php">Ind. de Intervenciones</a></li>
        </ul>
     </nav>    
     <div class="container">
