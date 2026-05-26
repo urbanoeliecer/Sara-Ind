@@ -8,4 +8,4 @@ The report includes filtering options.
 
 An example from mid-January 2026 is shown in the figure.
 
-![Informe de Elementos](../img/fig5_indelem.jpg)
+![Informe de Elementos](../img/fig6_indelem.jpg)

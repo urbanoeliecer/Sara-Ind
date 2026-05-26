@@ -11,10 +11,12 @@ Based on its use by several boards, the system was extended with a specialized m
 As a result, SARA is now organized into two main modules: SARA-Reg, for project data registration, and SARA-Ind, which focuses 
 on indicator generation.
 
-<li>SARA was developed as part of Project 4271 of the VIE by: **Urbano Eliécer Gómez-Prada**</li>
-<li>School of Systems Engineering, Universidad Industrial de Santander</li>
-<li>Bucaramanga – Colombia, [uegomezp@uis.edu.co](mailto:uegomezp@uis.edu.co)</li>
-<li>2026</li>
+<p>
+SARA was developed as part of Project 4271 of the VIE by <strong>Urbano Eliécer Gómez-Prada</strong><br>
+School of Systems Engineering, Universidad Industrial de Santander<br>
+Bucaramanga, Colombia — <a href="mailto:uegomezp@uis.edu.co">uegomezp@uis.edu.co</a><br>
+2026
+</p>
 
 The proposed application and indicator model were conceived with a generic structure that allows adaptation to different organizational and 
 territorial contexts. The system is implemented as an indicator-generation module integrated into SARA, a previously proposed service-oriented 
@@ -28,5 +30,5 @@ manage community projects effectively.
 In the Colombian context, JACs are primarily composed of families engaged in agricultural, livestock, and other rural-related activities, and 
 they are located in areas with a population density of fewer than 150 inhabitants per square kilometer. 
 
-1. https://acofipapers.org/index.php/eiei/article/view/4844
+1. <a href="https://acofipapers.org/index.php/eiei/article/view/4844" target="_blank">Paper published at ACOFI Papers</a>
 

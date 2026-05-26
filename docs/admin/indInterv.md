@@ -16,11 +16,11 @@ Item Indicators are defined as a measure of the degree of compliance with the go
 
 The indicator Iᵢⱼ may take values greater than 1 when the defined goal is exceeded, which makes it possible to identify scenarios of overachievement and additional efficiency.
 
-![Ind consolidado ](../img/fig4a_3Ind.jpg)
+![Ind consolidado ](../img/fig4a_4Ind.jpg)
 
 An unfiltered example is also presented.
 
-![Ind consolidado ](../img/fig4a_3Ind_large.jpg)
+![Ind consolidado ](../img/fig4a_4Ind_large.jpg)
 
 # Project Intervention Report (MVC)
 
@@ -48,5 +48,5 @@ The steps are as follows:
 
 The process is shown in the following figure.
  
-![MVC](../img/fig6_mvc.jpg)
+![MVC](../img/fig3_mvc.jpg)
 

@@ -27,8 +27,8 @@ The figure includes the following sections:
 
 An example from mid-January 2026 is shown in the figure.
 
-![Indicador de intervención general](../img/fig4e_indGnrl.jpg)
+![Indicador de intervención general](../img/fig5e_indGnrl.jpg)
 
 An unfiltered example is also presented.
 
-![Ind consolidado ](../img/fig4e_indGnrl_large.jpg)
+![Ind consolidado ](../img/fig5e_indGnrl_large.jpg)
