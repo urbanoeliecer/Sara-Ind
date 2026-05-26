@@ -3,26 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/view/vstInterventions.php</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/model/modInterventions.php</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/controller/indInterventions.php</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/functions/filtro.php</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/functions/filtro_func.php</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/index.md</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/admin/indInterventions.md</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/admin/indElem.md</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/view/vstElem.php</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/view/vstInterv.php</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/view/vstInterGnrl.php</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/model/modElem.php</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/model/modInterv.php</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/model/modInterGnrl.php</file>
             <file>file:/C:/xampp/htdocs/Sara-Ind/controller/indElem.php</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/principal.md</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/functions/conexion.php</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/tecnico/bdest.md</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/back/estilos.md</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/back/conexion.md</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/tecnico/roles.md</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/tecnico/entorno.md</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/tecnico/req.md</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/principal.php</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/.readthedocs.yaml</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/mkdocs.yml</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/controller/indInterv.php</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/controller/indInterGnrl.php</file>
         </group>
     </open-files>
 </project-private>
