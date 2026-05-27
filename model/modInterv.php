@@ -6,8 +6,7 @@ $where = "WHERE p.startdate BETWEEN '$fchInc' AND '$fchFin'";
 if ($iddpt !== null && $iddpt !== '') $where .= " AND d.idspr = '$iddpt'";
 if ($idmnc !== null && $idmnc !== '') $where .= " AND m.idsst = '$idmnc'";
 // Define el SQL
-$sql = " 
-SELECT
+$sql = "SELECT
     p.idprj, 
     p.name AS nombreproyecto, 
     p.beneficiaries,

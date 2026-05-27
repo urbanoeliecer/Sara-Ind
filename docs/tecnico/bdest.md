@@ -1,17 +1,31 @@
 # SARA-Ind - Database
 
-The database is presented in Figure and can be understood by reading it in the order:
+The database is presented in Figure 3 and can be understood by reading it in the order:
 
-1. Community action boards (**juntas**) are beneficiary community-based entities responsible for implementing projects in coordination with territorial entities.
-2. **Projectos**, with attributes such as JAC Id, start and end dates, budget, and beneficiaries.
-3. Project goal descriptions (**juntasdsc**), with attributes such as ID, execution periods, status, and goals per municipality, per JAC, and per period, in terms of number of projects, participants, and budget.
-4. **Usuario**s are included to determine who can access and the role assigned to each user.
-5. One of these users may act as a **representantes** for a defined period.
-6. In addition, each project includes **elementos** that are intervened by the community.
-7. These elements are associated with projects (**telementosproyectos**).
-8. Activities executed by users are recorded for each project (**pryact**).
-9. Each JAC is associated with a municipality.
-10. Each municipality is associated with a department.
-11. Each project must be associated with a JAC, and to facilitate data querying, a database view was created with the required attributes for indicators generation **vproyectosjunta**).
-12. Each JAC should be assigned weights associated with budget allocation, user participation, and time dedication (**juntaspesos**). These weighted are used to compute an overall indicator.
-![Estructura](../img/fig3_bd_old.jpg)
+ 1. Communities are responsible for implementing projects in coordination with entities.
+ 2. Projects include attributes such as community, start and end dates, budget, and beneficiaries.
+ 3. Community goals descriptions (comm_desc) include attributes such as goals per community in terms of number of projects, participants, and budget; this promotes flexibility, maintainability, and reuse across different scenarios by controlling rules through parameterized values stored in variables, such as goal thresholds per indicator. The structure also includes status and registration date of historical records.
+ 4. Each community should be assigned weights associated with budget allocation, user participation, and time dedication (comm_weights). These weights are used to compute an overall indicator.
+ 5. Users are included to determine who can access the system and the role assigned to each user.
+ 6. One of these users may act as a representative for a defined period.
+ 7. In addition, each project includes elements that are intervened by the community.
+ 8. These elements are associated with projects (projectselem).
+ 9. They have different classifications, which in rural contexts include roads, among others (telementclass).
+10. Activities executed by users are recorded for each project (pryact).
+11. Each community is associated with a system (systems).
+12. Each system is associated with a higher-level structure (systemsuper).
+13. Views such as vprojectsxcommunityxyear were generated to support the creation of the first indicator. This view integrates projects and activities data into a single structure (Not all attributes are shown).
+
+![Estructura](../img/fig3_bd.jpg)
+
+MySQL functionalities are used, as illustrated by the query that generates the Indicators. The highlighted SQL commands are:
+
+1. Consolidate data using aggregation functions such as COUNT, DISTINCT, and SUM.
+2. Avoid calculation errors and NULL results by using functions such as IFNULL and NULLIF, producing more robust indicators with less code, which allows the comparison of two values to ensure they are not equal within a record.
+3. Promote flexibility, maintainability, and reuse across different scenarios by controlling rules through parameterized values stored in variables, such as goals.
+
+Database queries are fundamental to the process, particularly the filtering mechanisms used for the GII. For a more detailed implementation, please refer to the Git repository <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a>
+
+![Query GII](../img/bd01.jpg)
+
+![Other query examples](../img/bd02.jpg)
