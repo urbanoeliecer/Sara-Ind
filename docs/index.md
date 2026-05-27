@@ -1,9 +1,10 @@
-# **Index**
+<h1><strong>Index</strong></h1>
 
 This product is a web-based system and a multi-level indicator framework for the systematic generation and consolidation of intervention indicators 
 in community-based projects. The proposal is oriented toward organizations such as foundations, educational institutions, and other entities that 
 execute social impact initiatives, enabling the processing of structured project information including activities, resources, participants, timelines, 
 budgets, and intervened elements.
+
 
 The options are:
 <ol>
@@ -11,6 +12,7 @@ The options are:
 <li>General Intervention</li>
 <li>Infrastructure Intervention</li>
 </ol>
+
 
 The proposed application and indicator model were conceived with a generic structure that allows adaptation to different organizational contexts. The 
 system is implemented as an indicator-generation module integrated into SARA, a previously proposed service-oriented project management platform [1]. 
@@ -24,6 +26,7 @@ The proposed solution is based on a modular cloud architecture with loosely coup
 
 [1] <a href="https://acofipapers.org/index.php/eiei/article/view/4844" target="_blank">Ponencia Acofi</a>
 [2] <a href="https://www.oecd.org/en/publications/rural-policy-review-of-colombia-2022_c26abeb4-en.html" target="_blank">OECD</a>
+
 
 * In the Colombian context, JACs are primarily composed of families engaged in agricultural, livestock, and other rural-related activities, and 
 they are located in areas with a population density of fewer than 150 inhabitants per square kilometer. 

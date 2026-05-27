@@ -1,4 +1,4 @@
-# SARA – Web Application for Measuring Rural Infrastructure Project Impact
+# SARA – Web Application for Measuring the Impact of Community-Based Projects
 
 This repository contains the source code and technical documentation of **SARA**, a web-based application designed to support the management and impact measurement 
 of rural infrastructure projects carried out by Community Action Boards (Juntas de Acción Comunal, JAC).

@@ -1,4 +1,4 @@
-site_name: SARA-Ind - Rural Indicators
+site_name: SARA-Ind -  Indicators
 theme:
   name: material
   language: en
@@ -16,14 +16,12 @@ markdown_extensions:
 nav:
   - Index: index.md
   - Principal Panel : principal.md
-  - Ind. General: admin/indInterGnrl.md
-  - Ind. de Infraestructura: admin/indElem.md
-  - Ind. de Interventions: admin/indInterv.md
-
-  - Back:
-    - Conection: back/conexion.md
-    - Styles: back/estilos.md
+  - Ind. General: indInterGnrl.md
+  - Ind. de Infraestructura: indElem.md
+  - Ind. de Interventions: indInterv.md
+  - Styles: back/estilos.md
   - Definition:
+    - Conection: back/conexion.md
     - BD structure: tecnico/bdest.md
     - Code: tecnico/entorno.md
     - Profiles: tecnico/roles.md

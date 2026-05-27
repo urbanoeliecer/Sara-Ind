@@ -14,5 +14,6 @@ b. Calculation of strategic indicators for decision making
 
 c. Visual representation
 
-
-![Entorno](../img/fig0_EDS.jpg)
+<p align="center">
+  <img src="../img/fig0_EDS.jpg" alt="Entorno" width="100%">
+</p>
