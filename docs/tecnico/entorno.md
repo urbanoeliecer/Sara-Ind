@@ -1,14 +1,10 @@
 # Programming Environment
 
-instrucciones de instalación
+The figure shows the code of an indicator from a programming perspective. On the left side, the project structure is displayed, with its components organized according to their hierarchy.
 
-The figure shows how two reports are being developed, one without MVC and one with MVC, as illustrated in Figure, sections 1 and 2. On the left side, the project components are organized according to their hierarchy.
+The image presents the controller of an indicator, which interacts with the model to execute the SQL query, and the view, which receives the data and prepares the information to be displayed.
 
-Section 1 presents the controller for the RGI indicator detail, which is responsible for building the main SQL query, processing the results, and preparing the information that will later be displayed in the view. This section shows the construction of the SQL query, which integrates actual and expected information from community projects, including filters, forms, and related elements.
-
-Section 2 presents the three required files for the monthly project activity report.
-
-These components act as a bridge between the data layer and the presentation layer. Their design allows for a clear separation of business logic, data access, and visual representation, thereby improving maintainability and scalability.
+This design enables a clear separation between business logic, data access, and visual representation, thereby improving the maintainability and scalability of the system.
 
 They fulfill the following roles:
 
@@ -18,5 +14,5 @@ b. Calculation of strategic indicators for decision making
 
 c. Visual representation
 
-On the left, the project components are presented organized according to their hierarchy.
+
 ![Entorno](../img/fig0_EDS.jpg)
