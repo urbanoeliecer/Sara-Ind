@@ -15,15 +15,10 @@ generated and managed through SARA-Reg. Consequently, the indicator-generation p
 prior registration, monitoring, and consolidation of project information within the base system. 
 Understanding this base system is necessary to explain the integration and data flow.
 
-<p>
-SARA was developed as part of Project 4271 of the VIE by <strong>Urbano Eliécer Gómez-Prada</strong><br>
-School of Systems Engineering, Universidad Industrial de Santander<br>
-Bucaramanga, Colombia — <a href="mailto:uegomezp@uis.edu.co">uegomezp@uis.edu.co</a><br>
-2026
-</p>
+In summary, SARA-Reg manages project data through the proposed management model, while SARA-Ind transforms this data into indicators through 
+aggregation, computation, and multi-level visualization. This work focuses on SARA-Ind, and an example of this process is shown in the following figure.
 
-* In the Colombian context, JACs are primarily composed of families engaged in agricultural, livestock, and other rural-related activities, and 
-they are located in areas with a population density of fewer than 150 inhabitants per square kilometer. 
+![Components of the SARA architecture](img/fig0_proceso.jpg)
 
 The SARA architecture is composed of the following components presented in the figure:
 <ol>
