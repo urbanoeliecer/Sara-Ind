@@ -1,7 +1,29 @@
 # Principal page
 
-Based on the results achieved with SARA-Reg and the increased adoption, 
-there is a need to incorporate new functionalities aimed at users from territorial entities. 
+SARA is a service-oriented platform for the management of community-based projects. Although it was initially 
+developed for rural communities organized as Community Action Boards (JACs)*, as described in [1], 
+the approach presented in this work adopts a more generic structure oriented toward different types of community-based 
+organizations and social intervention contexts. 
+
+SARA-Reg has been progressively adopted in different community-based project management contexts beyond its initial 
+deployment with Community Action Boards, supporting the registration and monitoring of projects in diverse 
+organizational settings. In this proposal, SARA serves as the operationalizing environment in which a new 
+indicator-generation module, called SARA-Ind, is incorporated.
+
+SARA-Ind operates as an extension of the original platform and relies on the structured project data 
+generated and managed through SARA-Reg. Consequently, the indicator-generation process depends on the 
+prior registration, monitoring, and consolidation of project information within the base system. 
+Understanding this base system is necessary to explain the integration and data flow.
+
+<p>
+SARA was developed as part of Project 4271 of the VIE by <strong>Urbano Eliécer Gómez-Prada</strong><br>
+School of Systems Engineering, Universidad Industrial de Santander<br>
+Bucaramanga, Colombia — <a href="mailto:uegomezp@uis.edu.co">uegomezp@uis.edu.co</a><br>
+2026
+</p>
+
+* In the Colombian context, JACs are primarily composed of families engaged in agricultural, livestock, and other rural-related activities, and 
+they are located in areas with a population density of fewer than 150 inhabitants per square kilometer. 
 
 The SARA architecture is composed of the following components presented in the figure:
 <ol>
@@ -14,12 +36,27 @@ The SARA architecture is composed of the following components presented in the f
 </ol>
 ![Components of the SARA architecture](img/fig2_saraArq.jpg)
 
+#  (MVC)
+
+The following subsections describe the implemented indicators, including their structure, calculation approach, and interpretation. These indicators were implemented following the Model–View–Controller (MVC) architecture, as shown in Figure 2. Figure 4 presents an example of the files involved in the General Intervention Indicator process. The process follows the steps outlined below:
+An example is shown in the figure. 
+
+The steps are as follows:
+
+1. The user reaches the controller.
+
+2. The controller interacts with the model.
+
+3. The controller selects a view.
+
+4. The view generates the output using the data that the controller obtained from the model.
+
+The process is shown in the following figure.
+ 
+![MVC](../img/fig4_mvc.jpg)
+
 All indicators are generated from data using the same set of filters, which can be applied by supersystem or system, by date range and page.
+
 ![Filters](img/fig0_filtros.jpg)
 
-The options are:
-<ol>
-<li>Interventions</li>
-<li>General Intervention</li>
-<li>Infrastructure Intervention</li>
-</ol>
+1. <a href="https://acofipapers.org/index.php/eiei/article/view/4844" target="_blank">Paper published at ACOFI Papers</a>
