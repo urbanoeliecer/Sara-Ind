@@ -1,4 +1,4 @@
-# Index 
+# **Index**
 
 This product is a web-based system and a multi-level indicator framework for the systematic generation and consolidation of intervention indicators 
 in community-based projects. The proposal is oriented toward organizations such as foundations, educational institutions, and other entities that 
@@ -22,8 +22,8 @@ in different community-based project management contexts beyond its initial depl
 
 The proposed solution is based on a modular cloud architecture with loosely coupled services, enabling reuse and evolution through APIs, and supporting the generation of indicators across multiple levels and time periods. SARA-Ind follows an exploratory–descriptive approach and was developed using the Rational Unified Process (RUP) through incremental, use case–driven iterations, resulting in a functional solution deployed for end users 
 
-1. <a href="https://acofipapers.org/index.php/eiei/article/view/4844" target="_blank">1</a>
-2. <a href="https://www.oecd.org/en/publications/rural-policy-review-of-colombia-2022_c26abeb4-en.html" target="_blank">2</a>
+[1] <a href="https://acofipapers.org/index.php/eiei/article/view/4844" target="_blank">1</a>
+[2] <a href="https://www.oecd.org/en/publications/rural-policy-review-of-colombia-2022_c26abeb4-en.html" target="_blank">2</a>
 
 * In the Colombian context, JACs are primarily composed of families engaged in agricultural, livestock, and other rural-related activities, and 
 they are located in areas with a population density of fewer than 150 inhabitants per square kilometer. 
@@ -42,11 +42,11 @@ Requirements: Make sure you have a local server environment with: Apache, PHP 8.
 
 Installation Steps:
 
-1. Clone the repository to the <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a> repository.
+[1] Clone the repository to the <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a> repository.
 
-2. Place the folder in your web server directory (e.g., htdocs in XAMPP).
+[2] Place the folder in your web server directory (e.g., htdocs in XAMPP).
 
-3. Set up the database
+[3] Set up the database
 
 4. Create a new database and import the SQL file included in the repository.
 

@@ -36,14 +36,12 @@ else {
     <div class="container">
         <div class="col-md-3"><?php
         if ($_SESSION["rol"] == 1) {
-//         echo '<a href="usuarios.php">Gestión de Usuarios</a><br>';
-//         echo '<a href="juntas.php">Gestión de JAC</a><br>';
+           // echo '<a href="usuarios.php">Gestión de Usuarios</a><br>';
+           // echo '<a href="juntas.php">Gestión de JAC</a><br>';
         }
         ?>
         </div>
     </div><?php
 }
 ?>
-</td>
-</tr>
-</table>
+</td></tr></table>

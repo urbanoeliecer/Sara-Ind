@@ -54,4 +54,4 @@ All indicators are generated from data using the same set of filters, which can 
 
 ![Filters](img/fig0_filtros.jpg)
 
-1. <a href="https://acofipapers.org/index.php/eiei/article/view/4844" target="_blank">Paper published at ACOFI Papers</a>
+[1] <a href="https://acofipapers.org/index.php/eiei/article/view/4844" target="_blank">Paper published at ACOFI Papers</a>
