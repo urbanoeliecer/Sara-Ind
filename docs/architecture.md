@@ -12,6 +12,7 @@ The SARA architecture is composed of the following components presented in the f
 </ol>
 ![Components of the SARA architecture](img/fig2_saraArq.jpg)
 
+
 #  (MVC)
 
 The following subsections describe the implemented indicators, including their structure, calculation approach, and interpretation. These indicators were 
@@ -31,7 +32,7 @@ The steps are as follows:
 
 The process is shown in the following figure.
  
-![MVC](../img/fig4_mvc.jpg)
+![MVC](img/fig4_mvc.jpg)
 
 All indicators are generated from data using the same set of filters, which can be applied by supersystem or system, by date range and page.
 

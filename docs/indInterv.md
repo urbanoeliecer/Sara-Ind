@@ -18,9 +18,9 @@ or the maximum value in the list, so:
 
 An example is shown in the figure, where data were filtered for a single supersystem, one system, and one community. 
 
-![Ind consolidado ](../img/fig5a_4Ind.jpg)
+![Ind Intervenciones ](img/fig5a_4Ind.jpg)
 
 An unfiltered example is also presented.
 
-![Ind consolidado ](../img/fig5a_4Ind_large.jpg)
+![Ind Intervenciones ](img/fig5a_4Ind_large.jpg)
 
