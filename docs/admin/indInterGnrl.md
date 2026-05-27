@@ -1,29 +1,37 @@
 
 # General Intervention Indicator
 
-The General Intervention Indicator (GII) is defined as a synthetic indicator that summarizes the overall performance of the intervention in a community. It is the most important indicator and integrates the different normalized indicators through a weighted linear combination calculated for each community:
-(Bᵢ is Budget indicator, Tᵢ is Time indicator and Uᵢ: Users indicator)
+The General Intervention Indicator (GII) is defined as a synthetic indicator that summarizes the overall performance of the intervention at 
+the community level. It integrates the different computed indicators through a weighted linear combination, where each component represents a 
+specific dimension of project execution. The indicator is calculated for each community using the expression defined by the corresponding weights 
+and indicators (Bᵢ is Budget indicator, Tᵢ is Time indicator and Uᵢ: Users indicator):
 
 **GIIᵢ = (pBᵢ * Bᵢ) + (pTᵢ * Tᵢ) + (pUᵢ * Uᵢ)**
 
-Each component is calculated by dividing the achieved value of each project by its expected value, similarly to Equation 1. In this case, predefined goals are used, allowing comparison across the Community Action Boards (JACs). For a community i and an item j.
+Each indicator, B, T, or U is computed as the proportion of achieved outcomes relative to the number of projects, based on predefined goals, 
+thereby enabling comparison across communities (as defined in Equation 1). The indicators Ij may take values greater than 1 when the defined goal 
+is exceeded, making it possible to identify scenarios of overachievement and additional efficiency. The indicator for each item is calculated as 
+the ratio between the achieved value for each measured element and the product of the number of projects and the corresponding community goal, 
+as follows:
 
 **Indicatorᵢ = (Sumatoria(Achieved valueⱼ)/number of projectsᵢ) / Goalᵢ**	
 
-The report presents a table listing projects by Department, Municipality, and Rural Area, including the number of projects, the budget amount, and the total number of beneficiaries. For the last three items, comparative charts are also presented alongside the list.
+In Equation, n represents the number of projects in the community. The goal values are defined together with the weights pB, pT, and pU, 
+which represent the relative importance assigned to each indicator within the community and must satisfy the condition that their sum equals 1. 
 
 
-The figure includes the following sections:
+These weights correspond to:
 
-1. GII indicator
+1. pBᵢ: weight assigned to the Budget indicator
 
-2. Number of activities carried out during the filtered time period
+2. pTᵢ: weight assigned to the Time indicator
 
-3. Project distribution
+3. pUᵢ: weight assigned to the Users indicator
 
-4. Budget distribution
 
-5. Participant distribution
+The report presents a table listing projects by Supersystem, system, and Comunity, including the number of projects, the budget amount, 
+and the total number of beneficiaries. For the last three items, comparative charts are also presented alongside the list.
+
 
 An example from mid-January 2026 is shown in the figure.
 
