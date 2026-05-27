@@ -25,6 +25,8 @@ in different community-based project management contexts beyond its initial depl
 The proposed solution is based on a modular cloud architecture with loosely coupled services, enabling reuse and evolution through APIs, and supporting the generation of indicators across multiple levels and time periods. SARA-Ind follows an exploratory–descriptive approach and was developed using the Rational Unified Process (RUP) through incremental, use case–driven iterations, resulting in a functional solution deployed for end users 
 
 [1] <a href="https://acofipapers.org/index.php/eiei/article/view/4844" target="_blank">Ponencia Acofi</a>
+
+
 [2] <a href="https://www.oecd.org/en/publications/rural-policy-review-of-colombia-2022_c26abeb4-en.html" target="_blank">OECD</a>
 
 
@@ -39,23 +41,3 @@ Bucaramanga, Colombia — <a href="mailto:uegomezp@uis.edu.co">uegomezp@uis.edu.
 </p>
 
 
-# **Index**
-
-Requirements: Make sure you have a local server environment with: Apache, PHP 8.2 or higher,MariaDB or MySQL
-
-
-Installation Steps:
-
-1. Clone the repository to the <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a> repository.
-
-2. Place the folder in your web server directory (e.g., htdocs in XAMPP).
-
-3. Set up the database
-
-4. Create a new database and import the SQL file included in the repository.
-
-5. Configure the connection
-
-6. Update the database credentials in the configuration file (e.g., functions/conexion.php).
-
-7. Run the application http://localhost/Sara-Ind

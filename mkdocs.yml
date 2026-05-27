@@ -19,10 +19,10 @@ nav:
   - Ind. General: indInterGnrl.md
   - Ind. de Infraestructura: indElem.md
   - Ind. de Interventions: indInterv.md
-  - Styles: back/estilos.md
   - Definition:
     - Conection: back/conexion.md
     - BD structure: tecnico/bdest.md
     - Code: tecnico/entorno.md
+    - Code: tecnico/installationGuide.md 
     - Profiles: tecnico/roles.md
     - Requeriments: tecnico/req.md

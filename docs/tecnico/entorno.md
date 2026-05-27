@@ -1,4 +1,4 @@
-# Programming Environment
+<h1><strong>Programming Environment</strong></h1>
 
 The figure shows the code of an indicator from a programming perspective. On the left side, the project structure is displayed, with its components organized according to their hierarchy.
 
@@ -14,6 +14,7 @@ b. Calculation of strategic indicators for decision making
 
 c. Visual representation
 
+
 <p align="center">
-  <img src="../img/fig0_EDS.jpg" alt="Entorno" width="100%">
+  <img src="../img/fig0_EDS.jpg" alt="Entorno" width="120%">
 </p>

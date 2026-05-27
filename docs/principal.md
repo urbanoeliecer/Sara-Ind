@@ -1,4 +1,5 @@
-# Principal page
+
+<h1><strong>Principal page</strong></h1>
 
 SARA is a service-oriented platform for the management of community-based projects. Although it was initially 
 developed for rural communities organized as Community Action Boards (JACs)*, as described in [1], 
