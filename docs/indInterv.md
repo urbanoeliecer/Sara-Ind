@@ -1,4 +1,5 @@
-# Interventions Indicators
+<h1><strong>Interventions Indicators</strong></h1>
+
 
 The intervention indicators quantify project execution based on predefined goals and support aggregation across communities, systems, and time periods. Information can be grouped by month, by year, or presented without temporal aggregation. The calculation is defined as the ratio between the observed value and the corresponding comparative value. This formulation enables objective and comparable performance evaluation for each generated record. The indicator for each item j is calculated as follows:
 

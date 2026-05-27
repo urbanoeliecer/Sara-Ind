@@ -1,5 +1,5 @@
+<h1><strong>General Intervention Indicator</strong></h1>
 
-# General Intervention Indicator
 
 The General Intervention Indicator (GII) is defined as a synthetic indicator that summarizes the overall performance of the intervention at 
 the community level. It integrates the different computed indicators through a weighted linear combination, where each component represents a 

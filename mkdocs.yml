@@ -14,8 +14,9 @@ markdown_extensions:
         - name: mermaid
           class: mermaid 
 nav:
-  - Index: index.md
-  - Principal Panel : principal.md
+  - Abstract: resumen.md
+  - Description : decription.md
+  - Architecture : architecture.md
   - Ind. General: indInterGnrl.md
   - Ind. de Infraestructura: indElem.md
   - Ind. de Interventions: indInterv.md

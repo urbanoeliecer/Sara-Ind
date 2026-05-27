@@ -1,4 +1,5 @@
-# Infrastructure Report
+<h1><strong>Infrastructure Report</strong></h1>
+
 
 This indicator provides a summary of infrastructure elements, grouped by supersystem, system, and community, including the intervened elements. An 
 example is shown in Figure, where two elements (01 and 02) are observed in community 1 (a water supply system and a road), one element in 

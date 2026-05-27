@@ -1,7 +1,8 @@
-# SARA-Ind - Database
+<h1><strong>SARA-Ind - Database</strong></h1>
+
 
 The database is presented in Figure 3 and can be understood by reading it in the order:
-
+<p>
  1. Communities are responsible for implementing projects in coordination with entities.
  2. Projects include attributes such as community, start and end dates, budget, and beneficiaries.
  3. Community goals descriptions (comm_desc) include attributes such as goals per community in terms of number of projects, participants, and budget; this promotes 
@@ -19,8 +20,11 @@ compute an overall indicator.
 12. Each system is associated with a higher-level structure (systemsuper).
 13. Views such as vprojectsxcommunityxyear were generated to support the creation of the first indicator. This view integrates projects and activities data into a 
 single structure (Not all attributes are shown).
+<p>
+
 
 ![Estructura](../img/fig3_bd.jpg)
+
 
 MySQL functionalities are used, as illustrated by the query that generates the Indicators. The highlighted SQL commands are:
 
