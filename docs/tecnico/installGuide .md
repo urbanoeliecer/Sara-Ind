@@ -1,4 +1,5 @@
-# **Installation Guide**
+# Installation Guide
+
 
 SARA requires a MySQL database, a local server environment such as XAMPP, and the source code available in this GitHub repository.
 

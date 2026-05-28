@@ -1,4 +1,4 @@
-# **Requeriments**
+# Requeriments
 
 
 SARA-Ind generates five indicators based on the records created in SARA-Reg.

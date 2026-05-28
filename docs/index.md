@@ -5,13 +5,14 @@ in community-based projects. The proposal is oriented toward organizations such 
 execute social impact initiatives, enabling the processing of structured project information including activities, resources, participants, timelines, 
 budgets, and intervened elements. For a more detailed implementation, please refer to the <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a> repository.
 
-<p>
-The options are:
-1. Interventions
-2. General Intervention
-3. Infrastructure Intervention
-</p>
 
+The options are:
+
+1. Interventions
+
+2. General Intervention
+
+3. Infrastructure Intervention
 
 The proposed application and indicator model were conceived with a generic structure that allows adaptation to different organizational contexts. The 
 system is implemented as an indicator-generation module integrated into SARA, a previously proposed service-oriented project management platform [1]. 
@@ -32,6 +33,8 @@ Unified Process (RUP) through incremental, use case–driven iterations, resulti
 [2] <a href="https://www.oecd.org/en/publications/rural-policy-review-of-colombia-2022_c26abeb4-en.html" target="_blank">OECD</a> (In the Colombian context, JACs are primarily composed of families engaged in agricultural, livestock, and other rural-related activities, and 
 they are located in areas with a population density of fewer than 150 inhabitants per square kilometer)
   
+
+
 
 <p>
 SARA was developed as part of Project 4271 of the VIE by <strong>Urbano Eliécer Gómez-Prada</strong><br>

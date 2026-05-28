@@ -17,9 +17,9 @@ nav:
   - Index: index.md
   - Description : description.md
   - Architecture : architecture.md
-  - Ind. General: indInterGnrl.md
-  - Ind. de Infraestructura: indElem.md
-  - Ind. de Interventions: indInterv.md
+  - General Ind.: indInterGnrl.md
+  - Elementos Ind.: indElem.md
+  - Interventions Ind.: indInterv.md
   - Definition:
     - Conection: tecnico/conexion.md
     - BD structure: tecnico/bdest.md

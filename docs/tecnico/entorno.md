@@ -1,4 +1,4 @@
-# **Programming Environment**
+# Programming Environment
 
 
 The figure shows the code of an indicator from a programming perspective. On the left side, the project structure is displayed, with its components organized according to their hierarchy.
@@ -7,14 +7,14 @@ The image presents the controller of an indicator, which interacts with the mode
 
 This design enables a clear separation between business logic, data access, and visual representation, thereby improving the maintainability and scalability of the system.
 
-<p>
+
 They fulfill the following roles:
+
 a. Analysis controller
+
 b. Calculation of strategic indicators for decision making
+
 c. Visual representation
-</p>
  
 
-<p align="center">
-  <img src="../img/fig0_EDS.jpg" alt="Entorno" width="120%">
-</p>
+<img src="../img/fig0_EDS.jpg" alt="Entorno" width="120%">
