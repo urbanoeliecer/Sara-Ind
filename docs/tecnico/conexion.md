@@ -1,4 +1,4 @@
-<h1><strong>Database Connection</strong></h1>
+# **Database Connection**
 
 
 This section presents the database connection function used by all pages.

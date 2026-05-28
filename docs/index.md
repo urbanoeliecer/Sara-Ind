@@ -1,4 +1,4 @@
-<h1><strong>Index</strong></h1>
+# **Index**
 
 This product is a web-based system and a multi-level indicator framework for the systematic generation and consolidation of intervention indicators 
 in community-based projects. The proposal is oriented toward organizations such as foundations, educational institutions, and other entities that 

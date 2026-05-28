@@ -1,4 +1,4 @@
-<h1><strong>Architecture</strong></h1>
+# **Architecture**
 
 
 The SARA architecture is composed of the following components presented in the figure:

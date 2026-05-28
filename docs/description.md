@@ -1,4 +1,4 @@
-<h1><strong>Description</strong></h1>
+# **Description**
 
 
 SARA is a service-oriented platform for the management of community-based projects. Although it was initially 

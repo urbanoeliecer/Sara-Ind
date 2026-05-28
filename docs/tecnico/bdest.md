@@ -1,4 +1,4 @@
-<h1><strong>SARA-Ind - Database</strong></h1>
+# **SARA-Ind - Database **
 
 
 The database is presented in Figure 3 and can be understood by reading it in the order:
@@ -39,3 +39,11 @@ the <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a>
 ![Query GII](../img/bd01.jpg)
 
 ![Other query examples](../img/bd02.jpg)
+
+# Tecnique Requirements
+
+SARA requires a MySQL database, a local server environment such as XAMPP, and the source code available in the <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a> repository.
+
+The system is designed to run on Windows and requires PHP and Apache (included in XAMPP) to be properly configured.
+
+Once the environment is set up, the project can be deployed by importing the database and configuring the application according to the provided source code.

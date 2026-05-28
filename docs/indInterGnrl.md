@@ -1,4 +1,4 @@
-<h1><strong>General Intervention Indicator</strong></h1>
+# **General Intervention Indicator**
 
 
 The General Intervention Indicator (GII) is defined as a synthetic indicator that summarizes the overall performance of the intervention at 

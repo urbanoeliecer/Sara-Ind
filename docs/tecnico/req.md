@@ -1,4 +1,4 @@
-<h1><strong>Requeriments</strong></h1>
+# **Requeriments**
 
 
 SARA-Ind generates five indicators based on the records created in SARA-Reg.
@@ -29,7 +29,6 @@ wasted resources, and/or a lack of accurate information. The system structure is
 ![Structure of the Rural Community Administration System](../img/fig0_estruc.jpg)
 
 
-
 The process is described in the activity diagram. It has three starting points based on the diamonds, corresponding to different moments:
 
 1. When the municipality assigns a project to a community and maps its location, triggering a pending activity for the community president to accept the project. However, the initial step is when the community identifies the need, although this is not handled in the software.
@@ -39,10 +38,3 @@ The process is described in the activity diagram. It has three starting points b
 3. When a community member replaces the president of the community board.
 
 
-# Tecnique Requirements
-
-SARA requires a MySQL database, a local server environment such as XAMPP, and the source code available in the <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a> repository.
-
-The system is designed to run on Windows and requires PHP and Apache (included in XAMPP) to be properly configured.
-
-Once the environment is set up, the project can be deployed by importing the database and configuring the application according to the provided source code.

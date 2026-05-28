@@ -15,7 +15,7 @@ markdown_extensions:
           class: mermaid 
 nav:
   - Index: index.md
-  - Description : decription.md
+  - Description : description.md
   - Architecture : architecture.md
   - Ind. General: indInterGnrl.md
   - Ind. de Infraestructura: indElem.md

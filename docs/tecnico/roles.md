@@ -1,4 +1,4 @@
-<h1><strong>Roles</strong></h1>
+# **Roles**
 
 
 SARA is now organized into two main modules: SARA-Reg, for project data registration, and SARA-Ind, which focuses on the  generation if multiple indicators.
