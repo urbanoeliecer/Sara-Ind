@@ -4,6 +4,7 @@
 SARA-Ind generates five indicators based on the records created in SARA-Reg.
 A summary of SARA-Reg is presented in [https://doi.org/10.26507/paper.4844](SARA Description).
 
+
 # Community management system
 
 The proposed system is process-oriented and interconnects municipalities, communities, and in-habitants, where some act as beneficiaries or managers, 
@@ -26,14 +27,16 @@ wasted resources, and/or a lack of accurate information. The system structure is
 
 6. Projects benefit the entire community.
 
-![Structure of the Rural Community Administration System](../img/fig0_estruc.jpg)
+
+![Structure](../img/fig0_estruc.jpg)
 
 
 The process is described in the activity diagram. It has three starting points based on the diamonds, corresponding to different moments:
 
-1. When the municipality assigns a project to a community and maps its location, triggering a pending activity for the community president to accept the project. However, the initial step is when the community identifies the need, although this is not handled in the software.
+1. When the municipality assigns a project to a community and maps its location, triggering a pending activity for the community president to accept 
+the project. However, the initial step is when the community identifies the need, although this is not handled in the software.
  
-2. When the community representant assigns activities, members, and/or tools, occurring when se-lects the project.
+2. When the community representant assigns activities, members, and/or tools, occurring when selects the project.
 
 3. When a community member replaces the president of the community board.
 

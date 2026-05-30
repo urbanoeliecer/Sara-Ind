@@ -15,6 +15,7 @@ a. Analysis controller
 b. Calculation of strategic indicators for decision making
 
 c. Visual representation
- 
 
-<img src="../img/fig0_EDS.jpg" alt="Entorno" width="120%">
+
+![EDS](../img/fig0_EDS.jpg)
+

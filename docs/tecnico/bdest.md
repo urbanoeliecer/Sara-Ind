@@ -54,6 +54,7 @@ the <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a>
 
 ![Other query examples](../img/bd02.jpg)
 
+
 # Tecnique Requirements
 
 SARA requires a MySQL database, a local server environment such as XAMPP, and the source code available in the <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a> repository.

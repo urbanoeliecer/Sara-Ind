@@ -33,7 +33,7 @@ $sql = "SELECT v.supersystem AS departamento,
 FROM prjact a
 INNER JOIN vprojectsxcommunityxyear v ON v.idprj = a.idprj
 INNER JOIN projects p ON p.idprj = v.idprj
-LEFT JOIN communitiesdsc cd ON cd.idcommunity = v.idcommunity
+LEFT JOIN comm_dsc cd ON cd.idcommunity = v.idcommunity
 $where
 GROUP BY v.supersystem,v.system,v.community,YEAR(a.date)
 UNION ALL
@@ -50,7 +50,7 @@ SELECT v.supersystem AS departamento, v.system AS municipio, v.community AS vere
 FROM prjact a
 INNER JOIN vprojectsxcommunityxyear v ON v.idprj = a.idprj
 INNER JOIN projects p ON p.idprj = v.idprj
-LEFT JOIN communitiesdsc cd ON cd.idcommunity = v.idcommunity
+LEFT JOIN comm_dsc cd ON cd.idcommunity = v.idcommunity
 $where
 GROUP BY v.supersystem, v.system, v.community
 ORDER BY departamento, municipio, vereda, anio
