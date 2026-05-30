@@ -35,12 +35,13 @@ they are located in areas with a population density of fewer than 150 inhabitant
   
 
 
-
-<p>
 SARA was developed as part of Project 4271 of the VIE by <strong>Urbano Eliécer Gómez-Prada</strong><br>
+
 School of Systems Engineering, Universidad Industrial de Santander<br>
+
 Bucaramanga, Colombia — <a href="mailto:uegomezp@uis.edu.co">uegomezp@uis.edu.co</a><br>
+
 2026
-</p>
+>
 
 
