@@ -49,14 +49,14 @@ comparison of two values to ensure they are not equal within a record.
 
 
 Database queries are fundamental to the process, particularly the filtering mechanisms used for the GII. For a more detailed implementation, please refer to 
-the <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a> repository.
+the <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a> repository.<br>
 
 ![Query GII](../img/bd01.jpg)
 
 ![Other query examples](../img/bd02.jpg)
 
 
-The system is designed to run on Windows and requires PHP and Apache (included in XAMPP) to be properly configured. Once the environment is set up, the project can be deployed by importing the database 
+<br>The system is designed to run on Windows and requires PHP and Apache (included in XAMPP) to be properly configured. Once the environment is set up, the project can be deployed by importing the database 
 and configuring the application according to the provided source code.
 
 
