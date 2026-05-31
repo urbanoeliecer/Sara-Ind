@@ -64,8 +64,10 @@ The system is designed to run on Windows and requires PHP and Apache (included i
 Once the environment is set up, the project can be deployed by importing the database and configuring the application according to the provided source code.
 
 
-The **Conect() function** defines the database parameters and executes the mysqli_connect command.
 
+
+
+The **Conect() function** defines the database parameters and executes the mysqli_connect command.
 
 function Conectarse()
 
