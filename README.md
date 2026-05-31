@@ -14,3 +14,5 @@ SARA aims to:
 - Provide transparent and structured information for decision-making  by territorial entities and community organizations.
 
 The project documentation is available at: <a href="https://sara-indicadores.readthedocs.io">MkDocs</a>
+
+Una explicación se encunetra en: https://youtu.be/cBWwXLb53sk

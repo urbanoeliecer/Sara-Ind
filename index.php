@@ -10,7 +10,7 @@
     <td width="65%" valign="top" rowspan="3">
         <h2>SARA-Ind - Descripción</h2>
         SARA es un aplicativo web basado en arquitectura orientada a servicios para la medición del impacto de proyectos en diferentes niveles territoriales 
-        y períodos de tiempo auqnue inició con infraestructura rural en juntas de acción comunal veredales.
+        y períodos de tiempo auqnue inició para comunidades rurales en juntas de acción comunal.
         <br><br>
         Su descripción es presentada en: <a href="https://sara-indicadores.readthedocs.io">MkDocs</a> 
         y su repositorio de código en: <a href="https://github.com/urbanoeliecer/Sara-Ind">Git</a>

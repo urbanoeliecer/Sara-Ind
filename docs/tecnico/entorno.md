@@ -17,5 +17,6 @@ b. Calculation of strategic indicators for decision making
 c. Visual representation
 
 
+
 ![EDS](../img/fig0_EDS.jpg)
 
