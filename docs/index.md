@@ -24,7 +24,7 @@ The proposed solution is based on a modular cloud architecture with loosely coup
 generation of indicators across multiple levels and time periods. SARA-Ind follows an exploratory–descriptive approach and was developed using the Rational 
 Unified Process (RUP) through incremental, use case–driven iterations, resulting in a functional solution deployed for end users.
 
-<br><br>SARA was developed as part of Project 4271 of the VIE by <strong>Urbano Eliécer Gómez-Prada</strong><br><br>
+<br><br>SARA was developed as part of Project 4271 of the VIE by <strong>Urbano Eliécer Gómez-Prada</strong>
 
 School of Systems Engineering, Universidad Industrial de Santander<br>
 
