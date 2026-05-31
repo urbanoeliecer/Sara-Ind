@@ -9,19 +9,12 @@ Once the environment is set up, the project can be deployed by importing the dat
 
 Requirements: Make sure you have a local server environment with: Apache, PHP 8.2 or higher,MariaDB or MySQL.
 
----
 
-# Technical Requirements
 
-SARA requires a MySQL database, a local server environment such as XAMPP, and the source code available in the <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a> repository.
 
-The system is designed to run on Windows and requires PHP and Apache (included in XAMPP) to be properly configured.
 
-Once the environment is set up, the project can be deployed by importing the database and configuring the application according to the provided source code.
+To replicate this solution:
 
----
-
-# System Requirements
 
 1. Clone the repository to the <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a> repository.
 

@@ -23,4 +23,27 @@ aggregation, computation, and multi-level visualization. This work focuses on SA
 ![Components of the SARA architecture](img/fig0_proceso.jpg)
 
 
-For a more detailed implementation, please refer to the <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a> repository.
+The proposed system is process-oriented and interconnects municipalities, communities, and in-habitants, where some act as beneficiaries or managers, 
+as well as projects involving activities with tools that consume certain resources to work on elements or infrastructure. Each project requires the support 
+of a manager assigned by the municipality, who ensures the proper use of the resources ad-ministered by the community. For this reason, the manager must
+ have access to information that pro-vides traceability and demonstrates the achievement of the project's goal.
+
+The system aims to enhance the management of information for community projects, addressing inefficiencies that often result in duplicated efforts and 
+wasted resources, and/or a lack of accurate information. The system structure is shown in Figure 2; its description is in the following points:
+
+1. Municipalities (systems) are entities made up of beneficiary communities.
+
+2. Projects involve activities carried out with tools that improve elements consume resources.
+
+3. The municipality (systems) must have a manager for to guide the projects who to work in the community.
+
+4. Beneficiaries must assign activities, tools and elements.
+
+5. The municipality (systems) is responsible for handling resources, it is guarantors of the communities.
+
+6. Projects benefit the entire community.
+
+![Structure](../img/fig0_estruc.jpg)
+
+SARA-Ind generates five indicators based on the records created in SARA-Reg and a summary of SARA-Reg is presented in [https://doi.org/10.26507/paper.4844](SARA Description).
+
