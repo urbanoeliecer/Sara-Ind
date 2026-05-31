@@ -8,7 +8,7 @@ and indicators (Bᵢ is Budget indicator, Tᵢ is Time indicator and Uᵢ: Users
 
 **GIIᵢ = (pBᵢ * Bᵢ) + (pTᵢ * Tᵢ) + (pUᵢ * Uᵢ)**
 
-><br>Each indicator, B, T, or U is computed as the proportion of achieved outcomes relative to the number of projects, based on predefined goals, 
+<br>Each indicator, B, T, or U is computed as the proportion of achieved outcomes relative to the number of projects, based on predefined goals, 
 thereby enabling comparison across communities (as defined in Equation 1). The indicators Ij may take values greater than 1 when the defined goal 
 is exceeded, making it possible to identify scenarios of overachievement and additional efficiency. The indicator for each item is calculated as 
 the ratio between the achieved value for each measured element and the product of the number of projects and the corresponding community goal, 
@@ -17,7 +17,7 @@ as follows:<br><br>
 **Indicatorᵢ = (Sumatoria(Achieved valueⱼ)/number of projectsᵢ) / Goalᵢ**	
 
 <br>In Equation, n represents the number of projects in the community. The goal values are defined together with the weights pB, pT, and pU, 
-which represent the relative importance assigned to each indicator within the community and must satisfy the condition that their sum equals 1. These weights correspond to:<br><br>
+which represent the relative importance assigned to each indicator within the community and must satisfy the condition that their sum equals 1. These weights correspond to:<br>
 
 1. pBᵢ: weight assigned to the Budget indicator
 
@@ -26,7 +26,7 @@ which represent the relative importance assigned to each indicator within the co
 3. pUᵢ: weight assigned to the Users indicator
 
 <br>The report presents a table listing projects by Supersystem, system, and Comunity, including the number of projects, the budget amount, 
-and the total number of beneficiaries. For the last three items, comparative charts are also presented alongside the list.An example from mid-January 2026 is shown in the figure.
+and the total number of beneficiaries. For the last three items, comparative charts are also presented alongside the list.An example from mid-January 2026 is shown in the figure.<br>
 
 ![Indicador de intervención general](../img/fig5e_indGnrl.jpg)
 

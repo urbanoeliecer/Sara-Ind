@@ -8,7 +8,7 @@ The image presents the controller of an indicator, which interacts with the mode
 This design enables a clear separation between business logic, data access, and visual representation, thereby improving the maintainability and scalability of the system.
 
 
-<br>They fulfill the following roles:
+<br>They fulfill the following roles:<br><br>
 
 a. Analysis controller
 
