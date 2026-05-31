@@ -21,7 +21,6 @@ nav:
   - Elementos Ind.: indElem.md
   - Interventions Ind.: indInterv.md
   - Definition:
-    - Conection: tecnico/conexion.md
     - BD structure: tecnico/bdest.md
     - Code: tecnico/entorno.md
     - Installation Guide: tecnico/installGuide.md 

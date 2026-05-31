@@ -62,3 +62,17 @@ SARA requires a MySQL database, a local server environment such as XAMPP, and th
 The system is designed to run on Windows and requires PHP and Apache (included in XAMPP) to be properly configured.
 
 Once the environment is set up, the project can be deployed by importing the database and configuring the application according to the provided source code.
+
+
+The **Conect() function** defines the database parameters and executes the mysqli_connect command.
+
+
+function Conectarse()
+
+$host = "localhost";
+
+$user = "root";
+
+$password = "";
+
+$database = "bdsaraind";
