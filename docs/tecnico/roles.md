@@ -7,7 +7,7 @@ SARA is now organized into two main modules: SARA-Reg, for project data registra
 In SARA-Ind, there is only one role, although it may be assigned to different municipalities and one or more departments. This role is called Administrator, and it is responsible for generating the indicators.
 
 
-In SARA-Ind, a System Authority role is used for indicator generation and visualization. Depending on the assigned scope, this role may access information at the community, system, or supersystem level. In the examples 
+<br><br>In SARA-Ind, a System Authority role is used for indicator generation and visualization. Depending on the assigned scope, this role may access information at the community, system, or supersystem level. In the examples 
 presented in this work, the role is responsible for consulting and generating indicators according to the corresponding level. In SARA-Reg, the roles are:
 
 1. Supervisor: Validates the reported expenditure indicators.
@@ -19,9 +19,7 @@ presented in this work, the role is responsible for consulting and generating in
 4. Authority: Management treasures.
 
 
-The use cases are shown in the following figure
-
-(1 to 4 correspond to SARA-Reg, and 5 corresponds to SARA-Ind).
+<br><br>The use cases are shown in the figure (1 to 4 correspond to SARA-Reg, and 5 corresponds to SARA-Ind):
 
 1. Manage communities, supersystems and systems.
 

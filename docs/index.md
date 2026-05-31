@@ -3,10 +3,8 @@
 This product is a web-based system and a multi-level indicator framework for the systematic generation and consolidation of intervention indicators 
 in community-based projects. The proposal is oriented toward organizations such as foundations, educational institutions, and other entities that 
 execute social impact initiatives, enabling the processing of structured project information including activities, resources, participants, timelines, 
-budgets, and intervened elements. For a more detailed implementation, please refer to the <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a> repository.
-
-
-The options are:
+budgets, and intervened elements. For a more detailed implementation, please refer to the <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a> 
+repository. The options are:
 
 1. Interventions
 
@@ -26,6 +24,13 @@ The proposed solution is based on a modular cloud architecture with loosely coup
 generation of indicators across multiple levels and time periods. SARA-Ind follows an exploratory–descriptive approach and was developed using the Rational 
 Unified Process (RUP) through incremental, use case–driven iterations, resulting in a functional solution deployed for end users.
 
+<br><br>SARA was developed as part of Project 4271 of the VIE by <strong>Urbano Eliécer Gómez-Prada</strong><br><br>
+
+School of Systems Engineering, Universidad Industrial de Santander<br>
+
+Bucaramanga, Colombia — <a href="mailto:uegomezp@uis.edu.co">uegomezp@uis.edu.co</a><br>
+
+2026<br><br>
 
 [1] <a href="https://acofipapers.org/index.php/eiei/article/view/4844" target="_blank">Ponencia Acofi</a>
 
@@ -34,14 +39,5 @@ Unified Process (RUP) through incremental, use case–driven iterations, resulti
 they are located in areas with a population density of fewer than 150 inhabitants per square kilometer)
   
 
-
-SARA was developed as part of Project 4271 of the VIE by <strong>Urbano Eliécer Gómez-Prada</strong><br>
-
-School of Systems Engineering, Universidad Industrial de Santander<br>
-
-Bucaramanga, Colombia — <a href="mailto:uegomezp@uis.edu.co">uegomezp@uis.edu.co</a><br>
-
-2026
->
 
 

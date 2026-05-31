@@ -1,6 +1,7 @@
 # SARA-Ind - Database
 
 
+SARA requires a MySQL database, a local server environment such as XAMPP, and the source code available in the <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a> repository. 
 The database is presented in Figure 3 and can be understood by reading it in the order:
 
  1. Communities are responsible for implementing projects in coordination with entities.
@@ -55,21 +56,7 @@ the <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a>
 ![Other query examples](../img/bd02.jpg)
 
 
-SARA requires a MySQL database, a local server environment such as XAMPP, and the source code available in the <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a> repository.
-
-The system is designed to run on Windows and requires PHP and Apache (included in XAMPP) to be properly configured.
-
-Once the environment is set up, the project can be deployed by importing the database and configuring the application according to the provided source code.
+The system is designed to run on Windows and requires PHP and Apache (included in XAMPP) to be properly configured. Once the environment is set up, the project can be deployed by importing the database 
+and configuring the application according to the provided source code.
 
 
-The **Conect() function** defines the database parameters and executes the mysqli_connect command.
-
-function Conectarse()
-
-$host = "localhost";
-
-$user = "root";
-
-$password = "";
-
-$database = "bdsaraind";
