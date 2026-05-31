@@ -9,11 +9,7 @@ Once the environment is set up, the project can be deployed by importing the dat
 
 Requirements: Make sure you have a local server environment with: Apache, PHP 8.2 or higher,MariaDB or MySQL.
 
-
-
-
-
-To replicate this solution:
+<br>To replicate this solution:
 
 
 1. Clone the repository to the <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a> repository.

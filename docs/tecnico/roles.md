@@ -18,7 +18,7 @@ presented in this work, the role is responsible for consulting and generating in
 4. Authority: Management treasures.
 
 
-><br>The use cases are shown in the figure (1 to 4 correspond to SARA-Reg, and 5 corresponds to SARA-Ind):
+<br>The use cases are shown in the figure (1 to 4 correspond to SARA-Reg, and 5 corresponds to SARA-Ind):
 
 1. Manage communities, supersystems and systems.
 
