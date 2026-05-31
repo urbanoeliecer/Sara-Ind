@@ -49,7 +49,7 @@ comparison of two values to ensure they are not equal within a record.
 
 
 Database queries are fundamental to the process, particularly the filtering mechanisms used for the GII. For a more detailed implementation, please refer to 
-the <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a> repository.<br>
+the <a href="https://github.com/urbanoeliecer/Sara-Ind " target="_blank">GIT</a> repository.<br><br>
 
 ![Query GII](../img/bd01.jpg)
 

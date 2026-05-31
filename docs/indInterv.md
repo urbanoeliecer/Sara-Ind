@@ -18,7 +18,7 @@ or the maximum value in the list, so:
 
 3. According to the generated list by system. In this case, each row shows execution percentages calculated with respect to the highest value registered within the corresponding system. For this reason, whenever the system changes, the values used to calculate each chart are displayed beforehand. In the example of super 01, three communities distributed across two systems can be observed; for instance, the third row executed 50% of the budget executed by community 01
 
-An example is shown in the figure, where data were filtered for a single supersystem, one system, and one community.<br>
+An example is shown in the figure, where data were filtered for a single supersystem, one system, and one community.<br><br>
 
 ![Ind Intervenciones ](img/fig5a_3Ind.jpg)
 

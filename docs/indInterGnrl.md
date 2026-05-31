@@ -30,6 +30,6 @@ and the total number of beneficiaries. For the last three items, comparative cha
 
 ![Indicador de intervención general](../img/fig5e_indGnrl.jpg)
 
-<br>An unfiltered example is also presented.
+<br>An unfiltered example is also presented.<br><br>
 
 ![Ind consolidado ](../img/fig5e_indGnrl_large.jpg)
