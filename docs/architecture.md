@@ -12,7 +12,7 @@ The SARA architecture is composed of the following components presented in the f
 </ol>
 ![Components of the SARA architecture](img/fig2_saraArq.jpg)
 
-
+<br><br>
 #  MVC
 
 The following subsections describe the implemented indicators, including their structure, calculation approach, and interpretation. These indicators were 
