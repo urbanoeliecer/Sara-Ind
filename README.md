@@ -15,4 +15,4 @@ SARA aims to:
 
 The project documentation is available at: <a href="https://sara-indicadores.readthedocs.io">MkDocs</a>
 
-Una explicación se encunetra en: https://youtu.be/cBWwXLb53sk
+Una explicación se encuentra en: https://youtu.be/cBWwXLb53sk
