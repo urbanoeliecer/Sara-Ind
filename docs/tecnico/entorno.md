@@ -1,21 +1,18 @@
 # Programming Environment
 
 
-The figure shows the code of an indicator from a programming perspective. On the left side, the project structure is displayed, with its components organized according to their hierarchy.
-
-The image presents the controller of an indicator, which interacts with the model to execute the SQL query, and the view, which receives the data and prepares the information to be displayed.
+The image presents the implementation of an indicator following the Model–View–Controller (MVC) architecture. The controller coordinates the execution flow, the model retrieves and processes the 
+required data, and the view generates the corresponding HTML output for presentation.
 
 This design enables a clear separation between business logic, data access, and visual representation, thereby improving the maintainability and scalability of the system.
 
+<br>The components fulfill the following roles:
 
-<br>They fulfill the following roles:<br>
+a. Controller: Validates the user session, loads the required files and components, and requests the indicator data from the model.
 
-a. Analysis controller
+b. Model: Executes the database queries using the filters provided by the controller and returns the resulting dataset.
 
-b. Calculation of strategic indicators for decision making
-
-c. Visual representation<br><br>
-
+c. View: Receives the dataset produced by the model and generates the HTML output used to present the indicator to the user.<br><br>
 
 ![EDS](../img/fig0_EDS.jpg)
 
