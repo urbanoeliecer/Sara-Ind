@@ -19,15 +19,18 @@ The following subsections describe the implemented indicators, including their s
 implemented following the Model–View–Controller (MVC) architecture, as shown to next, this figure presents an example of the files involved in the General 
 Intervention Indicator process. The steps are as follows:
 
-1. The user reaches the controller.
+i. The user sends a request, which is handled by the controller.
 
-2. The controller interacts with the model.
+ii. The controller validates the user session, invokes the required pages, and requests the corresponding data from the model.
 
-3. The controller selects a view.
+iii. The model executes the database query according to the filters received from the controller.
 
-4. The view generates the output using the data that the controller obtained from the model.
+iv. The model returns the resulting data to the view.
 
-![MVC](img/fig4_mvc.jpg)
+v. The view processes the data and generates the HTML indicator.
+
+vi. The controller presents the generated indicator to the user.
+
 
 All indicators are generated from data using the same set of filters, which can be applied by supersystem or system, by date range and page.
 
