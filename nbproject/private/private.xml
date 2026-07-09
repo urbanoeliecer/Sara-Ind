@@ -22,9 +22,12 @@
             <file>file:/C:/xampp/htdocs/Sara-Ind/controller/indInterv.php</file>
             <file>file:/C:/xampp/htdocs/Sara-Ind/model/modInterGnrl.php</file>
             <file>file:/C:/xampp/htdocs/Sara-Ind/bdsaraind.sql</file>
-            <file>file:/C:/xampp/htdocs/Sara-Ind/docs/img/fig0_EDS.jpg</file>
             <file>file:/C:/xampp/htdocs/Sara-Ind/docs/img/fig0_estruc.jpg</file>
             <file>file:/C:/xampp/htdocs/Sara-Ind/index.php</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/view/vstInterv.php</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/view/vstInterGnrl.php</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/functions/filtro.php</file>
+            <file>file:/C:/xampp/htdocs/Sara-Ind/controller/indInterGnrl.php</file>
         </group>
     </open-files>
 </project-private>

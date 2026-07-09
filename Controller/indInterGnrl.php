@@ -30,8 +30,6 @@ $offset = ($pgn - 1) * $porPagina;
 // datos
 $data = obtenerIntervencionGeneral($fchInc, $fchFin, $iddpt, $idmnc, $offset, $porPagina);
 
-// headers
-$headers = ["#", "Super.", "System", "Community", "Year", "GII", "Chart", "# Activ.", "Prjs & Dates", "# Prj.", "Goal", "%", "Chart", "Budget", "Goal", "%", "Chart", "Avg. Part.", "Goal", "%", "Chart"];
 
 // funciones auxiliares
 function porcentaje($real, $deseado) {
