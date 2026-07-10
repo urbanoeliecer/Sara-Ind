@@ -20,7 +20,7 @@ In summary, SARA-Reg manages project data through the proposed management model,
 aggregation, computation, and multi-level visualization. This work focuses on SARA-Ind, and an example of this process is shown in the following figure.
 
 
-![Components of the SARA architecture](img/fig0_proceso.jpg)
+![Components of the SARA architecture](../img/fig0_proceso.jpg)
 
 
 The proposed system is process-oriented and interconnects municipalities, communities, and in-habitants, where some act as beneficiaries or managers, 

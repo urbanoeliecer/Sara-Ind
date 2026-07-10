@@ -10,7 +10,7 @@ The SARA architecture is composed of the following components presented in the f
 <li>IoT sensors that collect climatic data from the rural area.</li>
 <li>A Google Maps component that allows the geographical identification of rural elements such as roads, properties, culverts, aqueducts, among others.</li>
 </ol>
-![Components of the SARA architecture](img/fig2_saraArq.jpg)
+![Components of the SARA architecture](../img/fig2_saraArq.jpg)
 
 <br>
 #  MVC
@@ -34,4 +34,4 @@ vi. The controller presents the generated indicator to the user.
 
 All indicators are generated from data using the same set of filters, which can be applied by supersystem or system, by date range and page.
 
-![Filters](img/fig0_filtros.jpg)
+![Filters](../img/fig0_filtros.jpg)

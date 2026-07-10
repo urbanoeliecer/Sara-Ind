@@ -21,4 +21,4 @@ Supersystem 01, which contains two communities.
 
 3. Supersystem: The information is grouped by supersystem, each row represents a community, and the percentages are calculated relative to the highest values within the corresponding supersystem. Since the comparison depends on the selected communities, the reference values used to compute each chart are displayed before the graphs. In the example, Supersystem 01 contains two communities working on three projects. The first community achieved the highest values, while the second reached 50% on projects, 10% on Executed Budget, 20% on participants, 18% in hours, and 21% on activities relative to the leading community; for example: 4 activities between 19 (comparative value) is 21%.
 
-![Ind Intervenciones ](img/fig5a_3Ind.jpg)
+![Ind Intervenciones ](../img/fig5a_3Ind.jpg)
