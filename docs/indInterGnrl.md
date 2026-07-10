@@ -34,17 +34,16 @@ In row 1, the indicator reaches 63% for 2025, based on 67% of the assigned proje
 The indicator is also 63% in row 2 and reaches 77% in row 3, which corresponds to the consolidated value for the two-year reporting period. 
 The values are obtained by applying Equations (2)–(5). As an example, the use of these equations is illustrated for row 3 as follows:
 
-<br><br>Applying Equation (3), the Projects indicator is calculated as 2/3=0.67, where two projects were executed out of three planned. Applying Equation (4),
+<br><br>Applying Equation (3), the Projects indicator is calculated as 2 / 3 = 0.67, where two projects were executed out of three planned. Applying Equation (4),
  the Executed Budget indicator is calculated as 16,800 / 18,000 = 0.93. Applying to Equation (5), the Participants indicator is calculated as 
 7.3 / 10 = 0.73. In this case, an additional calculation is required because the value corresponds to the average number of participants per 
 activity. Finally, applying Equation (2), and considering weights of 0.4, 0.3, and 0.3 for Projects, Executed Budget, and Participants, 
 respectively (Activity Hours and Activities were not considered in this example because they are omitted from the figure). The resulting 
 GII is 77%, using the following calculation: 
-
 <br>
-GII3 = (pP3xPᵢ)   + (pB3xB3)   + (pU3xU3)   + (pT3xT3)   + (pA3xA3) 
-GII3 = (0.67x0.4) + (0.93x0.3) + (0.73x0.3) + (0.71x0.0) + (0.64*0) 
-GII3 = 0.77
+<br>GII<sub>3</sub> = (pP<sub>3</sub> × P<sub>3</sub>) + (pB<sub>3</sub> × B<sub>3</sub>) + (pU<sub>3</sub> × U<sub>3</sub>) + (pT<sub>3</sub> × T<sub>3</sub>) + (pA<sub>3</sub> × A<sub>3</sub>)
+<br>GII<sub>3</sub> = (0.67 × 0.4) + (0.93 × 0.3) + (0.73 × 0.3) + (0.71 × 0) + (0.64 × 0)
+<br>GII3 = 0.77
 
 
 ![Indicador de intervención general](../img/fig5e_indGnrl.jpg) 
