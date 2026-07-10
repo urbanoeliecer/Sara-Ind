@@ -45,4 +45,4 @@ GII is 77%, using the following calculation:
 GII3 = (pP3*Pᵢ) + (pB3*B3) + (pU3*U3) + (pT3*T3) + (pA3*A3) = (0.67*0.4) + (0.93*0.3) + (0.73*0.3) + (0.71*0) + (0.64*0) = 0.77
 
 
-![Indicador de intervención general](../img/fig5e_indGnrl.jpg)
+![Indicador de intervención general](../img/fig5e_indGnrl.jpg) 

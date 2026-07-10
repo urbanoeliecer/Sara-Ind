@@ -5,7 +5,7 @@ The intervention indicators quantify project execution based on predefined goals
 The calculation is defined as the ratio between the observed value and the corresponding comparative value. This formulation enables objective and comparable performance evaluation for each generated record. The indicator for each item j 
 is calculated as follows:<br><br>
 
-**Indicatorᵢ = Actual valueᵢ / Comparative valueᵢ**
+**Indicatorᵢ = Actual valueᵢ / Comparative valueᵢ** 
 
 <br>The three indicators use the same columns (supersystem, system, community, projects, budget, participants, hours and activities), except that the first two incorporate the corresponding month or year column, while the first additionally includes the goals defined for each indicator. 
 The following reports illustrate these evaluation approaches. They share a common structure that combines project identification, temporal 
