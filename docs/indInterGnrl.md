@@ -12,16 +12,15 @@ and indicators (Bᵢ is Budget indicator, Tᵢ is Time indicator and Uᵢ: Users
 
 
 <br><br>Each indicator, P, B, U, T, or A is computed as the proportion of achieved outcomes relative to the number of projects, based on predefined goals, 
-thereby enabling comparisons across communities. The following equations are derived from Equation (1) by adapting the observed value for each 
-indicator. In these equations, n denotes the number of projects in the community. The indicators may take values greater than 1 when the defined 
+thereby enabling comparisons across communities. The indicators may take values greater than 1 when the defined 
 goal is exceeded, making it possible to identify scenarios of overachievement and additional efficiency. 
 <br><br>
 
-**Pᵢ =(Numbers by Communityᵢ)⁄(Community Goalᵢ) 						(Equation 3)**
-
-**B,T,or Aᵢ =(∑ (Achieved by projectᵢ) ⁄ Community Goalᵢ 				(Equation 4)**
-
-**Uᵢ =∑ Achieved by projectᵢ ⁄ number of projectsᵢ) ⁄ Community Goalᵢ 			(Equation 5)**
+**3 --> Pᵢ =(Numbers by Communityᵢ)⁄(Community Goalᵢ)**
+<br>
+**4 --> B,T,or Aᵢ = ∑ (Achieved by projectᵢ) ⁄ Community Goalᵢ**
+<br>
+**3 --> Uᵢ =∑ Achieved by projectᵢ ⁄ number of projectsᵢ) ⁄ Community Goalᵢ**
 
 <br><br>Thresholds can also be defined for color-coded visualization. In this study, values above 75% are represented in green, values between 60% and 74% 
 in orange, and values below 60% in red. For illustration, Participants are assigned a higher weight to prioritize intervention impact. 

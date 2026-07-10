@@ -33,5 +33,5 @@ vi. The controller presents the generated indicator to the user.
 
 <br><br>
 All indicators are generated from data using the same set of filters, which can be applied by supersystem or system, by date range and page.
-
+<br><br>
 ![Filters](../img/fig0_filtros.jpg)
