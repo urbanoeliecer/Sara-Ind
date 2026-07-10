@@ -15,9 +15,9 @@ The SARA architecture is composed of the following components presented in the f
 <br>
 #  MVC
 
-The following subsections describe the implemented indicators, including their structure, calculation approach, and interpretation. These indicators were 
+<br>The following subsections describe the implemented indicators, including their structure, calculation approach, and interpretation. These indicators were 
 implemented following the Model–View–Controller (MVC) architecture, as shown to next, this figure presents an example of the files involved in the General 
-Intervention Indicator process. The steps are as follows:
+<br><br>Intervention Indicator process. The steps are as follows:
 
 i. The user sends a request, which is handled by the controller.
 
@@ -31,7 +31,7 @@ v. The view processes the data and generates the HTML indicator.
 
 vi. The controller presents the generated indicator to the user.
 
-
+<br>
 All indicators are generated from data using the same set of filters, which can be applied by supersystem or system, by date range and page.
 
 ![Filters](../img/fig0_filtros.jpg)
