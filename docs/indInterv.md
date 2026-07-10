@@ -8,21 +8,17 @@ is calculated as follows:<br><br>
 **Indicatorᵢ = Actual valueᵢ / Comparative valueᵢ**
 
 <br>The three indicators use the same columns (supersystem, system, community, projects, budget, participants, hours and activities), except that the first two incorporate the corresponding month or year column, while the first additionally includes the goals defined for each indicator. 
+The following reports illustrate these evaluation approaches. They share a common structure that combines project identification, temporal 
+information, execution metrics, and the corresponding charts. Unlike the other reports, the first also includes the planned values defined by each community, enabling a direct comparison between planned 
+and executed results. 
 
-The comparative value i corresponds respectively in each indicator to the goal defined for the community, the maximum value between communities, 
-or the maximum value in the list, so:
+Figure presents examples of the intervention indicators. The first two reports were filtered for a single community, whereas the third is grouped by 
+Supersystem 01, which contains two communities. 
 
-1. According to defined goals, grouping the information by month. For example, in row 1 it can be observed that the first community executed 1500 during the first month out of the 4000 planned for the two-month period, thus obtaining a 38% project execution with respect to the established goal. Participants, hours, and activities are calculated in the same way.
+1. Goal-based: The information is grouped by month and compared with the goals defined by the community. For example, during the first month the community executed a budget of $2,900 out of the $3,000 planned for the two-month period (comparative value), resulting in a project execution value of 97% with respect to the established goal. Participants, time and activities using the same procedure.
 
-2. According to the generated list, grouping the information by year. In the example, it can be observed that in 2026 community 01 executed 2 projects, $5300 in budget, involved 66 participants over 56 hours, and carried out 10 activities. In this case, these values correspond to the highest record found in the list generated for that year and community.
+2. List-based: The information is grouped by year, and each value is compared with the highest record on the list. In the example, Community 03 executed one project in 2026, investing $700, involving 10 participants, completing 16 hours, and carrying out 2 activities. These values are expressed as percentages relative to the highest values recorded in the list for that year; for example: 10 participants between 31 (comparative value) is 32%.
 
-3. According to the generated list by system. In this case, each row shows execution percentages calculated with respect to the highest value registered within the corresponding system. For this reason, whenever the system changes, the values used to calculate each chart are displayed beforehand. In the example of super 01, three communities distributed across two systems can be observed; for instance, the third row executed 50% of the budget executed by community 01
-
-An example is shown in the figure, where data were filtered for a single supersystem, one system, and one community.<br><br>
+3. Supersystem: The information is grouped by supersystem, each row represents a community, and the percentages are calculated relative to the highest values within the corresponding supersystem. Since the comparison depends on the selected communities, the reference values used to compute each chart are displayed before the graphs. In the example, Supersystem 01 contains two communities working on three projects. The first community achieved the highest values, while the second reached 50% on projects, 10% on Executed Budget, 20% on participants, 18% in hours, and 21% on activities relative to the leading community; for example: 4 activities between 19 (comparative value) is 21%.
 
 ![Ind Intervenciones ](img/fig5a_3Ind.jpg)
-
-An unfiltered example is also presented.
-
-![Ind Intervenciones ](img/fig5a_3Ind_large.jpg)
-
