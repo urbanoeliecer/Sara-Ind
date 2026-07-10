@@ -28,7 +28,11 @@ criteria. The associated weights reflect the relative importance of each variabl
 <br>Figure 5 shows the GII for Community 01 (to improve readability, the Supersystem, System, Activity Hours, and Activities columns were omitted). 
 In row 1, the indicator reaches 63% for 2025, based on 67% of the assigned projects, 42% of the Executed Budget, and 78% of the Participants. 
 The indicator is also 63% in row 2 and reaches 77% in row 3, which corresponds to the consolidated value for the two-year reporting period. 
-The values are obtained by applying Equations (2)–(5). As an example, the use of these equations is illustrated for row 3 as follows:
+The values are obtained by applying Equations (2)–(5). As an example, the use of these equations is illustrated for row 3 as follows:<br>
+
+
+![Indicador de intervención general](../img/fig5e_indGnrl.jpg) 
+
 
 <br>Applying Equation (3), the Projects indicator is calculated as 2 / 3 = 0.67, where two projects were executed out of three planned. Applying Equation (4),
  the Executed Budget indicator is calculated as 16,800 / 18,000 = 0.93. Applying to Equation (5), the Participants indicator is calculated as 
@@ -40,6 +44,3 @@ GII is 77%, using the following calculation:
 <br>GII<sub>3</sub> = (pP<sub>3</sub> × P<sub>3</sub>) + (pB<sub>3</sub> × B<sub>3</sub>) + (pU<sub>3</sub> × U<sub>3</sub>) + (pT<sub>3</sub> × T<sub>3</sub>) + (pA<sub>3</sub> × A<sub>3</sub>)
 <br>GII<sub>3</sub> = (0.67 × 0.4) + (0.93 × 0.3) + (0.73 × 0.3) + (0.71 × 0) + (0.64 × 0)
 <br>GII<sub>3</sub> = 0.77
-
-
-![Indicador de intervención general](../img/fig5e_indGnrl.jpg) 
