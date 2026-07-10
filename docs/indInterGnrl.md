@@ -1,15 +1,11 @@
 # **General Intervention Indicator**
 
-
-The General Intervention Indicator (GII) is defined as a synthetic indicator that summarizes the overall performance of the intervention at 
+<br>The General Intervention Indicator (GII) is defined as a synthetic indicator that summarizes the overall performance of the intervention at 
 the community level. It integrates the different computed indicators through a weighted linear combination, where each component represents a 
 specific dimension of project execution. The indicator is calculated for each community using the expression defined by the corresponding weights 
 and indicators (Bᵢ is Budget indicator, Tᵢ is Time indicator and Uᵢ: Users indicator):<br><br>
 
-
 **GIIᵢ = + (pPᵢ * Pᵢ) (pBᵢ * Bᵢ) + (pUᵢ * Uᵢ) + + (pTᵢ * Tᵢ) +(pAᵢ * Aᵢ)**
-
-
 
 <br><br>Each indicator, P, B, U, T, or A is computed as the proportion of achieved outcomes relative to the number of projects, based on predefined goals, 
 thereby enabling comparisons across communities. The indicators may take values greater than 1 when the defined 
